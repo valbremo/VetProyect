@@ -41,8 +41,8 @@
             this.TxtCorreo = new System.Windows.Forms.TextBox();
             this.TxtDireccion = new System.Windows.Forms.TextBox();
             this.GbDetalleCliente = new System.Windows.Forms.GroupBox();
-            this.CbCodigo = new System.Windows.Forms.CheckBox();
-            this.CbCedula = new System.Windows.Forms.CheckBox();
+            this.CbVerId = new System.Windows.Forms.CheckBox();
+            this.CbVerCedula = new System.Windows.Forms.CheckBox();
             this.TxtBuscar = new System.Windows.Forms.TextBox();
             this.DgvLista = new System.Windows.Forms.DataGridView();
             this.IdCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,7 +67,7 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(23, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 38);
+            this.label1.Size = new System.Drawing.Size(76, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Código";
             // 
@@ -77,7 +77,7 @@
             this.label2.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(23, 117);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 38);
+            this.label2.Size = new System.Drawing.Size(83, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nombre";
             // 
@@ -87,7 +87,7 @@
             this.label3.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(23, 181);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 38);
+            this.label3.Size = new System.Drawing.Size(75, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "Cédula";
             // 
@@ -97,7 +97,7 @@
             this.label4.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(23, 240);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(134, 38);
+            this.label4.Size = new System.Drawing.Size(89, 25);
             this.label4.TabIndex = 3;
             this.label4.Text = "Teléfono";
             // 
@@ -107,7 +107,7 @@
             this.label5.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(23, 300);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(269, 38);
+            this.label5.Size = new System.Drawing.Size(179, 25);
             this.label5.TabIndex = 4;
             this.label5.Text = "Correo Electrónico";
             // 
@@ -117,7 +117,7 @@
             this.label6.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(23, 358);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(147, 38);
+            this.label6.Size = new System.Drawing.Size(98, 25);
             this.label6.TabIndex = 5;
             this.label6.Text = "Dirección";
             // 
@@ -192,25 +192,25 @@
             this.GbDetalleCliente.TabStop = false;
             this.GbDetalleCliente.Text = "Detalle del Cliente";
             // 
-            // CbCodigo
+            // CbVerId
             // 
-            this.CbCodigo.AutoSize = true;
-            this.CbCodigo.Location = new System.Drawing.Point(50, 51);
-            this.CbCodigo.Name = "CbCodigo";
-            this.CbCodigo.Size = new System.Drawing.Size(94, 26);
-            this.CbCodigo.TabIndex = 12;
-            this.CbCodigo.Text = "Código";
-            this.CbCodigo.UseVisualStyleBackColor = true;
+            this.CbVerId.AutoSize = true;
+            this.CbVerId.Location = new System.Drawing.Point(50, 51);
+            this.CbVerId.Name = "CbVerId";
+            this.CbVerId.Size = new System.Drawing.Size(94, 26);
+            this.CbVerId.TabIndex = 12;
+            this.CbVerId.Text = "Código";
+            this.CbVerId.UseVisualStyleBackColor = true;
             // 
-            // CbCedula
+            // CbVerCedula
             // 
-            this.CbCedula.AutoSize = true;
-            this.CbCedula.Location = new System.Drawing.Point(183, 51);
-            this.CbCedula.Name = "CbCedula";
-            this.CbCedula.Size = new System.Drawing.Size(92, 26);
-            this.CbCedula.TabIndex = 13;
-            this.CbCedula.Text = "Cédula";
-            this.CbCedula.UseVisualStyleBackColor = true;
+            this.CbVerCedula.AutoSize = true;
+            this.CbVerCedula.Location = new System.Drawing.Point(183, 51);
+            this.CbVerCedula.Name = "CbVerCedula";
+            this.CbVerCedula.Size = new System.Drawing.Size(92, 26);
+            this.CbVerCedula.TabIndex = 13;
+            this.CbVerCedula.Text = "Cédula";
+            this.CbVerCedula.UseVisualStyleBackColor = true;
             // 
             // TxtBuscar
             // 
@@ -289,15 +289,15 @@
             // GbBuscar
             // 
             this.GbBuscar.Controls.Add(this.TxtBuscar);
-            this.GbBuscar.Controls.Add(this.CbCedula);
-            this.GbBuscar.Controls.Add(this.CbCodigo);
+            this.GbBuscar.Controls.Add(this.CbVerCedula);
+            this.GbBuscar.Controls.Add(this.CbVerId);
             this.GbBuscar.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GbBuscar.Location = new System.Drawing.Point(682, 16);
             this.GbBuscar.Name = "GbBuscar";
             this.GbBuscar.Size = new System.Drawing.Size(838, 116);
             this.GbBuscar.TabIndex = 16;
             this.GbBuscar.TabStop = false;
-            this.GbBuscar.Text = "Buscar";
+            this.GbBuscar.Text = "Buscar Cliente";
             // 
             // BtnAgregar
             // 
@@ -348,7 +348,7 @@
             this.Controls.Add(this.DgvLista);
             this.Controls.Add(this.GbDetalleCliente);
             this.Name = "FrmCliente";
-            this.Text = "FrmCliente";
+            this.Text = "Gestión de Clientes";
             this.GbDetalleCliente.ResumeLayout(false);
             this.GbDetalleCliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvLista)).EndInit();
@@ -373,8 +373,8 @@
         private System.Windows.Forms.TextBox TxtCorreo;
         private System.Windows.Forms.TextBox TxtDireccion;
         private System.Windows.Forms.GroupBox GbDetalleCliente;
-        private System.Windows.Forms.CheckBox CbCodigo;
-        private System.Windows.Forms.CheckBox CbCedula;
+        private System.Windows.Forms.CheckBox CbVerId;
+        private System.Windows.Forms.CheckBox CbVerCedula;
         private System.Windows.Forms.TextBox TxtBuscar;
         private System.Windows.Forms.DataGridView DgvLista;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdCliente;
