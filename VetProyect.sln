@@ -4,6 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VetProyect", "VetProyect\VetProyect.csproj", "{FD17DE46-7B8F-4DF4-B48C-9F9450BAD8E7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{89FEF546-1B5D-4FEA-98EC-8E8964264DFC} = {89FEF546-1B5D-4FEA-98EC-8E8964264DFC}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VLogica", "VLogica\VLogica.csproj", "{89FEF546-1B5D-4FEA-98EC-8E8964264DFC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{FD17DE46-7B8F-4DF4-B48C-9F9450BAD8E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD17DE46-7B8F-4DF4-B48C-9F9450BAD8E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD17DE46-7B8F-4DF4-B48C-9F9450BAD8E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89FEF546-1B5D-4FEA-98EC-8E8964264DFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89FEF546-1B5D-4FEA-98EC-8E8964264DFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89FEF546-1B5D-4FEA-98EC-8E8964264DFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89FEF546-1B5D-4FEA-98EC-8E8964264DFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
