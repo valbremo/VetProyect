@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             this.GbDatosTipoMascota = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.TxtNombre = new System.Windows.Forms.TextBox();
+            this.TxtIdTipoMascota = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ColIdTipoMascota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,8 +44,6 @@
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnSalir = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.TxtId = new System.Windows.Forms.TextBox();
-            this.TxtNombre = new System.Windows.Forms.TextBox();
             this.GbDatosTipoMascota.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -52,7 +52,7 @@
             // GbDatosTipoMascota
             // 
             this.GbDatosTipoMascota.Controls.Add(this.TxtNombre);
-            this.GbDatosTipoMascota.Controls.Add(this.TxtId);
+            this.GbDatosTipoMascota.Controls.Add(this.TxtIdTipoMascota);
             this.GbDatosTipoMascota.Controls.Add(this.dataGridView1);
             this.GbDatosTipoMascota.Controls.Add(this.label2);
             this.GbDatosTipoMascota.Controls.Add(this.label1);
@@ -63,23 +63,20 @@
             this.GbDatosTipoMascota.TabStop = false;
             this.GbDatosTipoMascota.Text = "Datos Tipo de Mascota";
             // 
-            // label1
+            // TxtNombre
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 84);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 30);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Código";
+            this.TxtNombre.Location = new System.Drawing.Point(126, 128);
+            this.TxtNombre.Name = "TxtNombre";
+            this.TxtNombre.Size = new System.Drawing.Size(148, 26);
+            this.TxtNombre.TabIndex = 4;
             // 
-            // label2
+            // TxtIdTipoMascota
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 130);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 30);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nombre";
+            this.TxtIdTipoMascota.Location = new System.Drawing.Point(131, 81);
+            this.TxtIdTipoMascota.Name = "TxtIdTipoMascota";
+            this.TxtIdTipoMascota.ReadOnly = true;
+            this.TxtIdTipoMascota.Size = new System.Drawing.Size(144, 26);
+            this.TxtIdTipoMascota.TabIndex = 3;
             // 
             // dataGridView1
             // 
@@ -115,14 +112,35 @@
             this.ColNombre.ReadOnly = true;
             this.ColNombre.Width = 150;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(19, 130);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Nombre";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(20, 84);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Código";
+            // 
             // dataGridView2
             // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2});
             this.dataGridView2.Location = new System.Drawing.Point(484, 97);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 28;
             this.dataGridView2.Size = new System.Drawing.Size(368, 64);
@@ -190,21 +208,6 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Gestión de Tipo de Mascotas";
             // 
-            // TxtId
-            // 
-            this.TxtId.Location = new System.Drawing.Point(131, 81);
-            this.TxtId.Name = "TxtId";
-            this.TxtId.ReadOnly = true;
-            this.TxtId.Size = new System.Drawing.Size(144, 26);
-            this.TxtId.TabIndex = 3;
-            // 
-            // TxtNombre
-            // 
-            this.TxtNombre.Location = new System.Drawing.Point(126, 128);
-            this.TxtNombre.Name = "TxtNombre";
-            this.TxtNombre.Size = new System.Drawing.Size(148, 26);
-            this.TxtNombre.TabIndex = 4;
-            // 
             // FrmTipoMascota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -245,6 +248,6 @@
         private System.Windows.Forms.Button BtnSalir;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TxtNombre;
-        private System.Windows.Forms.TextBox TxtId;
+        private System.Windows.Forms.TextBox TxtIdTipoMascota;
     }
 }

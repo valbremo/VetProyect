@@ -57,6 +57,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.BtnBuscar = new System.Windows.Forms.Button();
+            this.BtnAgregar = new System.Windows.Forms.Button();
+            this.BtnEliminar = new System.Windows.Forms.Button();
+            this.BtnSalir = new System.Windows.Forms.Button();
             this.GbDatosHistorial.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvLista)).BeginInit();
             this.GbBuscarHistorial.SuspendLayout();
@@ -159,6 +162,7 @@
             // 
             this.TxtIdHistorial.Location = new System.Drawing.Point(132, 60);
             this.TxtIdHistorial.Name = "TxtIdHistorial";
+            this.TxtIdHistorial.ReadOnly = true;
             this.TxtIdHistorial.Size = new System.Drawing.Size(190, 30);
             this.TxtIdHistorial.TabIndex = 7;
             // 
@@ -328,11 +332,41 @@
             this.BtnBuscar.Text = "Buscar";
             this.BtnBuscar.UseVisualStyleBackColor = true;
             // 
+            // BtnAgregar
+            // 
+            this.BtnAgregar.Location = new System.Drawing.Point(128, 550);
+            this.BtnAgregar.Name = "BtnAgregar";
+            this.BtnAgregar.Size = new System.Drawing.Size(144, 48);
+            this.BtnAgregar.TabIndex = 10;
+            this.BtnAgregar.Text = "Agregar";
+            this.BtnAgregar.UseVisualStyleBackColor = true;
+            // 
+            // BtnEliminar
+            // 
+            this.BtnEliminar.Location = new System.Drawing.Point(504, 507);
+            this.BtnEliminar.Name = "BtnEliminar";
+            this.BtnEliminar.Size = new System.Drawing.Size(102, 51);
+            this.BtnEliminar.TabIndex = 12;
+            this.BtnEliminar.Text = "Eliminar";
+            this.BtnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // BtnSalir
+            // 
+            this.BtnSalir.Location = new System.Drawing.Point(813, 515);
+            this.BtnSalir.Name = "BtnSalir";
+            this.BtnSalir.Size = new System.Drawing.Size(183, 34);
+            this.BtnSalir.TabIndex = 13;
+            this.BtnSalir.Text = "Salir";
+            this.BtnSalir.UseVisualStyleBackColor = true;
+            // 
             // FrmHistorial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1402, 634);
+            this.Controls.Add(this.BtnSalir);
+            this.Controls.Add(this.BtnEliminar);
+            this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.GbBuscarHistorial);
             this.Controls.Add(this.DgvLista);
             this.Controls.Add(this.GbDatosHistorial);
@@ -379,5 +413,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Button BtnAgregar;
+        private System.Windows.Forms.Button BtnEliminar;
+        private System.Windows.Forms.Button BtnSalir;
     }
 }

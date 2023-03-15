@@ -144,6 +144,7 @@
             // 
             this.TxtIdMascota.Location = new System.Drawing.Point(120, 60);
             this.TxtIdMascota.Name = "TxtIdMascota";
+            this.TxtIdMascota.ReadOnly = true;
             this.TxtIdMascota.Size = new System.Drawing.Size(186, 26);
             this.TxtIdMascota.TabIndex = 8;
             // 
