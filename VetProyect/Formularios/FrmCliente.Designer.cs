@@ -34,11 +34,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.TxtID = new System.Windows.Forms.TextBox();
+            this.TxtIdCliente = new System.Windows.Forms.TextBox();
             this.TxtNombre = new System.Windows.Forms.TextBox();
             this.TxtCedula = new System.Windows.Forms.TextBox();
             this.TxtTelefono = new System.Windows.Forms.TextBox();
-            this.TxtCorreo = new System.Windows.Forms.TextBox();
+            this.TxtCorreoElectronico = new System.Windows.Forms.TextBox();
             this.TxtDireccion = new System.Windows.Forms.TextBox();
             this.GbDetalleCliente = new System.Windows.Forms.GroupBox();
             this.CbVerId = new System.Windows.Forms.CheckBox();
@@ -121,14 +121,14 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Dirección";
             // 
-            // TxtID
+            // TxtIdCliente
             // 
-            this.TxtID.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtID.Location = new System.Drawing.Point(210, 45);
-            this.TxtID.Name = "TxtID";
-            this.TxtID.ReadOnly = true;
-            this.TxtID.Size = new System.Drawing.Size(188, 33);
-            this.TxtID.TabIndex = 1;
+            this.TxtIdCliente.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtIdCliente.Location = new System.Drawing.Point(210, 45);
+            this.TxtIdCliente.Name = "TxtIdCliente";
+            this.TxtIdCliente.ReadOnly = true;
+            this.TxtIdCliente.Size = new System.Drawing.Size(188, 33);
+            this.TxtIdCliente.TabIndex = 1;
             // 
             // TxtNombre
             // 
@@ -154,13 +154,13 @@
             this.TxtTelefono.Size = new System.Drawing.Size(328, 33);
             this.TxtTelefono.TabIndex = 8;
             // 
-            // TxtCorreo
+            // TxtCorreoElectronico
             // 
-            this.TxtCorreo.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCorreo.Location = new System.Drawing.Point(210, 297);
-            this.TxtCorreo.Name = "TxtCorreo";
-            this.TxtCorreo.Size = new System.Drawing.Size(328, 33);
-            this.TxtCorreo.TabIndex = 9;
+            this.TxtCorreoElectronico.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCorreoElectronico.Location = new System.Drawing.Point(210, 297);
+            this.TxtCorreoElectronico.Name = "TxtCorreoElectronico";
+            this.TxtCorreoElectronico.Size = new System.Drawing.Size(328, 33);
+            this.TxtCorreoElectronico.TabIndex = 9;
             // 
             // TxtDireccion
             // 
@@ -173,11 +173,11 @@
             // GbDetalleCliente
             // 
             this.GbDetalleCliente.Controls.Add(this.TxtDireccion);
-            this.GbDetalleCliente.Controls.Add(this.TxtCorreo);
+            this.GbDetalleCliente.Controls.Add(this.TxtCorreoElectronico);
             this.GbDetalleCliente.Controls.Add(this.TxtTelefono);
             this.GbDetalleCliente.Controls.Add(this.TxtCedula);
             this.GbDetalleCliente.Controls.Add(this.TxtNombre);
-            this.GbDetalleCliente.Controls.Add(this.TxtID);
+            this.GbDetalleCliente.Controls.Add(this.TxtIdCliente);
             this.GbDetalleCliente.Controls.Add(this.label6);
             this.GbDetalleCliente.Controls.Add(this.label5);
             this.GbDetalleCliente.Controls.Add(this.label4);
@@ -366,11 +366,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox TxtID;
+        private System.Windows.Forms.TextBox TxtIdCliente;
         private System.Windows.Forms.TextBox TxtNombre;
         private System.Windows.Forms.TextBox TxtCedula;
         private System.Windows.Forms.TextBox TxtTelefono;
-        private System.Windows.Forms.TextBox TxtCorreo;
+        private System.Windows.Forms.TextBox TxtCorreoElectronico;
         private System.Windows.Forms.TextBox TxtDireccion;
         private System.Windows.Forms.GroupBox GbDetalleCliente;
         private System.Windows.Forms.CheckBox CbVerId;

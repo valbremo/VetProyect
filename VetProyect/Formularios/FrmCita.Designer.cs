@@ -34,11 +34,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dateTimeFecha = new System.Windows.Forms.DateTimePicker();
-            this.CbCliente = new System.Windows.Forms.ComboBox();
+            this.CbIdCliente = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.CbMascota = new System.Windows.Forms.ComboBox();
-            this.TxtCodigo = new System.Windows.Forms.TextBox();
+            this.CbIdMascota = new System.Windows.Forms.ComboBox();
+            this.TxtIdCita = new System.Windows.Forms.TextBox();
             this.TxtEspecificacion = new System.Windows.Forms.TextBox();
             this.TxtDisponibilidad = new System.Windows.Forms.TextBox();
             this.BtnAgregar = new System.Windows.Forms.Button();
@@ -114,13 +114,13 @@
             this.dateTimeFecha.Size = new System.Drawing.Size(226, 26);
             this.dateTimeFecha.TabIndex = 5;
             // 
-            // CbCliente
+            // CbIdCliente
             // 
-            this.CbCliente.FormattingEnabled = true;
-            this.CbCliente.Location = new System.Drawing.Point(215, 289);
-            this.CbCliente.Name = "CbCliente";
-            this.CbCliente.Size = new System.Drawing.Size(198, 28);
-            this.CbCliente.TabIndex = 6;
+            this.CbIdCliente.FormattingEnabled = true;
+            this.CbIdCliente.Location = new System.Drawing.Point(215, 289);
+            this.CbIdCliente.Name = "CbIdCliente";
+            this.CbIdCliente.Size = new System.Drawing.Size(198, 28);
+            this.CbIdCliente.TabIndex = 6;
             // 
             // label6
             // 
@@ -140,21 +140,21 @@
             this.label7.TabIndex = 8;
             this.label7.Text = "Mascota";
             // 
-            // CbMascota
+            // CbIdMascota
             // 
-            this.CbMascota.FormattingEnabled = true;
-            this.CbMascota.Location = new System.Drawing.Point(218, 333);
-            this.CbMascota.Name = "CbMascota";
-            this.CbMascota.Size = new System.Drawing.Size(194, 28);
-            this.CbMascota.TabIndex = 9;
+            this.CbIdMascota.FormattingEnabled = true;
+            this.CbIdMascota.Location = new System.Drawing.Point(218, 333);
+            this.CbIdMascota.Name = "CbIdMascota";
+            this.CbIdMascota.Size = new System.Drawing.Size(194, 28);
+            this.CbIdMascota.TabIndex = 9;
             // 
-            // TxtCodigo
+            // TxtIdCita
             // 
-            this.TxtCodigo.Location = new System.Drawing.Point(215, 40);
-            this.TxtCodigo.Name = "TxtCodigo";
-            this.TxtCodigo.ReadOnly = true;
-            this.TxtCodigo.Size = new System.Drawing.Size(151, 26);
-            this.TxtCodigo.TabIndex = 10;
+            this.TxtIdCita.Location = new System.Drawing.Point(215, 40);
+            this.TxtIdCita.Name = "TxtIdCita";
+            this.TxtIdCita.ReadOnly = true;
+            this.TxtIdCita.Size = new System.Drawing.Size(151, 26);
+            this.TxtIdCita.TabIndex = 10;
             // 
             // TxtEspecificacion
             // 
@@ -313,11 +313,11 @@
             // 
             this.GbDatosCita.Controls.Add(this.TxtDisponibilidad);
             this.GbDatosCita.Controls.Add(this.TxtEspecificacion);
-            this.GbDatosCita.Controls.Add(this.TxtCodigo);
-            this.GbDatosCita.Controls.Add(this.CbMascota);
+            this.GbDatosCita.Controls.Add(this.TxtIdCita);
+            this.GbDatosCita.Controls.Add(this.CbIdMascota);
             this.GbDatosCita.Controls.Add(this.label7);
             this.GbDatosCita.Controls.Add(this.label6);
-            this.GbDatosCita.Controls.Add(this.CbCliente);
+            this.GbDatosCita.Controls.Add(this.CbIdCliente);
             this.GbDatosCita.Controls.Add(this.dateTimeFecha);
             this.GbDatosCita.Controls.Add(this.label5);
             this.GbDatosCita.Controls.Add(this.label4);
@@ -363,11 +363,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dateTimeFecha;
-        private System.Windows.Forms.ComboBox CbCliente;
+        private System.Windows.Forms.ComboBox CbIdCliente;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox CbMascota;
-        private System.Windows.Forms.TextBox TxtCodigo;
+        private System.Windows.Forms.ComboBox CbIdMascota;
+        private System.Windows.Forms.TextBox TxtIdCita;
         private System.Windows.Forms.TextBox TxtEspecificacion;
         private System.Windows.Forms.TextBox TxtDisponibilidad;
         private System.Windows.Forms.Button BtnAgregar;

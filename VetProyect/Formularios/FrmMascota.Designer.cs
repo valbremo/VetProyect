@@ -36,7 +36,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.TxtId = new System.Windows.Forms.TextBox();
+            this.TxtIdMascota = new System.Windows.Forms.TextBox();
             this.TxtNombre = new System.Windows.Forms.TextBox();
             this.TxtRaza = new System.Windows.Forms.TextBox();
             this.TxtObservacion = new System.Windows.Forms.TextBox();
@@ -140,12 +140,12 @@
             this.label8.TabIndex = 7;
             this.label8.Text = "Dueño";
             // 
-            // TxtId
+            // TxtIdMascota
             // 
-            this.TxtId.Location = new System.Drawing.Point(120, 60);
-            this.TxtId.Name = "TxtId";
-            this.TxtId.Size = new System.Drawing.Size(186, 26);
-            this.TxtId.TabIndex = 8;
+            this.TxtIdMascota.Location = new System.Drawing.Point(120, 60);
+            this.TxtIdMascota.Name = "TxtIdMascota";
+            this.TxtIdMascota.Size = new System.Drawing.Size(186, 26);
+            this.TxtIdMascota.TabIndex = 8;
             // 
             // TxtNombre
             // 
@@ -358,7 +358,7 @@
             this.GbDatosMascota.Controls.Add(this.TxtObservacion);
             this.GbDatosMascota.Controls.Add(this.TxtRaza);
             this.GbDatosMascota.Controls.Add(this.TxtNombre);
-            this.GbDatosMascota.Controls.Add(this.TxtId);
+            this.GbDatosMascota.Controls.Add(this.TxtIdMascota);
             this.GbDatosMascota.Controls.Add(this.label8);
             this.GbDatosMascota.Controls.Add(this.label7);
             this.GbDatosMascota.Controls.Add(this.label6);
@@ -408,7 +408,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox TxtId;
+        private System.Windows.Forms.TextBox TxtIdMascota;
         private System.Windows.Forms.TextBox TxtNombre;
         private System.Windows.Forms.TextBox TxtRaza;
         private System.Windows.Forms.TextBox TxtObservacion;

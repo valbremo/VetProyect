@@ -16,5 +16,10 @@ namespace VetProyect.Formularios
         {
             InitializeComponent();
         }
+
+        private void GbDatosHistorial_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
