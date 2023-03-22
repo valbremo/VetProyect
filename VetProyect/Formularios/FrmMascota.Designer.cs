@@ -1,6 +1,6 @@
 ﻿namespace VetProyect.Formularios
 {
-    partial class Mascota
+    partial class FrmMascota
     {
         /// <summary>
         /// Required designer variable.
@@ -374,7 +374,7 @@
             this.GbDatosMascota.TabStop = false;
             this.GbDatosMascota.Text = "Datos de la Mascota";
             // 
-            // Mascota
+            // FrmMascota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -387,7 +387,7 @@
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.DgvLista);
             this.Controls.Add(this.label1);
-            this.Name = "Mascota";
+            this.Name = "FrmMascota";
             this.Text = "Mascota";
             ((System.ComponentModel.ISupportInitialize)(this.DgvLista)).EndInit();
             this.GbBuscar.ResumeLayout(false);

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace VetProyect.Formularios
 {
-    public partial class Mascota : Form
+    public partial class FrmMascota : Form
     {
-        public Mascota()
+        public FrmMascota()
         {
             InitializeComponent();
         }
