@@ -8,14 +8,15 @@ using System.Threading.Tasks;
 
 namespace VLogica
 {
-    public class TipoMascota
+    public class Especialidad
     {
-        public int IdTipoMascota { get; set; }
+        public int IdEspecialidad { get; set; }
 
         public string Nombre { get; set; }
 
 
-        public TipoMascota()
+
+        public Especialidad()
         {
 
         }
@@ -26,18 +27,18 @@ namespace VLogica
             Conexion MyCnn = new Conexion();
 
             MyCnn.ListadoDeParametros.Add(new SqlParameter("@Nombre", this.Nombre));
-           
 
-            return MyCnn.DMLUpdateDeleteInsert("SPTipoMascotaAgregar") > 0 ? true : false;
+
+            return MyCnn.DMLUpdateDeleteInsert("SPEspecialidadAgregar") > 0 ? true : false;
         }
 
         public bool Desactivar()
         {
             Conexion MyCnn = new Conexion();
 
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("IdTipoMascota", this.IdTipoMascota));
+            MyCnn.ListadoDeParametros.Add(new SqlParameter("IdEspecialidad", this.IdEspecialidad));
 
-            return (MyCnn.DMLUpdateDeleteInsert("SPTipoMascotaEliminar") > 0 ? true : false);
+            return (MyCnn.DMLUpdateDeleteInsert("SPEspecialidadEliminar") > 0 ? true : false);
         }
 
         public DataTable ListarTodos()
@@ -46,11 +47,10 @@ namespace VLogica
 
             Conexion MiConexion = new Conexion();
 
-            R = MiConexion.DMLSelect("SPTipoMascotaListar");
+            R = MiConexion.DMLSelect("SPEspecialidadListar");
 
             return R;
 
         }
-
     }
 }
