@@ -57,8 +57,8 @@ namespace VLogica
                 MyCnn.ListadoDeParametros.Add(new SqlParameter("@Fecha", this.Fecha));
                 MyCnn.ListadoDeParametros.Add(new SqlParameter("@Espeficicacion", this.Especificacion));
                 MyCnn.ListadoDeParametros.Add(new SqlParameter("@Disponible", this.Disponible));
-                MyCnn.ListadoDeParametros.Add(new SqlParameter("@IdCliente", MiCliente.IdCliente));
-                MyCnn.ListadoDeParametros.Add(new SqlParameter("@IdMascota", MiMascota.IdMascota));
+                MyCnn.ListadoDeParametros.Add(new SqlParameter("@IdCliente", this.MiCliente.IdCliente));
+                MyCnn.ListadoDeParametros.Add(new SqlParameter("@IdMascota", this.MiMascota.IdMascota));
 
                 int retorno = MyCnn.DMLUpdateDeleteInsert("SPCitaModificar");
 
@@ -89,9 +89,9 @@ namespace VLogica
             {
                 DataRow Fila = Tabla.Rows[0];
                 MiCita.IdCita = ID;
-                MiCita.Fecha = Convert.ToDateTime(Fila["fecha"]);
-                MiCita.Especificacion = Fila["especificacion"].ToString();
-                MiCita.Disponible = Convert.ToBoolean(Fila["disponible"]);
+                MiCita.Fecha = Convert.ToDateTime(Fila["Fecha"]);
+                MiCita.Especificacion = Fila["Especificacion"].ToString();
+                MiCita.Disponible = Convert.ToBoolean(Fila["Disponible"]);
                 MiCita.MiCliente.IdCliente = Convert.ToInt32(Fila["IdCliente"]);
                 MiCita.MiMascota.IdMascota = Convert.ToInt32(Fila["IdMascota"]);
             }
@@ -100,6 +100,32 @@ namespace VLogica
             return MiCita;
         }
 
+
+        //Eliminar la Cita
+
+        public bool Desactivar()
+        {
+            Conexion MyCnn = new Conexion();
+
+            MyCnn.ListadoDeParametros.Add(new SqlParameter("IdCita", this.IdCita));
+
+            return (MyCnn.DMLUpdateDeleteInsert("SPCitaEliminar") > 0 ? true : false);
+        }
+
+
+        //Listar todas las citas
+
+        public DataTable ListarTodos()
+        {
+            DataTable R = new DataTable();
+
+            Conexion MiConexion = new Conexion();
+
+            R = MiConexion.DMLSelect("SPCitaListar");
+
+            return R;
+
+        }
 
     }
 
