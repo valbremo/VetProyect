@@ -99,7 +99,7 @@ namespace VLogica
             }
 
 
-            return MiUsuario;
+            return MiReceta;
         }
 
 
