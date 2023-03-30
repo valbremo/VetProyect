@@ -25,10 +25,11 @@ namespace VetProyect.Formularios
 
         private void BtnUsuarios_Click(object sender, EventArgs e)
         {
-            if (!Locales.ObjetosGlobales.MiUsuarioGlobal.Visible)
+
+            if (!Locales.ObjetosGlobales.MiFormUsuario.Visible)
             {
-                Locales.ObjetosGlobales.MiUsuarioGlobal = new FrmUsuario();
-                Locales.ObjetosGlobales.MiUsuarioGlobal.Show();
+                Locales.ObjetosGlobales.MiFormUsuario = new FrmUsuario();
+                Locales.ObjetosGlobales.MiFormUsuario.Show();
             }
         }
 

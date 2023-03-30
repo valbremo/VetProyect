@@ -9,24 +9,13 @@ using System.Threading.Tasks;
 
 namespace VLogica
 {
-    internal class Conexion
+    public class Conexion
     {
-
-        //contiene informacion de la cadena de conexion a usar por la clase.
 
         String CadenaDeConexion { get; set; }
 
-        //este listado se usa para agregar los parametros que se pasaran al procedimiento almacenado.
 
         public List<SqlParameter> ListadoDeParametros = new List<SqlParameter>();
-
-        /*
-         Esta función ejecuta un procedimiento almacenado. 
-         Recibe por parámetro el nombre del SP y además 
-         agrega cualquier parámetro tipo SqlParameter
-         que esté en la lista de parámetros "Parametros"
-         Sirve para consultas tipo: DELETE FROM, UPDATE, INSERT.
-        */
 
 
         public int DMLUpdateDeleteInsert(String NombreSP)
@@ -49,8 +38,6 @@ namespace VLogica
 
                 MyCnn.Open();
 
-                //Si el comando a ejecutar en un DML (update, Insert o delete) 
-                //establecer SET NOCOUNT OFF; en el SP 
 
                 Retorno = MyComando.ExecuteNonQuery();
             }
@@ -59,14 +46,6 @@ namespace VLogica
         }
 
 
-        /*
-         Esta función ejecuta un procedimiento almacenado. 
-         Recibe por parámetro el nombre del SP y además 
-         agrega cualquier parámetro tipo SqlParameter
-         que esté en la lista de parámetros "ListadoParametros". 
-         Sirve para hacer consultas tipo: SELECT FROM y crear un
-         DataTable con dicha info.
-        */
         public DataTable DMLSelect(String NombreSP, bool CargarEsquemaDeTabla = false)
         {
             DataTable Retorno = new DataTable();
@@ -96,7 +75,6 @@ namespace VLogica
             return Retorno;
         }
 
-
         public Object DMLConRetornoEscalar(String NombreSP)
         {
             Object Retorno = null;
@@ -120,9 +98,7 @@ namespace VLogica
             return Retorno;
         }
 
-        //Constructor. Carga la info del app.config
-        //en la cadena de conexión al momento de crear 
-        //una instancia nueva de la clase.
+
         public Conexion()
         {
             this.CadenaDeConexion = ConfigurationManager.ConnectionStrings["CNNSTR"].ToString();

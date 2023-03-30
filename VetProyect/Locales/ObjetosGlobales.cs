@@ -13,6 +13,8 @@ namespace VetProyect.Locales
 
         public static VLogica.Usuario MiUsuarioGlobal = new VLogica.Usuario();
 
+        public static Formularios.FrmUsuario MiFormUsuario = new Formularios.FrmUsuario();
+
         public static Formularios.FrmCliente MiFormCliente = new Formularios.FrmCliente();
 
         public static Formularios.FrmCita MiFormCita = new Formularios.FrmCita();

@@ -23,7 +23,6 @@ namespace VLogica
         public string Contrasena { get; set; }
 
         public string Estado { get; set; }
-        public bool Visible { get; set; }
 
         public Usuario()
         {
@@ -151,114 +150,145 @@ namespace VLogica
             return R;
         }
 
-        public bool ConsultarPorID()
+        public Usuario Consultar(int pIDUsuario)
         {
-            bool R = false;
-
-            try
-            {
-                Conexion MiConexion = new Conexion();
-
-                MiConexion.ListadoDeParametros.Add(new SqlParameter("@IdUsuario", this.IdUsuario));
-
-                DataTable retorno = MiConexion.DMLSelect("SPUsuarioConsultarPorID");
-
-                if (retorno.Rows.Count > 0)
-                {
-                    R = true;
-                }
-
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-
-            return R;
-
-        }
-
-        public bool ConsultarPorCedula()
-        {
-            bool R = false;
-
-            try
-            {
-                Conexion MiConexion = new Conexion();
-
-                MiConexion.ListadoDeParametros.Add(new SqlParameter("@Cedula", this.Cedula));
-
-                DataTable retorno = MiConexion.DMLSelect("SPUsuarioConsultarPorCedula");
-
-                if (retorno.Rows.Count > 0)
-                {
-                    R = true;
-                }
-
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-
-            return R;
-        }
-
-        public int ValidarLogin(string pUsuario, string pPass)
-        {
-            int R = 0;
-
-            this.NombreCompleto = pUsuario;
-            this.Contrasena = pPass;
-
-            Crypto MiEncriptador = new Crypto();
-
-            string PasswordEncriptado = MiEncriptador.EncriptarEnUnSentido(this.Contrasena);
-
-            Conexion MiCnn = new Conexion();
-
-            MiCnn.ListadoDeParametros.Add(new SqlParameter("@User", this.NombreCompleto));
-            MiCnn.ListadoDeParametros.Add(new SqlParameter("@Pass", PasswordEncriptado));
-
-            DataTable Respuesta = MiCnn.DMLSelect("SPUsuarioValidarLogin");
-
-            if (Respuesta != null && Respuesta.Rows.Count > 0)
-            {
-                DataRow MiFila = Respuesta.Rows[0];
-
-                R = Convert.ToInt32(MiFila["IdUsuario"]);
-            }
-
-            return R;
-        }
-
-        public DataTable Listar(bool VerActivos, string Filtro)
-        {
-            DataTable R = new DataTable();
+            Usuario R = new Usuario();
 
             Conexion MyCnn = new Conexion();
 
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("@VerActivo", VerActivos));
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("@Filtro", Filtro));
+            MyCnn.ListadoDeParametros.Add(new SqlParameter("@IdUsuario", pIDUsuario));
 
-            R = MyCnn.DMLSelect("SPUsuarioListarActivos");
+            DataTable DatosUsuario = new DataTable();
+
+            DatosUsuario = MyCnn.DMLSelect("SPUsuarioConsultar");
+
+
+            if (DatosUsuario.Rows.Count > 0)
+            {
+
+                DataRow MiFila = DatosUsuario.Rows[0];
+
+                R.IdUsuario = Convert.ToInt32(MiFila["IdUsuario"]);
+                R.NombreCompleto = Convert.ToString(MiFila["NombreCompleto"]);
+                R.Cedula = Convert.ToString(MiFila["Cedula"]);
+                R.Telefono = Convert.ToString(MiFila["Telefono"]);
+                R.Contrasena = Convert.ToString(MiFila["Contrasena"]);
+
+                R.Estado = Convert.ToString(MiFila["Estado"]);
+
+            }
 
             return R;
         }
 
-        public DataTable ListarTodos()
-        {
-            DataTable R = new DataTable();
+            public bool ConsultarPorID()
+            {
+                bool R = false;
 
-            Conexion MiConexion = new Conexion();
+                try
+                {
+                    Conexion MiConexion = new Conexion();
 
-            R = MiConexion.DMLSelect("SPUsuarioListarTodos");
+                    MiConexion.ListadoDeParametros.Add(new SqlParameter("@IdUsuario", this.IdUsuario));
 
-            return R;
+                    DataTable retorno = MiConexion.DMLSelect("SPUsuarioConsultarPorID");
+
+                    if (retorno.Rows.Count > 0)
+                    {
+                        R = true;
+                    }
+
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+
+                return R;
+
+            }
+
+            public bool ConsultarPorCedula()
+            {
+                bool R = false;
+
+                try
+                {
+                    Conexion MiConexion = new Conexion();
+
+                    MiConexion.ListadoDeParametros.Add(new SqlParameter("@Cedula", this.Cedula));
+
+                    DataTable retorno = MiConexion.DMLSelect("SPUsuarioConsultarPorCedula");
+
+                    if (retorno.Rows.Count > 0)
+                    {
+                        R = true;
+                    }
+
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                return R;
+            }
+
+            public int ValidarLogin(string pUsuario, string pPass)
+            {
+                int R = 0;
+
+                this.NombreCompleto = pUsuario;
+                this.Contrasena = pPass;
+
+                Crypto MiEncriptador = new Crypto();
+
+                string PasswordEncriptado = MiEncriptador.EncriptarEnUnSentido(this.Contrasena);
+
+                Conexion MiCnn = new Conexion();
+
+                MiCnn.ListadoDeParametros.Add(new SqlParameter("@User", this.NombreCompleto));
+                MiCnn.ListadoDeParametros.Add(new SqlParameter("@Pass", PasswordEncriptado));
+
+                DataTable Respuesta = MiCnn.DMLSelect("SPUsuarioValidarLogin");
+
+                if (Respuesta != null && Respuesta.Rows.Count > 0)
+                {
+                    DataRow MiFila = Respuesta.Rows[0];
+
+                    R = Convert.ToInt32(MiFila["IdUsuario"]);
+                }
+
+                return R;
+            }
+
+            public DataTable Listar(bool VerActivos, string Filtro)
+            {
+                DataTable R = new DataTable();
+
+                Conexion MyCnn = new Conexion();
+
+                MyCnn.ListadoDeParametros.Add(new SqlParameter("@VerActivo", VerActivos));
+                MyCnn.ListadoDeParametros.Add(new SqlParameter("@Filtro", Filtro));
+
+                R = MyCnn.DMLSelect("SPUsuarioListarActivos");
+
+                return R;
+            }
+
+            public DataTable ListarTodos()
+            {
+                DataTable R = new DataTable();
+
+                Conexion MiConexion = new Conexion();
+
+                R = MiConexion.DMLSelect("SPUsuarioListarTodos");
+
+                return R;
+
+            }
+
 
         }
-
-
-    }
-}
+    } 
