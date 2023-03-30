@@ -44,7 +44,7 @@
             this.CbVerId = new System.Windows.Forms.CheckBox();
             this.CbVerCedula = new System.Windows.Forms.CheckBox();
             this.TxtBuscar = new System.Windows.Forms.TextBox();
-            this.DgvLista = new System.Windows.Forms.DataGridView();
+            this.DgvListaClientes = new System.Windows.Forms.DataGridView();
             this.IdCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,7 +57,7 @@
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnSalir = new System.Windows.Forms.Button();
             this.GbDetalleCliente.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvLista)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvListaClientes)).BeginInit();
             this.GbBuscar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -219,23 +219,23 @@
             this.TxtBuscar.Size = new System.Drawing.Size(377, 30);
             this.TxtBuscar.TabIndex = 14;
             // 
-            // DgvLista
+            // DgvListaClientes
             // 
-            this.DgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DgvListaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvListaClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdCliente,
             this.NombreCompleto,
             this.Cedula,
             this.Telefono,
             this.CorreoElectronico,
             this.Direccion});
-            this.DgvLista.Location = new System.Drawing.Point(691, 138);
-            this.DgvLista.Name = "DgvLista";
-            this.DgvLista.RowHeadersWidth = 62;
-            this.DgvLista.RowTemplate.Height = 28;
-            this.DgvLista.Size = new System.Drawing.Size(893, 434);
-            this.DgvLista.TabIndex = 15;
-            this.DgvLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLista_CellContentClick);
+            this.DgvListaClientes.Location = new System.Drawing.Point(691, 138);
+            this.DgvListaClientes.Name = "DgvListaClientes";
+            this.DgvListaClientes.RowHeadersWidth = 62;
+            this.DgvListaClientes.RowTemplate.Height = 28;
+            this.DgvListaClientes.Size = new System.Drawing.Size(893, 434);
+            this.DgvListaClientes.TabIndex = 15;
+            this.DgvListaClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLista_CellContentClick);
             // 
             // IdCliente
             // 
@@ -317,6 +317,7 @@
             this.BtnModificar.TabIndex = 18;
             this.BtnModificar.Text = "Modificar";
             this.BtnModificar.UseVisualStyleBackColor = true;
+            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
             // BtnEliminar
             // 
@@ -326,6 +327,7 @@
             this.BtnEliminar.TabIndex = 19;
             this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.UseVisualStyleBackColor = true;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // BtnSalir
             // 
@@ -335,6 +337,7 @@
             this.BtnSalir.TabIndex = 20;
             this.BtnSalir.Text = "Salir";
             this.BtnSalir.UseVisualStyleBackColor = true;
+            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // FrmCliente
             // 
@@ -346,13 +349,13 @@
             this.Controls.Add(this.BtnModificar);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.GbBuscar);
-            this.Controls.Add(this.DgvLista);
+            this.Controls.Add(this.DgvListaClientes);
             this.Controls.Add(this.GbDetalleCliente);
             this.Name = "FrmCliente";
             this.Text = "Gestión de Clientes";
             this.GbDetalleCliente.ResumeLayout(false);
             this.GbDetalleCliente.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvLista)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvListaClientes)).EndInit();
             this.GbBuscar.ResumeLayout(false);
             this.GbBuscar.PerformLayout();
             this.ResumeLayout(false);
@@ -377,7 +380,7 @@
         private System.Windows.Forms.CheckBox CbVerId;
         private System.Windows.Forms.CheckBox CbVerCedula;
         private System.Windows.Forms.TextBox TxtBuscar;
-        private System.Windows.Forms.DataGridView DgvLista;
+        private System.Windows.Forms.DataGridView DgvListaClientes;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreCompleto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cedula;

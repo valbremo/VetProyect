@@ -94,7 +94,7 @@ namespace VLogica
 
         //Consulta los datos del cliente por el Id en la Base de Datos
 
-        public Cliente ConsultarPorId(int pIdCliente)
+        public Cliente ConsultarPorId(int ID)
         {
             Cliente R = new Cliente();
 
@@ -105,7 +105,7 @@ namespace VLogica
             DataTable Tabla = new DataTable();
 
             //Se agrega un parametro que pueda llegar al SP con el valor del Id del cliente
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("@IdCliente", pIdCliente));
+            MyCnn.ListadoDeParametros.Add(new SqlParameter("@IdCliente", ID));
 
             Tabla = MyCnn.DMLSelect("SPClienteConsultaPorID");
 
@@ -115,7 +115,7 @@ namespace VLogica
             {
                 DataRow Fila = Tabla.Rows[0];
 
-                R.IdCliente = pIdCliente;
+                R.IdCliente = ID;
                 R.NombreCompleto = Fila["NombreCompleto"].ToString();
                 R.Cedula = Fila["Cedula"].ToString();
                 R.Telefono = Fila["Telefono"].ToString();
@@ -134,14 +134,27 @@ namespace VLogica
         public bool ConsultarPorCedula(string Cedula)
         {
 
-            DataTable Tabla = new DataTable();
-            Conexion MyCnn = new Conexion();
-            
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("@Cedula", Cedula));
+            bool R = false;
+            try
+            {
+                Conexion MiConexion = new Conexion();
 
-            Tabla = MyCnn.DMLSelect("SPClienteConsultarPorCedula");
+                MiConexion.ListadoDeParametros.Add(new SqlParameter("@Cedula", this.Cedula));
 
-            return Tabla.Rows.Count > 0 ? true : false;
+                DataTable retorno = MiConexion.DMLSelect("SPClienteConsultarPorCedula");
+
+                if (retorno.Rows.Count > 0)
+                {
+                    R = true;
+                }
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return R;
 
 
         }

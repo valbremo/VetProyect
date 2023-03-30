@@ -45,6 +45,7 @@
     <Compile Include="Modelos\Cita.cs" />
     <Compile Include="Modelos\Cliente.cs" />
     <Compile Include="Modelos\Conexion.cs" />
+    <Compile Include="Modelos\Crypto.cs" />
     <Compile Include="Modelos\Especialidad.cs" />
     <Compile Include="Modelos\Historial.cs" />
     <Compile Include="Modelos\Mascota.cs" />

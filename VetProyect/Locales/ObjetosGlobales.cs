@@ -11,7 +11,7 @@ namespace VetProyect.Locales
     {
         public static Form MiFormPrincipal = new Formularios.FrmPrincipal();
 
-        public static VLogica.Usuario MiUsuarioGlobal = new Formularios.FrmUsuario();
+        public static VLogica.Usuario MiUsuarioGlobal = new VLogica.Usuario();
 
         public static Formularios.FrmCliente MiFormCliente = new Formularios.FrmCliente();
 
