@@ -79,45 +79,58 @@ namespace VLogica
             return R;
         }
 
-        public Mascota ConsultarPorId(int ID)
+        public bool ConsultarPorId()
         {
-            Mascota MiMascota = new Mascota();
-            DataTable Tabla = new DataTable();
-            Conexion MyCnn = new Conexion();
+            bool R = false;
 
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("@IdMascota", ID));
-
-            Tabla = MyCnn.DMLSelect("SPMascotaConsultarPorID");
-
-            if (Tabla.Rows.Count > 0)
+            try
             {
-                DataRow Fila = Tabla.Rows[0];
-                MiMascota.IdMascota = ID;
-                MiMascota.Nombre = Fila["Nombre"].ToString();
-                MiMascota.FechaNacimiento = Convert.ToDateTime(Fila["FechaNacimiento"]);
-                MiMascota.Raza = Fila["Raza"].ToString();
-                MiMascota.Observacion = Fila["Observacion"].ToString();
-                MiMascota.MiTipoMascota.IdTipoMascota = Convert.ToInt32(Fila["IdTipoMascota"]);
-                MiMascota.MiCliente.IdCliente = Convert.ToInt32(Fila["IdCliente"]);
-                
+                Conexion MiConexion = new Conexion();
+
+                MiConexion.ListadoDeParametros.Add(new SqlParameter("@IdMascota", this.IdMascota));
+
+                DataTable retorno = MiConexion.DMLSelect("SPMascotaConsutarPorID");
+
+                if (retorno.Rows.Count > 0)
+                {
+                    R = true;
+                }
+
+            }
+            catch (Exception)
+            {
+                throw;
             }
 
-
-            return MiMascota;
+            return R;
         }
 
-        public bool ConsultarPorNombre(string Nombre)
+
+        public bool ConsultarPorNombre()
         {
-            DataTable Tabla = new DataTable();
-            Conexion MyCnn = new Conexion();
+            bool R = false;
 
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("@Nombre", Nombre));
+            try
+            {
+                Conexion MiConexion = new Conexion();
 
-            Tabla = MyCnn.DMLSelect("SPMascotaConsultarPorNombre");
+                MiConexion.ListadoDeParametros.Add(new SqlParameter("@Nombre", this.Nombre));
 
-            return (Tabla.Rows.Count > 0 ? true : false);
+                DataTable retorno = MiConexion.DMLSelect("SPMascotaConsultarPorNombre");
+
+                if (retorno.Rows.Count > 0)
+                {
+                    R = true;
+                }
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return R;
         }
-
         public bool Desactivar()
         {
             Conexion MyCnn = new Conexion();

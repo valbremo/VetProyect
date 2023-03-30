@@ -77,29 +77,30 @@ namespace VLogica
         }
 
 
-        public Receta ConsultarPorId(int ID)
+        public bool ConsultarPorId()
         {
-            Receta MiReceta = new Receta();
-            DataTable Tabla = new DataTable();
-            Conexion MyCnn = new Conexion();
+            bool R = false;
 
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("@IdReceta", ID));
-
-            Tabla = MyCnn.DMLSelect("SPRecetaConsultarPorID");
-
-            if (Tabla.Rows.Count > 0)
+            try
             {
-                DataRow Fila = Tabla.Rows[0];
-                MiReceta.IdReceta = ID;
-                MiReceta.Tratamiento = Fila["Tratamiento"].ToString();
-                MiReceta.Fecha = Convert.ToDateTime(Fila["Fecha"]);
-                MiReceta.Precio = Convert.ToDecimal(Fila["Precio"]);
-                MiReceta.MiHistorial.IdHistorial = Convert.ToInt32(Fila["IdHistorial"]);
-                MiReceta.MiUsuario.IdUsuario = Convert.ToInt32(Fila["IdUsuario"]);
+                Conexion MiConexion = new Conexion();
+
+                MiConexion.ListadoDeParametros.Add(new SqlParameter("@IdReceta", this.IdReceta));
+
+                DataTable retorno = MiConexion.DMLSelect("SPRecetaConsultarPorID");
+
+                if (retorno.Rows.Count > 0)
+                {
+                    R = true;
+                }
+
+            }
+            catch (Exception)
+            {
+                throw;
             }
 
-
-            return MiReceta;
+            return R;
         }
 
 

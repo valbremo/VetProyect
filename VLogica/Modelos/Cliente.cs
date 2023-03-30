@@ -94,44 +94,36 @@ namespace VLogica
 
         //Consulta los datos del cliente por el Id en la Base de Datos
 
-        public Cliente ConsultarPorId(int ID)
+        public bool ConsultarPorId()
         {
-            Cliente R = new Cliente();
+            bool R = false;
 
-            //esta funcion retorna un objeto de tipo cliente con la data correspondiente
-            //para el ID suministrado a traves del parametro
-
-            Conexion MyCnn = new Conexion();
-            DataTable Tabla = new DataTable();
-
-            //Se agrega un parametro que pueda llegar al SP con el valor del Id del cliente
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("@IdCliente", ID));
-
-            Tabla = MyCnn.DMLSelect("SPClienteConsultaPorID");
-
-            //Se evalua que el DT tenga datos y se asigna a al objeto de retorno R
-
-            if (Tabla.Rows.Count > 0)
+            try
             {
-                DataRow Fila = Tabla.Rows[0];
+                Conexion MiConexion = new Conexion();
 
-                R.IdCliente = ID;
-                R.NombreCompleto = Fila["NombreCompleto"].ToString();
-                R.Cedula = Fila["Cedula"].ToString();
-                R.Telefono = Fila["Telefono"].ToString();
-                R.CorreoElectronico = Fila["CorreoElectronico"].ToString();
-                R.Direccion = Fila["Direccion"].ToString();
+                MiConexion.ListadoDeParametros.Add(new SqlParameter("@IdCliente", this.IdCliente));
+
+                DataTable retorno = MiConexion.DMLSelect("SPClienteConsultarPorID");
+
+                if (retorno.Rows.Count > 0)
+                {
+                    R = true;
+                }
+
+            }
+            catch (Exception)
+            {
+                throw;
             }
 
             return R;
-            
         }
-
 
 
         //Consulta los datos del cliente por la cedula en la Base de Datos
 
-        public bool ConsultarPorCedula(string Cedula)
+        public bool ConsultarPorCedula()
         {
 
             bool R = false;

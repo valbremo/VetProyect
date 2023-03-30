@@ -75,29 +75,30 @@ namespace VLogica
             return R;
         }
 
-        public Cita ConsultarPorId(int ID)
+        public bool ConsultarPorId()
         {
-            Cita MiCita = new Cita();
-            DataTable Tabla = new DataTable();
-            Conexion MyCnn = new Conexion();
+            bool R = false;
 
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("@IdCita", ID));
-
-            Tabla = MyCnn.DMLSelect("SPCitaConsultarPorId");
-
-            if (Tabla.Rows.Count > 0)
+            try
             {
-                DataRow Fila = Tabla.Rows[0];
-                MiCita.IdCita = ID;
-                MiCita.Fecha = Convert.ToDateTime(Fila["Fecha"]);
-                MiCita.Especificacion = Fila["Especificacion"].ToString();
-                MiCita.Disponible = Convert.ToBoolean(Fila["Disponible"]);
-                MiCita.MiCliente.IdCliente = Convert.ToInt32(Fila["IdCliente"]);
-                MiCita.MiMascota.IdMascota = Convert.ToInt32(Fila["IdMascota"]);
+                Conexion MiConexion = new Conexion();
+
+                MiConexion.ListadoDeParametros.Add(new SqlParameter("@IdCita", this.IdCita));
+
+                DataTable retorno = MiConexion.DMLSelect("SPCitaConsultarPorID");
+
+                if (retorno.Rows.Count > 0)
+                {
+                    R = true;
+                }
+
+            }
+            catch (Exception)
+            {
+                throw;
             }
 
-
-            return MiCita;
+            return R;
         }
 
 

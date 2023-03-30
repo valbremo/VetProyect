@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using VLogica.Modelos;
 
 namespace VLogica
 {
@@ -158,7 +159,7 @@ namespace VLogica
             {
                 Conexion MiConexion = new Conexion();
 
-                MiConexion.ListadoDeParametros.Add(new SqlParameter("@Id", this.IdUsuario));
+                MiConexion.ListadoDeParametros.Add(new SqlParameter("@IdUsuario", this.IdUsuario));
 
                 DataTable retorno = MiConexion.DMLSelect("SPUsuarioConsultarPorID");
 
