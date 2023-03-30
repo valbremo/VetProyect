@@ -27,5 +27,6 @@ namespace VetProyect.Locales
 
         public static Formularios.FrmReceta MiFormReceta = new Formularios.FrmReceta();
 
+       // public static Formularios.FrmInformacion MiFormInfo = new Formularios.FrmInformacion();
     }
 }

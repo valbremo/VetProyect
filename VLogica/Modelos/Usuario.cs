@@ -23,7 +23,7 @@ namespace VLogica
         public string Contrasena { get; set; }
 
         public string Estado { get; set; }
-
+        public bool Visible { get; set; }
 
         public Usuario()
         {
