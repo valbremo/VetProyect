@@ -42,16 +42,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cita.cs" />
-    <Compile Include="Cliente.cs" />
-    <Compile Include="Conexion.cs" />
-    <Compile Include="Especialidad.cs" />
-    <Compile Include="Historial.cs" />
-    <Compile Include="Mascota.cs" />
+    <Compile Include="Modelos\Cita.cs" />
+    <Compile Include="Modelos\Cliente.cs" />
+    <Compile Include="Modelos\Conexion.cs" />
+    <Compile Include="Modelos\Especialidad.cs" />
+    <Compile Include="Modelos\Historial.cs" />
+    <Compile Include="Modelos\Mascota.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Receta.cs" />
-    <Compile Include="TipoMascota.cs" />
-    <Compile Include="Usuario.cs" />
+    <Compile Include="Modelos\Receta.cs" />
+    <Compile Include="Modelos\TipoMascota.cs" />
+    <Compile Include="Modelos\Usuario.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

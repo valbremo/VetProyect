@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace VetProyect.Formularios
 {
     public partial class FrmCliente : Form
@@ -23,6 +24,11 @@ namespace VetProyect.Formularios
         }
 
         private void DgvLista_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void BtnAgregar_Click(object sender, EventArgs e)
         {
 
         }
