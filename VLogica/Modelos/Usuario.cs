@@ -22,7 +22,7 @@ namespace VLogica
 
         public string Contrasena { get; set; }
 
-        public string Estado { get; set; }
+        public bool Estado { get; set; }
 
         public Usuario()
         {
@@ -174,7 +174,7 @@ namespace VLogica
                 R.Telefono = Convert.ToString(MiFila["Telefono"]);
                 R.Contrasena = Convert.ToString(MiFila["Contrasena"]);
 
-                R.Estado = Convert.ToString(MiFila["Estado"]);
+                R.Estado = Convert.ToBoolean(MiFila["Estado"]);
 
             }
 
@@ -235,12 +235,12 @@ namespace VLogica
                 return R;
             }
 
-            public int ValidarLogin(string pUsuario, string pPass)
+            public int ValidarLogin(string pUsuario, string pContrasena)
             {
                 int R = 0;
 
                 this.NombreCompleto = pUsuario;
-                this.Contrasena = pPass;
+                this.Contrasena = pContrasena;
 
                 Crypto MiEncriptador = new Crypto();
 
@@ -248,8 +248,8 @@ namespace VLogica
 
                 Conexion MiCnn = new Conexion();
 
-                MiCnn.ListadoDeParametros.Add(new SqlParameter("@User", this.NombreCompleto));
-                MiCnn.ListadoDeParametros.Add(new SqlParameter("@Pass", PasswordEncriptado));
+                MiCnn.ListadoDeParametros.Add(new SqlParameter("@NombreCompleto", this.NombreCompleto));
+                MiCnn.ListadoDeParametros.Add(new SqlParameter("@Contrasena", pContrasena));
 
                 DataTable Respuesta = MiCnn.DMLSelect("SPUsuarioValidarLogin");
 

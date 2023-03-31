@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.GbDatosCita = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.TxtContrasena = new System.Windows.Forms.TextBox();
+            this.TxtTelefono = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.TxtCedula = new System.Windows.Forms.TextBox();
             this.TxtNombre = new System.Windows.Forms.TextBox();
             this.TxtIdCita = new System.Windows.Forms.TextBox();
@@ -36,20 +41,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.DgvLista = new System.Windows.Forms.DataGridView();
-            this.BtnEliminar = new System.Windows.Forms.Button();
-            this.BtnModificar = new System.Windows.Forms.Button();
-            this.BtnAgregar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.TxtTelefono = new System.Windows.Forms.TextBox();
-            this.TxtContrasena = new System.Windows.Forms.TextBox();
             this.ColIdUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColNombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColCedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColContrasena = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.BtnEliminar = new System.Windows.Forms.Button();
+            this.BtnModificar = new System.Windows.Forms.Button();
+            this.BtnAgregar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.TxtBuscar = new System.Windows.Forms.TextBox();
             this.BtnSalir = new System.Windows.Forms.Button();
@@ -76,6 +76,48 @@
             this.GbDatosCita.TabIndex = 26;
             this.GbDatosCita.TabStop = false;
             this.GbDatosCita.Text = "Datos del Usuario";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(457, 175);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(78, 24);
+            this.checkBox1.TabIndex = 17;
+            this.checkBox1.Text = "Activo";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // TxtContrasena
+            // 
+            this.TxtContrasena.Location = new System.Drawing.Point(582, 121);
+            this.TxtContrasena.Name = "TxtContrasena";
+            this.TxtContrasena.Size = new System.Drawing.Size(235, 26);
+            this.TxtContrasena.TabIndex = 16;
+            // 
+            // TxtTelefono
+            // 
+            this.TxtTelefono.Location = new System.Drawing.Point(582, 52);
+            this.TxtTelefono.Name = "TxtTelefono";
+            this.TxtTelefono.Size = new System.Drawing.Size(185, 26);
+            this.TxtTelefono.TabIndex = 15;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(453, 127);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(92, 20);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Contraseña";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(453, 52);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 20);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Teléfono";
             // 
             // TxtCedula
             // 
@@ -122,7 +164,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(33, 45);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 30);
+            this.label2.Size = new System.Drawing.Size(26, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "ID";
             // 
@@ -144,75 +186,6 @@
             this.DgvLista.RowTemplate.Height = 28;
             this.DgvLista.Size = new System.Drawing.Size(819, 353);
             this.DgvLista.TabIndex = 24;
-            // 
-            // BtnEliminar
-            // 
-            this.BtnEliminar.Location = new System.Drawing.Point(450, 767);
-            this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(212, 58);
-            this.BtnEliminar.TabIndex = 23;
-            this.BtnEliminar.Text = "Eliminar";
-            this.BtnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // BtnModificar
-            // 
-            this.BtnModificar.Location = new System.Drawing.Point(264, 767);
-            this.BtnModificar.Name = "BtnModificar";
-            this.BtnModificar.Size = new System.Drawing.Size(180, 50);
-            this.BtnModificar.TabIndex = 22;
-            this.BtnModificar.Text = "Modificar";
-            this.BtnModificar.UseVisualStyleBackColor = true;
-            // 
-            // BtnAgregar
-            // 
-            this.BtnAgregar.Location = new System.Drawing.Point(64, 766);
-            this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(171, 51);
-            this.BtnAgregar.TabIndex = 21;
-            this.BtnAgregar.Text = "Agregar";
-            this.BtnAgregar.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(412, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(382, 32);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Control de registro de usuarios";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(453, 52);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 20);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Teléfono";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(453, 127);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 20);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Contraseña";
-            // 
-            // TxtTelefono
-            // 
-            this.TxtTelefono.Location = new System.Drawing.Point(582, 52);
-            this.TxtTelefono.Name = "TxtTelefono";
-            this.TxtTelefono.Size = new System.Drawing.Size(185, 26);
-            this.TxtTelefono.TabIndex = 15;
-            // 
-            // TxtContrasena
-            // 
-            this.TxtContrasena.Location = new System.Drawing.Point(582, 121);
-            this.TxtContrasena.Name = "TxtContrasena";
-            this.TxtContrasena.Size = new System.Drawing.Size(235, 26);
-            this.TxtContrasena.TabIndex = 16;
             // 
             // ColIdUsuario
             // 
@@ -259,22 +232,50 @@
             this.ColContrasena.ReadOnly = true;
             this.ColContrasena.Width = 150;
             // 
-            // checkBox1
+            // BtnEliminar
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(457, 175);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(78, 24);
-            this.checkBox1.TabIndex = 17;
-            this.checkBox1.Text = "Activo";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.BtnEliminar.Location = new System.Drawing.Point(450, 767);
+            this.BtnEliminar.Name = "BtnEliminar";
+            this.BtnEliminar.Size = new System.Drawing.Size(212, 58);
+            this.BtnEliminar.TabIndex = 23;
+            this.BtnEliminar.Text = "Eliminar";
+            this.BtnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // BtnModificar
+            // 
+            this.BtnModificar.Location = new System.Drawing.Point(264, 767);
+            this.BtnModificar.Name = "BtnModificar";
+            this.BtnModificar.Size = new System.Drawing.Size(180, 50);
+            this.BtnModificar.TabIndex = 22;
+            this.BtnModificar.Text = "Modificar";
+            this.BtnModificar.UseVisualStyleBackColor = true;
+            // 
+            // BtnAgregar
+            // 
+            this.BtnAgregar.Location = new System.Drawing.Point(64, 766);
+            this.BtnAgregar.Name = "BtnAgregar";
+            this.BtnAgregar.Size = new System.Drawing.Size(171, 51);
+            this.BtnAgregar.TabIndex = 21;
+            this.BtnAgregar.Text = "Agregar";
+            this.BtnAgregar.UseVisualStyleBackColor = true;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(412, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(382, 32);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Control de registro de usuarios";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(186, 81);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(89, 30);
+            this.label7.Size = new System.Drawing.Size(59, 20);
             this.label7.TabIndex = 27;
             this.label7.Text = "Buscar";
             // 
