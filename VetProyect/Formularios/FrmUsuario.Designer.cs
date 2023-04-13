@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.GbDatosCita = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.CbActivo = new System.Windows.Forms.CheckBox();
             this.TxtContrasena = new System.Windows.Forms.TextBox();
             this.TxtTelefono = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.TxtCedula = new System.Windows.Forms.TextBox();
             this.TxtNombre = new System.Windows.Forms.TextBox();
-            this.TxtIdCita = new System.Windows.Forms.TextBox();
+            this.TxtIdUsuario = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.DgvLista = new System.Windows.Forms.DataGridView();
+            this.DgvListaUsuarios = new System.Windows.Forms.DataGridView();
             this.ColIdUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColNombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColCedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,19 +54,19 @@
             this.TxtBuscar = new System.Windows.Forms.TextBox();
             this.BtnSalir = new System.Windows.Forms.Button();
             this.GbDatosCita.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvLista)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvListaUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // GbDatosCita
             // 
-            this.GbDatosCita.Controls.Add(this.checkBox1);
+            this.GbDatosCita.Controls.Add(this.CbActivo);
             this.GbDatosCita.Controls.Add(this.TxtContrasena);
             this.GbDatosCita.Controls.Add(this.TxtTelefono);
             this.GbDatosCita.Controls.Add(this.label6);
             this.GbDatosCita.Controls.Add(this.label3);
             this.GbDatosCita.Controls.Add(this.TxtCedula);
             this.GbDatosCita.Controls.Add(this.TxtNombre);
-            this.GbDatosCita.Controls.Add(this.TxtIdCita);
+            this.GbDatosCita.Controls.Add(this.TxtIdUsuario);
             this.GbDatosCita.Controls.Add(this.label5);
             this.GbDatosCita.Controls.Add(this.label4);
             this.GbDatosCita.Controls.Add(this.label2);
@@ -77,15 +77,15 @@
             this.GbDatosCita.TabStop = false;
             this.GbDatosCita.Text = "Datos del Usuario";
             // 
-            // checkBox1
+            // CbActivo
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(457, 175);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(78, 24);
-            this.checkBox1.TabIndex = 17;
-            this.checkBox1.Text = "Activo";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.CbActivo.AutoSize = true;
+            this.CbActivo.Location = new System.Drawing.Point(457, 175);
+            this.CbActivo.Name = "CbActivo";
+            this.CbActivo.Size = new System.Drawing.Size(78, 24);
+            this.CbActivo.TabIndex = 17;
+            this.CbActivo.Text = "Activo";
+            this.CbActivo.UseVisualStyleBackColor = true;
             // 
             // TxtContrasena
             // 
@@ -133,13 +133,13 @@
             this.TxtNombre.Size = new System.Drawing.Size(202, 26);
             this.TxtNombre.TabIndex = 11;
             // 
-            // TxtIdCita
+            // TxtIdUsuario
             // 
-            this.TxtIdCita.Location = new System.Drawing.Point(157, 46);
-            this.TxtIdCita.Name = "TxtIdCita";
-            this.TxtIdCita.ReadOnly = true;
-            this.TxtIdCita.Size = new System.Drawing.Size(151, 26);
-            this.TxtIdCita.TabIndex = 10;
+            this.TxtIdUsuario.Location = new System.Drawing.Point(157, 46);
+            this.TxtIdUsuario.Name = "TxtIdUsuario";
+            this.TxtIdUsuario.ReadOnly = true;
+            this.TxtIdUsuario.Size = new System.Drawing.Size(151, 26);
+            this.TxtIdUsuario.TabIndex = 10;
             // 
             // label5
             // 
@@ -168,24 +168,24 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "ID";
             // 
-            // DgvLista
+            // DgvListaUsuarios
             // 
-            this.DgvLista.AllowUserToAddRows = false;
-            this.DgvLista.AllowUserToDeleteRows = false;
-            this.DgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DgvListaUsuarios.AllowUserToAddRows = false;
+            this.DgvListaUsuarios.AllowUserToDeleteRows = false;
+            this.DgvListaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvListaUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColIdUsuario,
             this.ColNombreCompleto,
             this.ColCedula,
             this.ColTelefono,
             this.ColContrasena});
-            this.DgvLista.Location = new System.Drawing.Point(64, 140);
-            this.DgvLista.Name = "DgvLista";
-            this.DgvLista.ReadOnly = true;
-            this.DgvLista.RowHeadersWidth = 62;
-            this.DgvLista.RowTemplate.Height = 28;
-            this.DgvLista.Size = new System.Drawing.Size(819, 353);
-            this.DgvLista.TabIndex = 24;
+            this.DgvListaUsuarios.Location = new System.Drawing.Point(64, 140);
+            this.DgvListaUsuarios.Name = "DgvListaUsuarios";
+            this.DgvListaUsuarios.ReadOnly = true;
+            this.DgvListaUsuarios.RowHeadersWidth = 62;
+            this.DgvListaUsuarios.RowTemplate.Height = 28;
+            this.DgvListaUsuarios.Size = new System.Drawing.Size(819, 353);
+            this.DgvListaUsuarios.TabIndex = 24;
             // 
             // ColIdUsuario
             // 
@@ -240,6 +240,7 @@
             this.BtnEliminar.TabIndex = 23;
             this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.UseVisualStyleBackColor = true;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // BtnModificar
             // 
@@ -249,6 +250,7 @@
             this.BtnModificar.TabIndex = 22;
             this.BtnModificar.Text = "Modificar";
             this.BtnModificar.UseVisualStyleBackColor = true;
+            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
             // BtnAgregar
             // 
@@ -264,7 +266,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(412, 26);
+            this.label1.Location = new System.Drawing.Point(317, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(382, 32);
             this.label1.TabIndex = 20;
@@ -304,16 +306,17 @@
             this.Controls.Add(this.TxtBuscar);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.GbDatosCita);
-            this.Controls.Add(this.DgvLista);
+            this.Controls.Add(this.DgvListaUsuarios);
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.BtnModificar);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.label1);
             this.Name = "FrmUsuario";
             this.Text = "FrmUsuario";
+            this.Load += new System.EventHandler(this.FrmUsuario_Load);
             this.GbDatosCita.ResumeLayout(false);
             this.GbDatosCita.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvLista)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvListaUsuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,18 +327,18 @@
         private System.Windows.Forms.GroupBox GbDatosCita;
         private System.Windows.Forms.TextBox TxtCedula;
         private System.Windows.Forms.TextBox TxtNombre;
-        private System.Windows.Forms.TextBox TxtIdCita;
+        private System.Windows.Forms.TextBox TxtIdUsuario;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView DgvLista;
+        private System.Windows.Forms.DataGridView DgvListaUsuarios;
         private System.Windows.Forms.Button BtnEliminar;
         private System.Windows.Forms.Button BtnModificar;
         private System.Windows.Forms.Button BtnAgregar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox CbActivo;
         private System.Windows.Forms.TextBox TxtContrasena;
         private System.Windows.Forms.TextBox TxtTelefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColIdUsuario;

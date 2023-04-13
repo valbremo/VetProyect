@@ -172,7 +172,10 @@ namespace VetProyect.Formularios
                 //que no contengan un dato menor al ingresado.
 
                 if (!string.IsNullOrEmpty(TxtNombre.Text.Trim()) &&
-                !string.IsNullOrEmpty(TxtCedula.Text.Trim()))
+                !string.IsNullOrEmpty(TxtCedula.Text.Trim()) &&
+                !string.IsNullOrEmpty(TxtTelefono.Text.Trim()) &&
+                !string.IsNullOrEmpty(TxtCorreoElectronico.Text.Trim()) &&
+                !string.IsNullOrEmpty(TxtDireccion.Text.Trim()))
                 {
                     R = true;
                 }
