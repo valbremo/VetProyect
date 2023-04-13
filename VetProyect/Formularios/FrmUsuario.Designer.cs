@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.GbDatosCita = new System.Windows.Forms.GroupBox();
-            this.CbActivo = new System.Windows.Forms.CheckBox();
             this.TxtContrasena = new System.Windows.Forms.TextBox();
             this.TxtTelefono = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -59,7 +58,6 @@
             // 
             // GbDatosCita
             // 
-            this.GbDatosCita.Controls.Add(this.CbActivo);
             this.GbDatosCita.Controls.Add(this.TxtContrasena);
             this.GbDatosCita.Controls.Add(this.TxtTelefono);
             this.GbDatosCita.Controls.Add(this.label6);
@@ -77,22 +75,13 @@
             this.GbDatosCita.TabStop = false;
             this.GbDatosCita.Text = "Datos del Usuario";
             // 
-            // CbActivo
-            // 
-            this.CbActivo.AutoSize = true;
-            this.CbActivo.Location = new System.Drawing.Point(457, 175);
-            this.CbActivo.Name = "CbActivo";
-            this.CbActivo.Size = new System.Drawing.Size(78, 24);
-            this.CbActivo.TabIndex = 17;
-            this.CbActivo.Text = "Activo";
-            this.CbActivo.UseVisualStyleBackColor = true;
-            // 
             // TxtContrasena
             // 
             this.TxtContrasena.Location = new System.Drawing.Point(582, 121);
             this.TxtContrasena.Name = "TxtContrasena";
             this.TxtContrasena.Size = new System.Drawing.Size(235, 26);
             this.TxtContrasena.TabIndex = 16;
+            this.TxtContrasena.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtContrasena_KeyPress);
             // 
             // TxtTelefono
             // 
@@ -125,6 +114,7 @@
             this.TxtCedula.Name = "TxtCedula";
             this.TxtCedula.Size = new System.Drawing.Size(195, 26);
             this.TxtCedula.TabIndex = 12;
+            this.TxtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCedula_KeyPress);
             // 
             // TxtNombre
             // 
@@ -186,6 +176,7 @@
             this.DgvListaUsuarios.RowTemplate.Height = 28;
             this.DgvListaUsuarios.Size = new System.Drawing.Size(819, 353);
             this.DgvListaUsuarios.TabIndex = 24;
+            this.DgvListaUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListaUsuarios_CellClick);
             // 
             // ColIdUsuario
             // 
@@ -287,6 +278,7 @@
             this.TxtBuscar.Name = "TxtBuscar";
             this.TxtBuscar.Size = new System.Drawing.Size(434, 26);
             this.TxtBuscar.TabIndex = 28;
+            this.TxtBuscar.TextChanged += new System.EventHandler(this.TxtBuscar_TextChanged);
             // 
             // BtnSalir
             // 
@@ -296,6 +288,7 @@
             this.BtnSalir.TabIndex = 29;
             this.BtnSalir.Text = "Salir";
             this.BtnSalir.UseVisualStyleBackColor = true;
+            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // FrmUsuario
             // 
@@ -338,7 +331,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.CheckBox CbActivo;
         private System.Windows.Forms.TextBox TxtContrasena;
         private System.Windows.Forms.TextBox TxtTelefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColIdUsuario;

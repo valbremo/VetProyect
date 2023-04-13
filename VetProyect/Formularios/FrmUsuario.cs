@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -161,7 +162,6 @@ namespace VetProyect.Formularios
             TxtTelefono.Clear();
             TxtContrasena.Clear();
             
-            CbActivo.Checked = false;
 
         }
 
@@ -263,9 +263,82 @@ namespace VetProyect.Formularios
         //Se emplea el método para activar el botón de agregar.
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
+            
+                VLogica.Usuario MiUsuario = new VLogica.Usuario();
+
+                MiUsuario.IdUsuario= Convert.ToInt32(TxtIdUsuario.Text.Trim());
+
+            if (MiUsuario.ConsultarPorID())
+            {
+                //Se emplea el método de eliminar de la clase.
+                if (MiUsuario.Desactivar())
+                {
+                    MessageBox.Show("Usuario eliminado correctamente", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    LimpiarFormulario();
+                    LlenarListaUsuarios();
+                    ActivarBotonAgregar();
+                }
+            }
+            
+        }
+
+        private void BtnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void TxtBuscar_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void DgvListaUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Si se ha seleccionado una fila en el datagridview
+            if (DgvListaUsuarios.SelectedRows.Count == 1)
+            {
+
+                LimpiarFormulario();
+
+                DataGridViewRow MiFila = DgvListaUsuarios.SelectedRows[0];
+
+                //se captura el valor de la columna código, ya se usará como parámetro para
+                //crear el objeto de tipo Usuario
+                int IdUsuario = Convert.ToInt32(MiFila.Cells["IdUsuario"].Value);
+
+                MiUsuarioLocal = new VLogica.Usuario();
+
+                MiUsuarioLocal = MiUsuarioLocal.Consultar(IdUsuario);
+
+                //Una vez tenemos el objeto MiUsuarioLocal cargado con info del usuario seleccionado
+                //en el DGV, representamos la info de cada atributo en el control correspondiente. 
+
+                TxtIdUsuario.Text = MiUsuarioLocal.IdUsuario.ToString();
+
+                TxtNombre.Text = MiUsuarioLocal.NombreCompleto;
+                TxtCedula.Text = MiUsuarioLocal.Cedula;
+                TxtTelefono.Text = MiUsuarioLocal.Telefono;
+                TxtContrasena.Text = MiUsuarioLocal.Contrasena;
 
 
+                ActivarEditarYEliminar();
+            }
+        }
+
+        //Método que permite solo números 
+        //en el textbox de cédula.
+        private void TxtCedula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = Herramientas.CaracteresNumeros(e);
+        }
+
+        //Método que permite letras minúsculas y números 
+        //en el textbox de contra.
+        private void TxtContrasena_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = Herramientas.CaracteresTexto(e, false, true);
         }
     }
+    
 }
 
