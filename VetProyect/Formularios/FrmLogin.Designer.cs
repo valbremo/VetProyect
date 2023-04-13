@@ -143,6 +143,7 @@
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "FrmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLogin";
             this.TransparencyKey = System.Drawing.SystemColors.ActiveBorder;
             this.ResumeLayout(false);

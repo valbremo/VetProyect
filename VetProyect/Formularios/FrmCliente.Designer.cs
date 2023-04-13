@@ -41,8 +41,6 @@
             this.TxtCorreoElectronico = new System.Windows.Forms.TextBox();
             this.TxtDireccion = new System.Windows.Forms.TextBox();
             this.GbDetalleCliente = new System.Windows.Forms.GroupBox();
-            this.CbVerId = new System.Windows.Forms.CheckBox();
-            this.CbVerCedula = new System.Windows.Forms.CheckBox();
             this.TxtBuscar = new System.Windows.Forms.TextBox();
             this.DgvListaClientes = new System.Windows.Forms.DataGridView();
             this.IdCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -137,6 +135,7 @@
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(297, 33);
             this.TxtNombre.TabIndex = 6;
+            this.TxtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNombre_KeyPress);
             // 
             // TxtCedula
             // 
@@ -145,6 +144,7 @@
             this.TxtCedula.Name = "TxtCedula";
             this.TxtCedula.Size = new System.Drawing.Size(328, 33);
             this.TxtCedula.TabIndex = 7;
+            this.TxtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCedula_KeyPress);
             // 
             // TxtTelefono
             // 
@@ -153,6 +153,7 @@
             this.TxtTelefono.Name = "TxtTelefono";
             this.TxtTelefono.Size = new System.Drawing.Size(328, 33);
             this.TxtTelefono.TabIndex = 8;
+            this.TxtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtTelefono_KeyPress);
             // 
             // TxtCorreoElectronico
             // 
@@ -161,6 +162,7 @@
             this.TxtCorreoElectronico.Name = "TxtCorreoElectronico";
             this.TxtCorreoElectronico.Size = new System.Drawing.Size(328, 33);
             this.TxtCorreoElectronico.TabIndex = 9;
+            this.TxtCorreoElectronico.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCorreoElectronico_KeyPress);
             // 
             // TxtDireccion
             // 
@@ -169,6 +171,7 @@
             this.TxtDireccion.Name = "TxtDireccion";
             this.TxtDireccion.Size = new System.Drawing.Size(328, 33);
             this.TxtDireccion.TabIndex = 10;
+            this.TxtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDireccion_KeyPress);
             // 
             // GbDetalleCliente
             // 
@@ -187,37 +190,19 @@
             this.GbDetalleCliente.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GbDetalleCliente.Location = new System.Drawing.Point(37, 47);
             this.GbDetalleCliente.Name = "GbDetalleCliente";
-            this.GbDetalleCliente.Size = new System.Drawing.Size(586, 509);
+            this.GbDetalleCliente.Size = new System.Drawing.Size(544, 427);
             this.GbDetalleCliente.TabIndex = 11;
             this.GbDetalleCliente.TabStop = false;
             this.GbDetalleCliente.Text = "Detalle del Cliente";
             // 
-            // CbVerId
-            // 
-            this.CbVerId.AutoSize = true;
-            this.CbVerId.Location = new System.Drawing.Point(50, 51);
-            this.CbVerId.Name = "CbVerId";
-            this.CbVerId.Size = new System.Drawing.Size(94, 26);
-            this.CbVerId.TabIndex = 12;
-            this.CbVerId.Text = "Código";
-            this.CbVerId.UseVisualStyleBackColor = true;
-            // 
-            // CbVerCedula
-            // 
-            this.CbVerCedula.AutoSize = true;
-            this.CbVerCedula.Location = new System.Drawing.Point(183, 51);
-            this.CbVerCedula.Name = "CbVerCedula";
-            this.CbVerCedula.Size = new System.Drawing.Size(92, 26);
-            this.CbVerCedula.TabIndex = 13;
-            this.CbVerCedula.Text = "Cédula";
-            this.CbVerCedula.UseVisualStyleBackColor = true;
-            // 
             // TxtBuscar
             // 
-            this.TxtBuscar.Location = new System.Drawing.Point(401, 38);
+            this.TxtBuscar.Location = new System.Drawing.Point(124, 54);
             this.TxtBuscar.Name = "TxtBuscar";
-            this.TxtBuscar.Size = new System.Drawing.Size(377, 30);
+            this.TxtBuscar.Size = new System.Drawing.Size(616, 30);
             this.TxtBuscar.TabIndex = 14;
+            this.TxtBuscar.Click += new System.EventHandler(this.TxtBuscar_Click);
+            this.TxtBuscar.TextChanged += new System.EventHandler(this.TxtBuscar_TextChanged);
             // 
             // DgvListaClientes
             // 
@@ -229,12 +214,13 @@
             this.Telefono,
             this.CorreoElectronico,
             this.Direccion});
-            this.DgvListaClientes.Location = new System.Drawing.Point(691, 138);
+            this.DgvListaClientes.Location = new System.Drawing.Point(600, 138);
             this.DgvListaClientes.Name = "DgvListaClientes";
             this.DgvListaClientes.RowHeadersWidth = 62;
             this.DgvListaClientes.RowTemplate.Height = 28;
             this.DgvListaClientes.Size = new System.Drawing.Size(893, 434);
             this.DgvListaClientes.TabIndex = 15;
+            this.DgvListaClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListaClientes_CellClick);
             this.DgvListaClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLista_CellContentClick);
             // 
             // IdCliente
@@ -289,10 +275,8 @@
             // GbBuscar
             // 
             this.GbBuscar.Controls.Add(this.TxtBuscar);
-            this.GbBuscar.Controls.Add(this.CbVerCedula);
-            this.GbBuscar.Controls.Add(this.CbVerId);
             this.GbBuscar.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GbBuscar.Location = new System.Drawing.Point(682, 16);
+            this.GbBuscar.Location = new System.Drawing.Point(612, 19);
             this.GbBuscar.Name = "GbBuscar";
             this.GbBuscar.Size = new System.Drawing.Size(838, 116);
             this.GbBuscar.TabIndex = 16;
@@ -331,7 +315,7 @@
             // 
             // BtnSalir
             // 
-            this.BtnSalir.Location = new System.Drawing.Point(1298, 585);
+            this.BtnSalir.Location = new System.Drawing.Point(1256, 582);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(222, 53);
             this.BtnSalir.TabIndex = 20;
@@ -343,7 +327,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1619, 662);
+            this.ClientSize = new System.Drawing.Size(1523, 650);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.BtnModificar);
@@ -353,6 +337,7 @@
             this.Controls.Add(this.GbDetalleCliente);
             this.Name = "FrmCliente";
             this.Text = "Gestión de Clientes";
+            this.Load += new System.EventHandler(this.FrmCliente_Load);
             this.GbDetalleCliente.ResumeLayout(false);
             this.GbDetalleCliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaClientes)).EndInit();
@@ -377,8 +362,6 @@
         private System.Windows.Forms.TextBox TxtCorreoElectronico;
         private System.Windows.Forms.TextBox TxtDireccion;
         private System.Windows.Forms.GroupBox GbDetalleCliente;
-        private System.Windows.Forms.CheckBox CbVerId;
-        private System.Windows.Forms.CheckBox CbVerCedula;
         private System.Windows.Forms.TextBox TxtBuscar;
         private System.Windows.Forms.DataGridView DgvListaClientes;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdCliente;

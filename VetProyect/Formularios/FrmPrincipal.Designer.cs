@@ -167,7 +167,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(759, 492);
+            this.ClientSize = new System.Drawing.Size(769, 499);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.BtnAcercaDe);
             this.Controls.Add(this.label1);
@@ -180,8 +180,11 @@
             this.Controls.Add(this.BtnMascotas);
             this.Controls.Add(this.BtnClientes);
             this.Controls.Add(this.BtnUsuarios);
+            this.IsMdiContainer = true;
             this.Name = "FrmPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPrincipal";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmPrincipal_FormClosed);
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

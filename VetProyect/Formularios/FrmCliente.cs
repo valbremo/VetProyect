@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,7 +15,7 @@ namespace VetProyect.Formularios
     public partial class FrmCliente : Form
     {
 
-        private VLogica.Cliente MiClienteLocal { get; set; }  
+        private VLogica.Cliente MiClienteLocal { get; set; }
 
         public DataTable ListaClientesNormal { get; set; }
 
@@ -22,7 +23,7 @@ namespace VetProyect.Formularios
         {
             InitializeComponent();
 
-            MiClienteLocal = new Cliente();
+            MiClienteLocal = new VLogica.Cliente();
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
@@ -36,9 +37,12 @@ namespace VetProyect.Formularios
 
         }
 
+
         //Método que permite limpiar los campos del formulario.
         private void LimpiarFormulario()
         {
+            TxtIdCliente.Clear();
+
             TxtNombre.Clear();
             TxtCedula.Clear();
             TxtTelefono.Clear();
@@ -50,7 +54,7 @@ namespace VetProyect.Formularios
         private void LlenarListaClientes()
         {
             //se llama la clase empleado para manipular los datos.
-            Cliente MiCliente = new Cliente();
+            VLogica.Cliente MiCliente = new VLogica.Cliente();
             try
             {
                 ListaClientesNormal = MiCliente.ListarTodos();
@@ -73,6 +77,14 @@ namespace VetProyect.Formularios
             BtnAgregar.Enabled = true;
             BtnModificar.Enabled = false;
             BtnEliminar.Enabled = false;
+            TxtIdCliente.Enabled = true;
+        }
+
+        private void ActivarBtnModificarYEliminar()
+        {
+            BtnAgregar.Enabled = false;
+            BtnModificar.Enabled = true;
+            BtnEliminar.Enabled = true;
 
         }
 
@@ -85,70 +97,68 @@ namespace VetProyect.Formularios
         //se llena el datagrid con los datos del cliente.
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            try
+
+            if (ValidarDatosRequeridos())
             {
-                //Se emplea este método para validar los campos
-                //Se emplea un método para validar existencias
-                //y así no existan datos repetidos
-                //con los datos ingresados.
-                if (ValidarDatosRequeridos())
+
+                DialogResult Respuesta = MessageBox.Show("¿Esta seguro de agregar el nuevo cliente?", "Confirmacion requerida", MessageBoxButtons.YesNo);
+
+                if (Respuesta == DialogResult.Yes)
                 {
 
-                    DialogResult Respuesta = MessageBox.Show("¿Esta seguro de agregar el nuevo cliente?", "Confirmacion requerida", MessageBoxButtons.YesNo);
+                    VLogica.Cliente MiCliente = new VLogica.Cliente();
 
-                    if (Respuesta == DialogResult.Yes)
+                    MiCliente.NombreCompleto = TxtNombre.Text.Trim();
+                    MiCliente.Cedula = TxtCedula.Text.Trim();
+                    MiCliente.Telefono = TxtTelefono.Text.Trim();
+                    MiCliente.CorreoElectronico = TxtCorreoElectronico.Text.Trim();
+                    MiCliente.Direccion = TxtDireccion.Text.Trim();
+
+                    bool CedulaExiste = MiCliente.ConsultarPorCedula();
+
+
+
+                    if (!CedulaExiste)
                     {
+                        //No existe un usuario con la cédula y el correo proporcionado 
 
-                        Cliente MiCliente = new Cliente();
+                        // en la llamada a funciones anteriores usé una var bool para 
+                        //almacenar el retorno de la función. Acá evaluaremos el 
+                        //retorno de la función de forma directa. 
 
-                        MiCliente.NombreCompleto = TxtNombre.Text.Trim();
-                        MiCliente.Cedula = TxtCedula.Text.Trim();
-                        MiCliente.Telefono = TxtTelefono.Text.Trim();
-                        MiCliente.CorreoElectronico = TxtCorreoElectronico.Text.Trim();
-                        MiCliente.Direccion = TxtDireccion.Text.Trim();
-
-                        bool NombreExiste = MiCliente.ConsultarPorCedula();
-
-
-                        if (!NombreExiste)
+                        if (MiCliente.Agregar())
                         {
-                            //Se emplea el método agregar de la clase
-                            //Se emplea el método de limpiar el formulario
-                            //Se emplea el método para llenar la lista con los clientes
-                            //Se emplea el método para activar el botón de agregar.
-                            if (MiCliente.Agregar())
-                            {
-                                MessageBox.Show("Cliente agregado correctamente", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
-                                LimpiarFormulario();
-                                LlenarListaClientes();
-                                ActivarBtnAgregar();
+                            //todo salió bien al realizaer el Insert 
+                            //se muestra un mensaje de éxito al usuario 
 
-                            }
+                            MessageBox.Show("Cliente agregado correctamente", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
+                            LimpiarFormulario();
+                            LlenarListaClientes();
+                            ActivarBtnAgregar();
 
                         }
-                        else
-                        {
-                            //Se validan los textbox de nombre en caso
-                            //de que ya existan estos datos registrados.
-                            if (NombreExiste)
-                            {
-                                MessageBox.Show("La cedula ya esta en uso", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                TxtCedula.Focus();
-                                TxtCedula.SelectAll();
 
-                            }
+
+                    }
+                    else
+                    {
+                        //Se validan los textbox de nombre en caso
+                        //de que ya existan estos datos registrados.
+                        if (CedulaExiste)
+                        {
+                            MessageBox.Show("La cédula ya esta en uso", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            TxtCedula.Focus();
+                            TxtCedula.SelectAll();
 
                         }
 
                     }
+
                 }
             }
-            catch (Exception error)
-            {
-                MessageBox.Show("Error denotado por:\n" + error.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
         }
 
 
@@ -160,6 +170,7 @@ namespace VetProyect.Formularios
             {
                 //Valida  los campos no estén vacíos o
                 //que no contengan un dato menor al ingresado.
+
                 if (!string.IsNullOrEmpty(TxtNombre.Text.Trim()) &&
                 !string.IsNullOrEmpty(TxtCedula.Text.Trim()))
                 {
@@ -188,11 +199,11 @@ namespace VetProyect.Formularios
                 //valida los datos existentes y los modifica.
                 if (ValidarDatosRequeridos())
                 {
-                    Cliente MiCliente = new Cliente();
+                    VLogica.Cliente MiCliente = new VLogica.Cliente();
 
-                    DataGridViewRow MiFila = DgvListaClientes.SelectedRows[0];
 
-                    MiCliente.IdCliente = Convert.ToInt32(MiFila.Cells["IDCliente"].Value);
+
+                    MiCliente.IdCliente = Convert.ToInt32(TxtIdCliente.Text.Trim());
 
                     MiCliente.NombreCompleto = TxtNombre.Text.Trim();
                     MiCliente.Cedula = TxtCedula.Text.Trim();
@@ -224,11 +235,9 @@ namespace VetProyect.Formularios
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
 
-            Cliente MiCliente = new Cliente();
+            VLogica.Cliente MiCliente = new VLogica.Cliente();
 
-            DataGridViewRow MiFila = DgvListaClientes.SelectedRows[0];
-
-            MiCliente.IdCliente = Convert.ToInt32(MiFila.Cells["IdCliente"].Value);
+            MiCliente.IdCliente = Convert.ToInt32(TxtIdCliente.Text.Trim());
 
             try
             {
@@ -258,10 +267,103 @@ namespace VetProyect.Formularios
             this.Close();
 
         }
+
+        private void TxtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void DgvListaClientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                //valida si se ha seleccionado una fila en el datagridview
+                if (DgvListaClientes.SelectedRows.Count == 1)
+                {
+
+                    LimpiarFormulario();
+
+                    DataGridViewRow MiFila = DgvListaClientes.Rows[0];
+
+                    int IdCliente = Convert.ToInt32(MiFila.Cells["IdCliente"].Value);
+
+                    MiClienteLocal = new VLogica.Cliente();
+
+                    MiClienteLocal = MiClienteLocal.Consultar(IdCliente);
+
+                    TxtNombre.Text = MiClienteLocal.NombreCompleto;
+                    TxtCedula.Text = MiClienteLocal.Cedula;
+                    TxtTelefono.Text = MiClienteLocal.Telefono;
+                    TxtCorreoElectronico.Text = MiClienteLocal.CorreoElectronico;
+                    TxtDireccion.Text = MiClienteLocal.Direccion;
+
+                    ActivarBtnModificarYEliminar();
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error denotado por:\n" + error.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void FrmCliente_Load(object sender, EventArgs e)
+        {
+            MdiParent = Locales.ObjetosGlobales.MiFormPrincipal;
+
+            LlenarListaClientes();
+
+            LimpiarFormulario();
+
+            ActivarBtnAgregar();
+
+        }
+
+        //Método que permite solo letras 
+        //en el textbox de nombre.
+        private void TxtNombre_KeyPress(object sender, KeyPressEventArgs pE)
+        {
+            Herramientas.CaracteresTextoM(pE);
+
+        }
+
+        //Método que permite solo letras y números
+        //en el textbox de cedula.
+        private void TxtCedula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = Herramientas.CaracteresTexto(e, true);
+
+        }
+
+        //Método que permite solo números 
+        //en el textbox de teléfono.
+        private void TxtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = Herramientas.CaracteresNumeros(e);
+        }
+
+        //Método que permite solo letras y números
+        //en el textbox de correo.
+        private void TxtCorreoElectronico_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = Herramientas.CaracteresTexto(e, true);
+
+        }
+
+        //Método que permite solo letras y números
+        //en el textbox de direccion.
+        private void TxtDireccion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = Herramientas.CaracteresTexto(e, true);
+
+        }
+
+        private void TxtBuscar_Click(object sender, EventArgs e)
+        {
+            TxtBuscar.Focus();
+            TxtBuscar.SelectAll();
+        }
     }
-
- 
-
-
 
 }

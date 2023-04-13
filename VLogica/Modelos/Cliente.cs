@@ -118,7 +118,37 @@ namespace VLogica
             }
 
             return R;
+        } 
+
+
+        public Cliente Consultar(int pIdCliente)
+        {
+            Cliente R = new Cliente();
+
+            Conexion MyCnn = new Conexion();
+
+            MyCnn.ListadoDeParametros.Add(new SqlParameter("IdCliente", pIdCliente));
+
+            DataTable DatosCLiente = new DataTable();
+            DatosCLiente = MyCnn.DMLSelect("SPClienteConsultarPorID");
+
+            //Valida los datos del cliente
+
+            if (DatosCLiente.Rows.Count > 0)
+                {
+
+                DataRow MiFila = DatosCLiente.Rows[0];
+
+                R.IdCliente = Convert.ToInt32(MiFila["IDCliente"]);
+                R.NombreCompleto = Convert.ToString(MiFila["NombreCompleto"]);
+                R.Cedula = Convert.ToString(MiFila["Cedula"]);
+                R.CorreoElectronico = Convert.ToString(MiFila["CorreoElectronico"]);
+                R.Direccion = Convert.ToString(MiFila["Direccion"]);
+            }
+
+            return R;
         }
+
 
 
         //Consulta los datos del cliente por la cedula en la Base de Datos
