@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Linq.Expressions;
@@ -19,11 +20,14 @@ namespace VetProyect.Formularios
 
         public DataTable ListaClientesNormal { get; set; }
 
+        public int IdCliente { get; set; }
+
         public FrmCliente()
         {
             InitializeComponent();
 
             MiClienteLocal = new VLogica.Cliente();
+            ListaClientesNormal = new DataTable();
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
@@ -77,7 +81,7 @@ namespace VetProyect.Formularios
             BtnAgregar.Enabled = true;
             BtnModificar.Enabled = false;
             BtnEliminar.Enabled = false;
-            TxtIdCliente.Enabled = true;
+            
         }
 
         private void ActivarBtnModificarYEliminar()
@@ -97,7 +101,7 @@ namespace VetProyect.Formularios
         //se llena el datagrid con los datos del cliente.
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-
+           
             if (ValidarDatosRequeridos())
             {
 
@@ -136,7 +140,7 @@ namespace VetProyect.Formularios
 
                             LimpiarFormulario();
                             LlenarListaClientes();
-                            ActivarBtnAgregar();
+                            //ActivarBtnAgregar();
 
                         }
 
@@ -202,11 +206,12 @@ namespace VetProyect.Formularios
                 //valida los datos existentes y los modifica.
                 if (ValidarDatosRequeridos())
                 {
-                    VLogica.Cliente MiCliente = new VLogica.Cliente();
+                   VLogica.Cliente MiCliente = new VLogica.Cliente();
 
+                    DataGridViewRow MiFila = DgvListaClientes.SelectedRows[0];
 
+                    MiCliente.IdCliente = Convert.ToInt32(MiFila.Cells["IdCliente"].Value);
 
-                    MiCliente.IdCliente = Convert.ToInt32(TxtIdCliente.Text.Trim());
 
                     MiCliente.NombreCompleto = TxtNombre.Text.Trim();
                     MiCliente.Cedula = TxtCedula.Text.Trim();
@@ -222,7 +227,7 @@ namespace VetProyect.Formularios
                             MessageBox.Show("Cliente modificado correctamente", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                             LimpiarFormulario();
                             LlenarListaClientes();
-                            ActivarBtnAgregar();
+                            //ActivarBtnAgregar();
                         }
                     }
                 }
@@ -240,27 +245,34 @@ namespace VetProyect.Formularios
 
             VLogica.Cliente MiCliente = new VLogica.Cliente();
 
-            MiCliente.IdCliente = Convert.ToInt32(TxtIdCliente.Text.Trim());
+            DataGridViewRow MiFila = DgvListaClientes.SelectedRows[0];
+
+            MiCliente.IdCliente = Convert.ToInt32(MiFila.Cells["Id"].Value);
+
 
             try
-            {
+             {
+
                 if (MiCliente.ConsultarPorId())
                 {
-                    //Se emplea el método de eliminar de la clase.
-                    if (MiCliente.Desactivar())
+            //Se emplea el método de eliminar de la clase.
+                   if (MiCliente.Desactivar())
                     {
-                        MessageBox.Show("Cliente eliminado correctamente", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                         MessageBox.Show("Cliente eliminado correctamente", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         LimpiarFormulario();
-                        ActivarBtnAgregar();
+                        //ActivarBtnAgregar();
                         LlenarListaClientes();
-                    }
+                   }
                 }
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show("Error denotado por:\n" + error.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                }
 
+               catch (Exception error)
+              {
+                 MessageBox.Show("Error denotado por:\n" + error.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+              }
+
+            
+                
 
         }
 
@@ -279,17 +291,16 @@ namespace VetProyect.Formularios
 
         private void DgvListaClientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
+            
                 //valida si se ha seleccionado una fila en el datagridview
                 if (DgvListaClientes.SelectedRows.Count == 1)
                 {
-
                     LimpiarFormulario();
 
-                    DataGridViewRow MiFila = DgvListaClientes.Rows[0];
+                    DataGridViewRow MiFila = DgvListaClientes.SelectedRows[0];
 
-                    int IdCliente = Convert.ToInt32(MiFila.Cells["IdCliente"].Value);
+
+                    int IdCliente = Convert.ToInt32(MiFila.Cells["Id"].Value);
 
                     MiClienteLocal = new VLogica.Cliente();
 
@@ -301,25 +312,19 @@ namespace VetProyect.Formularios
                     TxtCorreoElectronico.Text = MiClienteLocal.CorreoElectronico;
                     TxtDireccion.Text = MiClienteLocal.Direccion;
 
-                    ActivarBtnModificarYEliminar();
+                    //ActivarBtnModificarYEliminar();
                 }
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show("Error denotado por:\n" + error.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
         }
 
         private void FrmCliente_Load(object sender, EventArgs e)
         {
-            MdiParent = Locales.ObjetosGlobales.MiFormPrincipal;
+           
 
             LlenarListaClientes();
 
             LimpiarFormulario();
 
-            ActivarBtnAgregar();
+            //ActivarBtnAgregar();
 
         }
 
@@ -327,7 +332,7 @@ namespace VetProyect.Formularios
         //en el textbox de nombre.
         private void TxtNombre_KeyPress(object sender, KeyPressEventArgs pE)
         {
-            Herramientas.CaracteresTextoM(pE);
+            Herramientas.CaracteresTexto(pE);
 
         }
 
@@ -335,7 +340,7 @@ namespace VetProyect.Formularios
         //en el textbox de cedula.
         private void TxtCedula_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = Herramientas.CaracteresTexto(e, true);
+            e.Handled = Herramientas.CaracteresTexto(e);
 
         }
 
@@ -350,7 +355,7 @@ namespace VetProyect.Formularios
         //en el textbox de correo.
         private void TxtCorreoElectronico_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = Herramientas.CaracteresTexto(e, true);
+            e.Handled = Herramientas.CaracteresTexto(e, false, true);
 
         }
 
@@ -366,6 +371,11 @@ namespace VetProyect.Formularios
         {
             TxtBuscar.Focus();
             TxtBuscar.SelectAll();
+        }
+
+        private void TxtIdCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
     }
 

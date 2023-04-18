@@ -43,17 +43,17 @@
             this.GbDetalleCliente = new System.Windows.Forms.GroupBox();
             this.TxtBuscar = new System.Windows.Forms.TextBox();
             this.DgvListaClientes = new System.Windows.Forms.DataGridView();
+            this.GbBuscar = new System.Windows.Forms.GroupBox();
+            this.BtnAgregar = new System.Windows.Forms.Button();
+            this.BtnModificar = new System.Windows.Forms.Button();
+            this.BtnEliminar = new System.Windows.Forms.Button();
+            this.BtnSalir = new System.Windows.Forms.Button();
             this.IdCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CorreoElectronico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GbBuscar = new System.Windows.Forms.GroupBox();
-            this.BtnAgregar = new System.Windows.Forms.Button();
-            this.BtnModificar = new System.Windows.Forms.Button();
-            this.BtnEliminar = new System.Windows.Forms.Button();
-            this.BtnSalir = new System.Windows.Forms.Button();
             this.GbDetalleCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaClientes)).BeginInit();
             this.GbBuscar.SuspendLayout();
@@ -63,7 +63,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(23, 48);
+            this.label1.Location = new System.Drawing.Point(22, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 25);
             this.label1.TabIndex = 0;
@@ -73,7 +73,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(23, 117);
+            this.label2.Location = new System.Drawing.Point(22, 117);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 25);
             this.label2.TabIndex = 1;
@@ -83,7 +83,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(23, 181);
+            this.label3.Location = new System.Drawing.Point(22, 182);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 25);
             this.label3.TabIndex = 2;
@@ -93,7 +93,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(23, 240);
+            this.label4.Location = new System.Drawing.Point(22, 240);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 25);
             this.label4.TabIndex = 3;
@@ -103,7 +103,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(23, 300);
+            this.label5.Location = new System.Drawing.Point(22, 300);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(179, 25);
             this.label5.TabIndex = 4;
@@ -113,7 +113,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(23, 358);
+            this.label6.Location = new System.Drawing.Point(22, 358);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(98, 25);
             this.label6.TabIndex = 5;
@@ -121,19 +121,21 @@
             // 
             // TxtIdCliente
             // 
+            this.TxtIdCliente.Cursor = System.Windows.Forms.Cursors.No;
             this.TxtIdCliente.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtIdCliente.Location = new System.Drawing.Point(210, 45);
             this.TxtIdCliente.Name = "TxtIdCliente";
             this.TxtIdCliente.ReadOnly = true;
-            this.TxtIdCliente.Size = new System.Drawing.Size(188, 33);
+            this.TxtIdCliente.Size = new System.Drawing.Size(141, 33);
             this.TxtIdCliente.TabIndex = 1;
+            this.TxtIdCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtIdCliente_KeyPress);
             // 
             // TxtNombre
             // 
             this.TxtNombre.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtNombre.Location = new System.Drawing.Point(213, 114);
             this.TxtNombre.Name = "TxtNombre";
-            this.TxtNombre.Size = new System.Drawing.Size(297, 33);
+            this.TxtNombre.Size = new System.Drawing.Size(245, 33);
             this.TxtNombre.TabIndex = 6;
             this.TxtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNombre_KeyPress);
             // 
@@ -142,7 +144,7 @@
             this.TxtCedula.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtCedula.Location = new System.Drawing.Point(210, 178);
             this.TxtCedula.Name = "TxtCedula";
-            this.TxtCedula.Size = new System.Drawing.Size(328, 33);
+            this.TxtCedula.Size = new System.Drawing.Size(248, 33);
             this.TxtCedula.TabIndex = 7;
             this.TxtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCedula_KeyPress);
             // 
@@ -151,7 +153,7 @@
             this.TxtTelefono.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtTelefono.Location = new System.Drawing.Point(210, 237);
             this.TxtTelefono.Name = "TxtTelefono";
-            this.TxtTelefono.Size = new System.Drawing.Size(328, 33);
+            this.TxtTelefono.Size = new System.Drawing.Size(248, 33);
             this.TxtTelefono.TabIndex = 8;
             this.TxtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtTelefono_KeyPress);
             // 
@@ -160,7 +162,7 @@
             this.TxtCorreoElectronico.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtCorreoElectronico.Location = new System.Drawing.Point(210, 297);
             this.TxtCorreoElectronico.Name = "TxtCorreoElectronico";
-            this.TxtCorreoElectronico.Size = new System.Drawing.Size(328, 33);
+            this.TxtCorreoElectronico.Size = new System.Drawing.Size(277, 33);
             this.TxtCorreoElectronico.TabIndex = 9;
             this.TxtCorreoElectronico.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCorreoElectronico_KeyPress);
             // 
@@ -169,7 +171,7 @@
             this.TxtDireccion.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtDireccion.Location = new System.Drawing.Point(210, 358);
             this.TxtDireccion.Name = "TxtDireccion";
-            this.TxtDireccion.Size = new System.Drawing.Size(328, 33);
+            this.TxtDireccion.Size = new System.Drawing.Size(277, 33);
             this.TxtDireccion.TabIndex = 10;
             this.TxtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDireccion_KeyPress);
             // 
@@ -188,24 +190,26 @@
             this.GbDetalleCliente.Controls.Add(this.label2);
             this.GbDetalleCliente.Controls.Add(this.label1);
             this.GbDetalleCliente.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GbDetalleCliente.Location = new System.Drawing.Point(37, 47);
+            this.GbDetalleCliente.Location = new System.Drawing.Point(12, 50);
             this.GbDetalleCliente.Name = "GbDetalleCliente";
-            this.GbDetalleCliente.Size = new System.Drawing.Size(544, 427);
+            this.GbDetalleCliente.Size = new System.Drawing.Size(497, 428);
             this.GbDetalleCliente.TabIndex = 11;
             this.GbDetalleCliente.TabStop = false;
             this.GbDetalleCliente.Text = "Detalle del Cliente";
             // 
             // TxtBuscar
             // 
-            this.TxtBuscar.Location = new System.Drawing.Point(124, 54);
+            this.TxtBuscar.Location = new System.Drawing.Point(217, 52);
             this.TxtBuscar.Name = "TxtBuscar";
-            this.TxtBuscar.Size = new System.Drawing.Size(616, 30);
+            this.TxtBuscar.Size = new System.Drawing.Size(408, 30);
             this.TxtBuscar.TabIndex = 14;
             this.TxtBuscar.Click += new System.EventHandler(this.TxtBuscar_Click);
             this.TxtBuscar.TextChanged += new System.EventHandler(this.TxtBuscar_TextChanged);
             // 
             // DgvListaClientes
             // 
+            this.DgvListaClientes.AllowUserToAddRows = false;
+            this.DgvListaClientes.AllowUserToDeleteRows = false;
             this.DgvListaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvListaClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdCliente,
@@ -214,80 +218,33 @@
             this.Telefono,
             this.CorreoElectronico,
             this.Direccion});
-            this.DgvListaClientes.Location = new System.Drawing.Point(600, 138);
+            this.DgvListaClientes.Location = new System.Drawing.Point(515, 138);
             this.DgvListaClientes.Name = "DgvListaClientes";
+            this.DgvListaClientes.ReadOnly = true;
+            this.DgvListaClientes.RowHeadersVisible = false;
             this.DgvListaClientes.RowHeadersWidth = 62;
             this.DgvListaClientes.RowTemplate.Height = 28;
-            this.DgvListaClientes.Size = new System.Drawing.Size(893, 434);
+            this.DgvListaClientes.Size = new System.Drawing.Size(820, 434);
             this.DgvListaClientes.TabIndex = 15;
             this.DgvListaClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListaClientes_CellClick);
             this.DgvListaClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLista_CellContentClick);
-            // 
-            // IdCliente
-            // 
-            this.IdCliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.IdCliente.DataPropertyName = "IdCliente";
-            this.IdCliente.HeaderText = "Código";
-            this.IdCliente.MinimumWidth = 8;
-            this.IdCliente.Name = "IdCliente";
-            this.IdCliente.Width = 80;
-            // 
-            // NombreCompleto
-            // 
-            this.NombreCompleto.DataPropertyName = "NombreCompleto";
-            this.NombreCompleto.HeaderText = "Nombre";
-            this.NombreCompleto.MinimumWidth = 8;
-            this.NombreCompleto.Name = "NombreCompleto";
-            this.NombreCompleto.Width = 150;
-            // 
-            // Cedula
-            // 
-            this.Cedula.DataPropertyName = "Cedula";
-            this.Cedula.HeaderText = "Cédula";
-            this.Cedula.MinimumWidth = 8;
-            this.Cedula.Name = "Cedula";
-            this.Cedula.Width = 150;
-            // 
-            // Telefono
-            // 
-            this.Telefono.DataPropertyName = "Telefono";
-            this.Telefono.HeaderText = "Teléfono";
-            this.Telefono.MinimumWidth = 8;
-            this.Telefono.Name = "Telefono";
-            this.Telefono.Width = 150;
-            // 
-            // CorreoElectronico
-            // 
-            this.CorreoElectronico.DataPropertyName = "CorreoElectronico";
-            this.CorreoElectronico.HeaderText = "Correo Electrónico";
-            this.CorreoElectronico.MinimumWidth = 8;
-            this.CorreoElectronico.Name = "CorreoElectronico";
-            this.CorreoElectronico.Width = 150;
-            // 
-            // Direccion
-            // 
-            this.Direccion.DataPropertyName = "Direccion";
-            this.Direccion.HeaderText = "Dirección";
-            this.Direccion.MinimumWidth = 8;
-            this.Direccion.Name = "Direccion";
-            this.Direccion.Width = 150;
             // 
             // GbBuscar
             // 
             this.GbBuscar.Controls.Add(this.TxtBuscar);
             this.GbBuscar.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GbBuscar.Location = new System.Drawing.Point(612, 19);
+            this.GbBuscar.Location = new System.Drawing.Point(515, 17);
             this.GbBuscar.Name = "GbBuscar";
-            this.GbBuscar.Size = new System.Drawing.Size(838, 116);
+            this.GbBuscar.Size = new System.Drawing.Size(820, 115);
             this.GbBuscar.TabIndex = 16;
             this.GbBuscar.TabStop = false;
             this.GbBuscar.Text = "Buscar Cliente";
             // 
             // BtnAgregar
             // 
-            this.BtnAgregar.Location = new System.Drawing.Point(584, 582);
+            this.BtnAgregar.Location = new System.Drawing.Point(515, 585);
             this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(153, 53);
+            this.BtnAgregar.Size = new System.Drawing.Size(153, 52);
             this.BtnAgregar.TabIndex = 17;
             this.BtnAgregar.Text = "Agregar";
             this.BtnAgregar.UseVisualStyleBackColor = true;
@@ -295,9 +252,9 @@
             // 
             // BtnModificar
             // 
-            this.BtnModificar.Location = new System.Drawing.Point(800, 578);
+            this.BtnModificar.Location = new System.Drawing.Point(693, 586);
             this.BtnModificar.Name = "BtnModificar";
-            this.BtnModificar.Size = new System.Drawing.Size(176, 60);
+            this.BtnModificar.Size = new System.Drawing.Size(176, 53);
             this.BtnModificar.TabIndex = 18;
             this.BtnModificar.Text = "Modificar";
             this.BtnModificar.UseVisualStyleBackColor = true;
@@ -305,7 +262,7 @@
             // 
             // BtnEliminar
             // 
-            this.BtnEliminar.Location = new System.Drawing.Point(1022, 581);
+            this.BtnEliminar.Location = new System.Drawing.Point(893, 586);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(216, 54);
             this.BtnEliminar.TabIndex = 19;
@@ -315,19 +272,74 @@
             // 
             // BtnSalir
             // 
-            this.BtnSalir.Location = new System.Drawing.Point(1256, 582);
+            this.BtnSalir.Location = new System.Drawing.Point(1129, 585);
             this.BtnSalir.Name = "BtnSalir";
-            this.BtnSalir.Size = new System.Drawing.Size(222, 53);
+            this.BtnSalir.Size = new System.Drawing.Size(206, 52);
             this.BtnSalir.TabIndex = 20;
             this.BtnSalir.Text = "Salir";
             this.BtnSalir.UseVisualStyleBackColor = true;
             this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
+            // IdCliente
+            // 
+            this.IdCliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.IdCliente.DataPropertyName = "IdCliente";
+            this.IdCliente.HeaderText = "Código";
+            this.IdCliente.MinimumWidth = 8;
+            this.IdCliente.Name = "IdCliente";
+            this.IdCliente.ReadOnly = true;
+            this.IdCliente.Width = 80;
+            // 
+            // NombreCompleto
+            // 
+            this.NombreCompleto.DataPropertyName = "NombreCompleto";
+            this.NombreCompleto.HeaderText = "Nombre";
+            this.NombreCompleto.MinimumWidth = 8;
+            this.NombreCompleto.Name = "NombreCompleto";
+            this.NombreCompleto.ReadOnly = true;
+            this.NombreCompleto.Width = 150;
+            // 
+            // Cedula
+            // 
+            this.Cedula.DataPropertyName = "Cedula";
+            this.Cedula.HeaderText = "Cédula";
+            this.Cedula.MinimumWidth = 8;
+            this.Cedula.Name = "Cedula";
+            this.Cedula.ReadOnly = true;
+            this.Cedula.Width = 150;
+            // 
+            // Telefono
+            // 
+            this.Telefono.DataPropertyName = "Telefono";
+            this.Telefono.HeaderText = "Teléfono";
+            this.Telefono.MinimumWidth = 8;
+            this.Telefono.Name = "Telefono";
+            this.Telefono.ReadOnly = true;
+            this.Telefono.Width = 150;
+            // 
+            // CorreoElectronico
+            // 
+            this.CorreoElectronico.DataPropertyName = "CorreoElectronico";
+            this.CorreoElectronico.HeaderText = "Correo Electrónico";
+            this.CorreoElectronico.MinimumWidth = 8;
+            this.CorreoElectronico.Name = "CorreoElectronico";
+            this.CorreoElectronico.ReadOnly = true;
+            this.CorreoElectronico.Width = 150;
+            // 
+            // Direccion
+            // 
+            this.Direccion.DataPropertyName = "Direccion";
+            this.Direccion.HeaderText = "Dirección";
+            this.Direccion.MinimumWidth = 8;
+            this.Direccion.Name = "Direccion";
+            this.Direccion.ReadOnly = true;
+            this.Direccion.Width = 150;
+            // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1523, 650);
+            this.ClientSize = new System.Drawing.Size(1347, 649);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.BtnModificar);
@@ -364,16 +376,16 @@
         private System.Windows.Forms.GroupBox GbDetalleCliente;
         private System.Windows.Forms.TextBox TxtBuscar;
         private System.Windows.Forms.DataGridView DgvListaClientes;
+        private System.Windows.Forms.GroupBox GbBuscar;
+        private System.Windows.Forms.Button BtnAgregar;
+        private System.Windows.Forms.Button BtnModificar;
+        private System.Windows.Forms.Button BtnEliminar;
+        private System.Windows.Forms.Button BtnSalir;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreCompleto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cedula;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn CorreoElectronico;
         private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
-        private System.Windows.Forms.GroupBox GbBuscar;
-        private System.Windows.Forms.Button BtnAgregar;
-        private System.Windows.Forms.Button BtnModificar;
-        private System.Windows.Forms.Button BtnEliminar;
-        private System.Windows.Forms.Button BtnSalir;
     }
 }

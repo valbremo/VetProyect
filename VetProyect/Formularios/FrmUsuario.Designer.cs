@@ -70,7 +70,7 @@
             this.GbDatosCita.Controls.Add(this.label2);
             this.GbDatosCita.Location = new System.Drawing.Point(27, 512);
             this.GbDatosCita.Name = "GbDatosCita";
-            this.GbDatosCita.Size = new System.Drawing.Size(856, 244);
+            this.GbDatosCita.Size = new System.Drawing.Size(798, 244);
             this.GbDatosCita.TabIndex = 26;
             this.GbDatosCita.TabStop = false;
             this.GbDatosCita.Text = "Datos del Usuario";
@@ -79,7 +79,7 @@
             // 
             this.TxtContrasena.Location = new System.Drawing.Point(582, 121);
             this.TxtContrasena.Name = "TxtContrasena";
-            this.TxtContrasena.Size = new System.Drawing.Size(235, 26);
+            this.TxtContrasena.Size = new System.Drawing.Size(208, 26);
             this.TxtContrasena.TabIndex = 16;
             this.TxtContrasena.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtContrasena_KeyPress);
             // 
@@ -172,9 +172,10 @@
             this.DgvListaUsuarios.Location = new System.Drawing.Point(64, 140);
             this.DgvListaUsuarios.Name = "DgvListaUsuarios";
             this.DgvListaUsuarios.ReadOnly = true;
+            this.DgvListaUsuarios.RowHeadersVisible = false;
             this.DgvListaUsuarios.RowHeadersWidth = 62;
             this.DgvListaUsuarios.RowTemplate.Height = 28;
-            this.DgvListaUsuarios.Size = new System.Drawing.Size(819, 353);
+            this.DgvListaUsuarios.Size = new System.Drawing.Size(753, 353);
             this.DgvListaUsuarios.TabIndex = 24;
             this.DgvListaUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListaUsuarios_CellClick);
             // 
@@ -225,9 +226,9 @@
             // 
             // BtnEliminar
             // 
-            this.BtnEliminar.Location = new System.Drawing.Point(450, 767);
+            this.BtnEliminar.Location = new System.Drawing.Point(410, 771);
             this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(212, 58);
+            this.BtnEliminar.Size = new System.Drawing.Size(212, 52);
             this.BtnEliminar.TabIndex = 23;
             this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.UseVisualStyleBackColor = true;
@@ -235,7 +236,7 @@
             // 
             // BtnModificar
             // 
-            this.BtnModificar.Location = new System.Drawing.Point(264, 767);
+            this.BtnModificar.Location = new System.Drawing.Point(215, 771);
             this.BtnModificar.Name = "BtnModificar";
             this.BtnModificar.Size = new System.Drawing.Size(180, 50);
             this.BtnModificar.TabIndex = 22;
@@ -245,7 +246,7 @@
             // 
             // BtnAgregar
             // 
-            this.BtnAgregar.Location = new System.Drawing.Point(64, 766);
+            this.BtnAgregar.Location = new System.Drawing.Point(27, 771);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(171, 51);
             this.BtnAgregar.TabIndex = 21;
@@ -282,9 +283,9 @@
             // 
             // BtnSalir
             // 
-            this.BtnSalir.Location = new System.Drawing.Point(701, 770);
+            this.BtnSalir.Location = new System.Drawing.Point(636, 773);
             this.BtnSalir.Name = "BtnSalir";
-            this.BtnSalir.Size = new System.Drawing.Size(181, 46);
+            this.BtnSalir.Size = new System.Drawing.Size(181, 50);
             this.BtnSalir.TabIndex = 29;
             this.BtnSalir.Text = "Salir";
             this.BtnSalir.UseVisualStyleBackColor = true;
@@ -294,7 +295,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(925, 835);
+            this.ClientSize = new System.Drawing.Size(837, 835);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.TxtBuscar);
             this.Controls.Add(this.label7);

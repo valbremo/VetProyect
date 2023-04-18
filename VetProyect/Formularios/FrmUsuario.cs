@@ -17,12 +17,6 @@ namespace VetProyect.Formularios
         // Variables locales
         private VLogica.Usuario MiUsuarioLocal { get; set; }
 
-        //usaremos una variable flag para capturar el valor boolean de 
-        //si lo que queremos hacer es activar o desactivar un usuario 
-        //NOTA. podríamos haber usado el valor de checked del checkbox también.
-        private bool FlagActivar { get; set; }
-
-        private bool FlagCambioContrasena { get; set; }
 
 
         //Si trabajos con dos versiones de listado que se presenta en el 
@@ -47,7 +41,7 @@ namespace VetProyect.Formularios
             BtnAgregar.Enabled = true;
             BtnModificar.Enabled = false;
             BtnEliminar.Enabled = false;
-            TxtCedula.Enabled = true;
+            
         }
 
         private void ActivarEditarYEliminar()
@@ -55,10 +49,8 @@ namespace VetProyect.Formularios
             BtnAgregar.Enabled = false;
             BtnModificar.Enabled = true;
             BtnEliminar.Enabled = true;
-            TxtCedula.Enabled = false;
+            
         }
-
-
 
 
 
@@ -107,11 +99,11 @@ namespace VetProyect.Formularios
                             //se muestra un mensaje de éxito al usuario 
 
                             
-                            MessageBox.Show("Usuario agregado correctamente", ":)", MessageBoxButtons.OK);
+                            MessageBox.Show("Usuario agregado correctamente", "Aviso del sistema", MessageBoxButtons.OK);
 
                             LimpiarFormulario();
                             LlenarListaUsuarios();
-                            ActivarBotonAgregar();
+                           // ActivarBotonAgregar();
 
                         }
 
@@ -143,7 +135,6 @@ namespace VetProyect.Formularios
 
         private void FrmUsuario_Load(object sender, EventArgs e)
         {
-            MdiParent = Locales.ObjetosGlobales.MiFormPrincipal;
 
             LlenarListaUsuarios();
 
@@ -246,7 +237,7 @@ namespace VetProyect.Formularios
                         MessageBox.Show("Usuario modificado correctamente", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         LimpiarFormulario();
                         LlenarListaUsuarios();
-                        ActivarBotonAgregar();
+                        //ActivarBotonAgregar();
 
                     }
                 
@@ -276,7 +267,7 @@ namespace VetProyect.Formularios
                     MessageBox.Show("Usuario eliminado correctamente", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     LimpiarFormulario();
                     LlenarListaUsuarios();
-                    ActivarBotonAgregar();
+                    //ActivarBotonAgregar();
                 }
             }
             
@@ -304,7 +295,7 @@ namespace VetProyect.Formularios
 
                 //se captura el valor de la columna código, ya se usará como parámetro para
                 //crear el objeto de tipo Usuario
-                int IdUsuario = Convert.ToInt32(MiFila.Cells["IdUsuario"].Value);
+                int IdUsuario = Convert.ToInt32(MiFila.Cells["CIdUsuario"].Value);
 
                 MiUsuarioLocal = new VLogica.Usuario();
 
@@ -321,7 +312,7 @@ namespace VetProyect.Formularios
                 TxtContrasena.Text = MiUsuarioLocal.Contrasena;
 
 
-                ActivarEditarYEliminar();
+                //ActivarEditarYEliminar();
             }
         }
 

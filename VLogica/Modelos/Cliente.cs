@@ -185,11 +185,30 @@ namespace VLogica
 
         public bool Desactivar()
         {
-            Conexion MyCnn = new Conexion();
+            bool R = false;
+            try
+            { 
 
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("IdCliente", this.IdCliente));
+                Conexion MyCnn = new Conexion();
 
-            return (MyCnn.DMLUpdateDeleteInsert("SPClienteEliminar") > 0 ? true : false);
+                MyCnn.ListadoDeParametros.Add(new SqlParameter("IdCliente", this.IdCliente));
+
+                int retorno = MyCnn.DMLUpdateDeleteInsert("SPClienteEliminar");
+
+                if (retorno > 0)
+                {
+                    R=true;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return R;
+
+
         }
 
         //Listar todos los clientes
