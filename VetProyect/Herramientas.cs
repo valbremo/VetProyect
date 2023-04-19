@@ -12,21 +12,21 @@ namespace VetProyect
     {
 
         //Regex que permite que el correo cumpla como válido
-        const string EmailRegex =
+        const string NombreRegex =
          "@[a-z0-9._%+-]+@[a-z0-9-]+.+.[a-z]{2,4}@";
 
         //Regex que permite ciertos datos
-        const string PassRegex = "^(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{4,10}$";
+        const string ContrasenaRegex = "^(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{4,10}$";
         //2 numeros, 3 letras, rango de 4 a 5 caracteres
 
 
 
         //valida el email
-        public static bool ValidarEmail(string email)
+        public static bool ValidarNombre(string nombre)
         {
-            if (email != null)
+            if (nombre != null)
             {
-                return Regex.IsMatch(email, EmailRegex);
+                return Regex.IsMatch(nombre, NombreRegex);
             }
             else
             {
@@ -54,11 +54,11 @@ namespace VetProyect
 
 
         //valida la contraseña
-        public static bool ValidarPass(string pass)
+        public static bool ValidarContrasena(string contrasena)
         {
-            if (pass != null)
+            if (contrasena != null)
             {
-                return Regex.IsMatch(pass, PassRegex);
+                return Regex.IsMatch(contrasena, ContrasenaRegex);
             }
             else
             {

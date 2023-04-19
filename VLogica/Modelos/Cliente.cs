@@ -139,7 +139,7 @@ namespace VLogica
 
                 DataRow MiFila = DatosCLiente.Rows[0];
 
-                R.IdCliente = Convert.ToInt32(MiFila["IDCliente"]);
+                R.IdCliente = Convert.ToInt32(MiFila["IdCliente"]);
                 R.NombreCompleto = Convert.ToString(MiFila["NombreCompleto"]);
                 R.Cedula = Convert.ToString(MiFila["Cedula"]);
                 R.CorreoElectronico = Convert.ToString(MiFila["CorreoElectronico"]);

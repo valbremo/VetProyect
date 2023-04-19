@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using VLogica;
 
+
 namespace VetProyect.Formularios
 {
     public partial class FrmUsuario : Form
@@ -17,15 +18,13 @@ namespace VetProyect.Formularios
         // Variables locales
         private VLogica.Usuario MiUsuarioLocal { get; set; }
 
+        private bool FlagActivar { get; set; }
 
-
-        //Si trabajos con dos versiones de listado que se presenta en el 
-        //datagrid, es conveniente tenerlas por separado, para que la lista
-        //normal no deba ser recargada cada que borramos el filtro del 
-        //cuadro de búsqueda
         public DataTable ListaUsuariosNormal { get; set; }
 
         public DataTable ListaUsuariosConFiltro { get; set; }
+
+
 
 
         //Método que carga las variables locales en el constructor.
@@ -34,6 +33,7 @@ namespace VetProyect.Formularios
             InitializeComponent();
 
             MiUsuarioLocal = new VLogica.Usuario();
+
         }
 
         private void ActivarBotonAgregar()
@@ -41,7 +41,7 @@ namespace VetProyect.Formularios
             BtnAgregar.Enabled = true;
             BtnModificar.Enabled = false;
             BtnEliminar.Enabled = false;
-            
+
         }
 
         private void ActivarEditarYEliminar()
@@ -49,7 +49,7 @@ namespace VetProyect.Formularios
             BtnAgregar.Enabled = false;
             BtnModificar.Enabled = true;
             BtnEliminar.Enabled = true;
-            
+
         }
 
 
@@ -78,14 +78,13 @@ namespace VetProyect.Formularios
                     MiUsuario.Telefono = TxtTelefono.Text.Trim();
                     MiUsuario.Contrasena = TxtContrasena.Text.Trim();
 
-                    
+
                     bool CedulaExiste = MiUsuario.ConsultarPorCedula();
 
-                    
-                    bool IdExiste = MiUsuario.ConsultarPorID();
 
-                   
-                    if (!CedulaExiste && !IdExiste)
+
+
+                    if (!CedulaExiste)
                     {
                         //No existe un usuario con la cédula y el id proporcionado 
 
@@ -98,12 +97,12 @@ namespace VetProyect.Formularios
                             //todo salió bien al realizaer el Insert 
                             //se muestra un mensaje de éxito al usuario 
 
-                            
+
                             MessageBox.Show("Usuario agregado correctamente", "Aviso del sistema", MessageBoxButtons.OK);
 
                             LimpiarFormulario();
-                            LlenarListaUsuarios();
-                           // ActivarBotonAgregar();
+                            LlenarListaUsuarios(true);
+                            // ActivarBotonAgregar();
 
                         }
 
@@ -118,12 +117,7 @@ namespace VetProyect.Formularios
                             TxtCedula.Focus();
                             TxtCedula.SelectAll();
                         }
-                        else if (IdExiste)
-                        {
-                            MessageBox.Show("La Id ya está siendo usado", "Aviso del sistema", MessageBoxButtons.OK);
-                            TxtIdUsuario.Focus();
-                            TxtIdUsuario.SelectAll();
-                        }
+
 
                     }
 
@@ -136,11 +130,11 @@ namespace VetProyect.Formularios
         private void FrmUsuario_Load(object sender, EventArgs e)
         {
 
-            LlenarListaUsuarios();
+            LlenarListaUsuarios(CbActivo.Checked);
 
             LimpiarFormulario();
 
-            ActivarBotonAgregar();
+            // ActivarBotonAgregar();
         }
 
         private void LimpiarFormulario()
@@ -152,26 +146,30 @@ namespace VetProyect.Formularios
             TxtCedula.Clear();
             TxtTelefono.Clear();
             TxtContrasena.Clear();
-            
+
 
         }
 
-        private void LlenarListaUsuarios()
+        private void LlenarListaUsuarios(bool VerActivos, string FiltroBusqueda = "")
         {
             //se llama la clase empleado para manipular los datos.
-            VLogica.Cliente MiCliente = new VLogica.Cliente();
-            try
-            {
-                ListaUsuariosNormal = MiCliente.ListarTodos();
 
+            VLogica.Usuario MiUsuario = new VLogica.Usuario();
+
+            if (!string.IsNullOrEmpty(FiltroBusqueda.Trim()))
+            {
+                //Si hay datos de busqueda
+                ListaUsuariosConFiltro = MiUsuario.Listar(VerActivos, FiltroBusqueda);
+                DgvListaUsuarios.DataSource = ListaUsuariosConFiltro;
+            }
+            else
+            {
+                //listado normal
+                ListaUsuariosNormal = MiUsuario.Listar(VerActivos);
                 DgvListaUsuarios.DataSource = ListaUsuariosNormal;
+            }
 
-                DgvListaUsuarios.ClearSelection();
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show("Error denotado por:\n" + error.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            DgvListaUsuarios.ClearSelection();
         }
 
         private bool ValidarDatosRequeridos()
@@ -187,8 +185,8 @@ namespace VetProyect.Formularios
                 !string.IsNullOrEmpty(TxtTelefono.Text.Trim()) &&
                 !string.IsNullOrEmpty(TxtContrasena.Text.Trim()) &&
 
-                Herramientas.ValidarEmail(TxtNombre.Text.Trim()) == true ||
-                Herramientas.ValidarPass(TxtContrasena.Text.Trim()) == true)
+                Herramientas.ValidarNombre(TxtNombre.Text.Trim()) == true ||
+                Herramientas.ValidarContrasena(TxtContrasena.Text.Trim()) == true)
                 
                 {
                     R = true;
@@ -236,7 +234,7 @@ namespace VetProyect.Formularios
                     {
                         MessageBox.Show("Usuario modificado correctamente", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         LimpiarFormulario();
-                        LlenarListaUsuarios();
+                        LlenarListaUsuarios(CbVerActivos.Checked);
                         //ActivarBotonAgregar();
 
                     }
@@ -254,23 +252,30 @@ namespace VetProyect.Formularios
         //Se emplea el método para activar el botón de agregar.
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+
                 VLogica.Usuario MiUsuario = new VLogica.Usuario();
 
-                MiUsuario.IdUsuario= Convert.ToInt32(TxtIdUsuario.Text.Trim());
+                MiUsuario.IdUsuario = Convert.ToInt32(TxtIdUsuario.Text.Trim());
 
-            if (MiUsuario.ConsultarPorID())
-            {
-                //Se emplea el método de eliminar de la clase.
-                if (MiUsuario.Desactivar())
+                if (MiUsuario.ConsultarPorID())
                 {
-                    MessageBox.Show("Usuario eliminado correctamente", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    LimpiarFormulario();
-                    LlenarListaUsuarios();
-                    //ActivarBotonAgregar();
+                    //Se emplea el método de eliminar de la clase.
+                    if (MiUsuario.Desactivar())
+                    {
+                        MessageBox.Show("Usuario eliminado correctamente", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        LimpiarFormulario();
+                        LlenarListaUsuarios(true);
+                        //ActivarBotonAgregar();
+                    }
                 }
             }
-            
+
+            catch (Exception error)
+            {
+                MessageBox.Show("Error denotado por:\n" + error.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)
@@ -285,34 +290,43 @@ namespace VetProyect.Formularios
 
         private void DgvListaUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //Si se ha seleccionado una fila en el datagridview
-            if (DgvListaUsuarios.SelectedRows.Count == 1)
+            try
             {
 
-                LimpiarFormulario();
 
-                DataGridViewRow MiFila = DgvListaUsuarios.SelectedRows[0];
+                //Si se ha seleccionado una fila en el datagridview
+                if (DgvListaUsuarios.SelectedRows.Count == 1)
+                {
 
-                //se captura el valor de la columna código, ya se usará como parámetro para
-                //crear el objeto de tipo Usuario
-                int IdUsuario = Convert.ToInt32(MiFila.Cells["CIdUsuario"].Value);
+                    LimpiarFormulario();
 
-                MiUsuarioLocal = new VLogica.Usuario();
+                    DataGridViewRow MiFila = DgvListaUsuarios.SelectedRows[0];
 
-                MiUsuarioLocal = MiUsuarioLocal.Consultar(IdUsuario);
+                    //se captura el valor de la columna código, ya se usará como parámetro para
+                    //crear el objeto de tipo Usuario
+                    int IdUsuario = Convert.ToInt32(MiFila.Cells["ColIdUsuario"].Value);
 
-                //Una vez tenemos el objeto MiUsuarioLocal cargado con info del usuario seleccionado
-                //en el DGV, representamos la info de cada atributo en el control correspondiente. 
+                    MiUsuarioLocal = new VLogica.Usuario();
 
-                TxtIdUsuario.Text = MiUsuarioLocal.IdUsuario.ToString();
+                    MiUsuarioLocal = MiUsuarioLocal.Consultar(IdUsuario);
 
-                TxtNombre.Text = MiUsuarioLocal.NombreCompleto;
-                TxtCedula.Text = MiUsuarioLocal.Cedula;
-                TxtTelefono.Text = MiUsuarioLocal.Telefono;
-                TxtContrasena.Text = MiUsuarioLocal.Contrasena;
+                    //Una vez tenemos el objeto MiUsuarioLocal cargado con info del usuario seleccionado
+                    //en el DGV, representamos la info de cada atributo en el control correspondiente. 
+
+                    TxtIdUsuario.Text = MiUsuarioLocal.IdUsuario.ToString();
+
+                    TxtNombre.Text = MiUsuarioLocal.NombreCompleto;
+                    TxtCedula.Text = MiUsuarioLocal.Cedula;
+                    TxtTelefono.Text = MiUsuarioLocal.Telefono;
+                    TxtContrasena.Text = MiUsuarioLocal.Contrasena;
 
 
-                //ActivarEditarYEliminar();
+                    //ActivarEditarYEliminar();
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error denotado por:\n" + error.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -328,6 +342,23 @@ namespace VetProyect.Formularios
         private void TxtContrasena_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = Herramientas.CaracteresTexto(e, false, true);
+        }
+
+        private void CbVerActivos_CheckedChanged(object sender, EventArgs e)
+        {
+            LlenarListaUsuarios(CbVerActivos.Checked);
+            //FlagActivar = !CbVerUsauariosActivos.Checked;
+
+            if (CbVerActivos.Checked)
+            {
+                BtnEliminar.Text = "ELIMINAR";
+                FlagActivar = false;
+            }
+            else
+            {
+                BtnEliminar.Text = "ACTIVAR";
+                FlagActivar = true;
+            }
         }
     }
     

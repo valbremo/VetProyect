@@ -26,7 +26,7 @@ namespace VLogica
 
         public Usuario()
         {
-
+            Estado = true;
         }
 
         public bool Agregar()
@@ -86,7 +86,7 @@ namespace VLogica
                     PasswordEncriptado = MiEncriptador.EncriptarEnUnSentido(this.Contrasena);
                 }
 
-                MiCnn.ListadoDeParametros.Add(new SqlParameter("@Pass", PasswordEncriptado));
+                MiCnn.ListadoDeParametros.Add(new SqlParameter("@Contrasena", PasswordEncriptado));
 
                 int retorno = MiCnn.DMLUpdateDeleteInsert("SPUsuarioEditarModificar");
 
@@ -263,7 +263,7 @@ namespace VLogica
                 return R;
             }
 
-            public DataTable Listar(bool VerActivos, string Filtro)
+            public DataTable Listar(bool VerActivos = true, string Filtro = "")
             {
                 DataTable R = new DataTable();
 
