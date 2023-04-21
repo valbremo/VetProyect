@@ -210,7 +210,7 @@ namespace VetProyect.Formularios
 
                     DataGridViewRow MiFila = DgvListaClientes.SelectedRows[0];
 
-                    MiCliente.IdCliente = Convert.ToInt32(MiFila.Cells["IdCliente"].Value);
+                    MiCliente.IdCliente = Convert.ToInt32(MiFila.Cells["CIdCliente"].Value);
 
 
                     MiCliente.NombreCompleto = TxtNombre.Text.Trim();
@@ -247,7 +247,7 @@ namespace VetProyect.Formularios
 
             DataGridViewRow MiFila = DgvListaClientes.SelectedRows[0];
 
-            MiCliente.IdCliente = Convert.ToInt32(MiFila.Cells["IdCliente"].Value);
+            MiCliente.IdCliente = Convert.ToInt32(MiFila.Cells["CIdCliente"].Value);
 
 
             try

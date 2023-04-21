@@ -22,11 +22,11 @@ namespace VLogica
 
         public string Contrasena { get; set; }
 
-        public bool Estado { get; set; }
+
 
         public Usuario()
         {
-            Estado = true;
+            
         }
 
         public bool Agregar()
@@ -37,15 +37,10 @@ namespace VLogica
             {
                 Conexion MiCnn = new Conexion();
 
-                Crypto MiEncriptador = new Crypto();
-
                 MiCnn.ListadoDeParametros.Add(new SqlParameter("@NombreCompleto", this.NombreCompleto));
                 MiCnn.ListadoDeParametros.Add(new SqlParameter("@Cedula", this.Cedula));
                 MiCnn.ListadoDeParametros.Add(new SqlParameter("@Telefono", this.Telefono));
-
-                string MiPasswordEncriptado = MiEncriptador.EncriptarEnUnSentido(this.Contrasena);
-
-                MiCnn.ListadoDeParametros.Add(new SqlParameter("@Pass", MiPasswordEncriptado));
+                MiCnn.ListadoDeParametros.Add(new SqlParameter("@Contrasena", this.Contrasena));
 
                 int retorno = MiCnn.DMLUpdateDeleteInsert("SPUsuarioAgregar");
 
@@ -73,22 +68,15 @@ namespace VLogica
             {
                 Conexion MiCnn = new Conexion();
 
-                MiCnn.ListadoDeParametros.Add(new SqlParameter("@Id", this.IdUsuario));
+                MiCnn.ListadoDeParametros.Add(new SqlParameter("@IdUsuario", this.IdUsuario));
+
                 MiCnn.ListadoDeParametros.Add(new SqlParameter("@NombreCompleto", this.NombreCompleto));
                 MiCnn.ListadoDeParametros.Add(new SqlParameter("@Cedula", this.Cedula));
                 MiCnn.ListadoDeParametros.Add(new SqlParameter("@Telefono", this.Telefono));
+                MiCnn.ListadoDeParametros.Add(new SqlParameter("@Contrasena", this.Contrasena));
 
-                Crypto MiEncriptador = new Crypto();
-                string PasswordEncriptado = "";
 
-                if (!string.IsNullOrEmpty(this.Contrasena))
-                {
-                    PasswordEncriptado = MiEncriptador.EncriptarEnUnSentido(this.Contrasena);
-                }
-
-                MiCnn.ListadoDeParametros.Add(new SqlParameter("@Contrasena", PasswordEncriptado));
-
-                int retorno = MiCnn.DMLUpdateDeleteInsert("SPUsuarioEditarModificar");
+                int retorno = MiCnn.DMLUpdateDeleteInsert("SPUsuarioModificar");
 
                 if (retorno > 0)
                 {
@@ -130,9 +118,9 @@ namespace VLogica
                 Conexion MiCnn = new Conexion();
 
                 //Lista de parametros que llegaran al SP
-                MiCnn.ListadoDeParametros.Add(new SqlParameter("@Id", this.IdUsuario));
+                MiCnn.ListadoDeParametros.Add(new SqlParameter("@IdUsuario", this.IdUsuario));
 
-                int retorno = MiCnn.DMLUpdateDeleteInsert("SPUsuarioDesactivar");
+                int retorno = MiCnn.DMLUpdateDeleteInsert("SPUsuarioEliminar");
 
                 if (retorno > 0)
                 {
@@ -174,7 +162,7 @@ namespace VLogica
                 R.Telefono = Convert.ToString(MiFila["Telefono"]);
                 R.Contrasena = Convert.ToString(MiFila["Contrasena"]);
 
-                R.Estado = Convert.ToBoolean(MiFila["Estado"]);
+               
 
             }
 
@@ -242,9 +230,6 @@ namespace VLogica
                 this.NombreCompleto = pUsuario;
                 this.Contrasena = pContrasena;
 
-                Crypto MiEncriptador = new Crypto();
-
-                string PasswordEncriptado = MiEncriptador.EncriptarEnUnSentido(this.Contrasena);
 
                 Conexion MiCnn = new Conexion();
 

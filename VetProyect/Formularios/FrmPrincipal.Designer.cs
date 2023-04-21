@@ -65,7 +65,7 @@
             // BtnUsuarios
             // 
             this.BtnUsuarios.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BtnUsuarios.Location = new System.Drawing.Point(744, 94);
+            this.BtnUsuarios.Location = new System.Drawing.Point(725, 94);
             this.BtnUsuarios.Name = "BtnUsuarios";
             this.BtnUsuarios.Size = new System.Drawing.Size(185, 57);
             this.BtnUsuarios.TabIndex = 0;
@@ -76,7 +76,7 @@
             // BtnClientes
             // 
             this.BtnClientes.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BtnClientes.Location = new System.Drawing.Point(744, 156);
+            this.BtnClientes.Location = new System.Drawing.Point(725, 156);
             this.BtnClientes.Name = "BtnClientes";
             this.BtnClientes.Size = new System.Drawing.Size(185, 54);
             this.BtnClientes.TabIndex = 1;
@@ -87,7 +87,7 @@
             // BtnMascotas
             // 
             this.BtnMascotas.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BtnMascotas.Location = new System.Drawing.Point(744, 216);
+            this.BtnMascotas.Location = new System.Drawing.Point(725, 216);
             this.BtnMascotas.Name = "BtnMascotas";
             this.BtnMascotas.Size = new System.Drawing.Size(183, 57);
             this.BtnMascotas.TabIndex = 2;
@@ -98,7 +98,7 @@
             // BtnCitas
             // 
             this.BtnCitas.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BtnCitas.Location = new System.Drawing.Point(744, 276);
+            this.BtnCitas.Location = new System.Drawing.Point(725, 276);
             this.BtnCitas.Name = "BtnCitas";
             this.BtnCitas.Size = new System.Drawing.Size(187, 54);
             this.BtnCitas.TabIndex = 3;
@@ -109,7 +109,7 @@
             // BtnRecetas
             // 
             this.BtnRecetas.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BtnRecetas.Location = new System.Drawing.Point(746, 336);
+            this.BtnRecetas.Location = new System.Drawing.Point(727, 336);
             this.BtnRecetas.Name = "BtnRecetas";
             this.BtnRecetas.Size = new System.Drawing.Size(185, 56);
             this.BtnRecetas.TabIndex = 4;
@@ -120,7 +120,7 @@
             // BtnHistorial
             // 
             this.BtnHistorial.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BtnHistorial.Location = new System.Drawing.Point(744, 398);
+            this.BtnHistorial.Location = new System.Drawing.Point(725, 398);
             this.BtnHistorial.Name = "BtnHistorial";
             this.BtnHistorial.Size = new System.Drawing.Size(185, 54);
             this.BtnHistorial.TabIndex = 5;
@@ -131,7 +131,7 @@
             // BtnTipoMascota
             // 
             this.BtnTipoMascota.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BtnTipoMascota.Location = new System.Drawing.Point(744, 458);
+            this.BtnTipoMascota.Location = new System.Drawing.Point(725, 458);
             this.BtnTipoMascota.Name = "BtnTipoMascota";
             this.BtnTipoMascota.Size = new System.Drawing.Size(187, 54);
             this.BtnTipoMascota.TabIndex = 6;
@@ -142,7 +142,7 @@
             // BtnEspecialidad
             // 
             this.BtnEspecialidad.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BtnEspecialidad.Location = new System.Drawing.Point(744, 518);
+            this.BtnEspecialidad.Location = new System.Drawing.Point(725, 518);
             this.BtnEspecialidad.Name = "BtnEspecialidad";
             this.BtnEspecialidad.Size = new System.Drawing.Size(183, 53);
             this.BtnEspecialidad.TabIndex = 7;
@@ -164,7 +164,7 @@
             // BtnAcercaDe
             // 
             this.BtnAcercaDe.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.BtnAcercaDe.Location = new System.Drawing.Point(101, 516);
+            this.BtnAcercaDe.Location = new System.Drawing.Point(96, 506);
             this.BtnAcercaDe.Name = "BtnAcercaDe";
             this.BtnAcercaDe.Size = new System.Drawing.Size(156, 50);
             this.BtnAcercaDe.TabIndex = 10;
@@ -175,7 +175,7 @@
             // BtnSalir
             // 
             this.BtnSalir.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.BtnSalir.Location = new System.Drawing.Point(438, 516);
+            this.BtnSalir.Location = new System.Drawing.Point(404, 506);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(153, 51);
             this.BtnSalir.TabIndex = 11;
@@ -186,7 +186,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel1.Location = new System.Drawing.Point(746, 94);
+            this.panel1.Location = new System.Drawing.Point(727, 94);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(10, 54);
@@ -195,7 +195,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel2.Location = new System.Drawing.Point(746, 159);
+            this.panel2.Location = new System.Drawing.Point(727, 159);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(10, 49);
@@ -204,7 +204,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel3.Location = new System.Drawing.Point(746, 219);
+            this.panel3.Location = new System.Drawing.Point(727, 219);
             this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(10, 54);
@@ -213,7 +213,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel4.Location = new System.Drawing.Point(746, 279);
+            this.panel4.Location = new System.Drawing.Point(727, 279);
             this.panel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(10, 49);
@@ -222,7 +222,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel5.Location = new System.Drawing.Point(746, 336);
+            this.panel5.Location = new System.Drawing.Point(727, 336);
             this.panel5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(10, 54);
@@ -231,7 +231,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel6.Location = new System.Drawing.Point(746, 398);
+            this.panel6.Location = new System.Drawing.Point(727, 398);
             this.panel6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(10, 52);
@@ -240,7 +240,7 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel7.Location = new System.Drawing.Point(746, 460);
+            this.panel7.Location = new System.Drawing.Point(727, 460);
             this.panel7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(10, 50);
@@ -249,7 +249,7 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel8.Location = new System.Drawing.Point(746, 520);
+            this.panel8.Location = new System.Drawing.Point(727, 520);
             this.panel8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(10, 51);
@@ -258,7 +258,7 @@
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel9.Location = new System.Drawing.Point(917, 97);
+            this.panel9.Location = new System.Drawing.Point(898, 97);
             this.panel9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(10, 51);
@@ -267,7 +267,7 @@
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel10.Location = new System.Drawing.Point(919, 159);
+            this.panel10.Location = new System.Drawing.Point(900, 159);
             this.panel10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(10, 49);
@@ -276,7 +276,7 @@
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel11.Location = new System.Drawing.Point(919, 219);
+            this.panel11.Location = new System.Drawing.Point(900, 219);
             this.panel11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(10, 54);
@@ -285,7 +285,7 @@
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel12.Location = new System.Drawing.Point(919, 279);
+            this.panel12.Location = new System.Drawing.Point(900, 279);
             this.panel12.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(10, 49);
@@ -294,7 +294,7 @@
             // panel13
             // 
             this.panel13.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel13.Location = new System.Drawing.Point(919, 338);
+            this.panel13.Location = new System.Drawing.Point(900, 338);
             this.panel13.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(10, 54);
@@ -303,7 +303,7 @@
             // panel14
             // 
             this.panel14.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel14.Location = new System.Drawing.Point(919, 398);
+            this.panel14.Location = new System.Drawing.Point(900, 398);
             this.panel14.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(10, 52);
@@ -312,7 +312,7 @@
             // panel15
             // 
             this.panel15.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel15.Location = new System.Drawing.Point(919, 459);
+            this.panel15.Location = new System.Drawing.Point(900, 459);
             this.panel15.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(10, 51);
@@ -321,7 +321,7 @@
             // panel16
             // 
             this.panel16.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel16.Location = new System.Drawing.Point(919, 520);
+            this.panel16.Location = new System.Drawing.Point(900, 520);
             this.panel16.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(10, 51);
@@ -330,7 +330,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(59, 124);
+            this.pictureBox1.Location = new System.Drawing.Point(44, 124);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(599, 351);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -352,7 +352,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(950, 598);
+            this.ClientSize = new System.Drawing.Size(937, 598);
             this.Controls.Add(this.panel17);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel16);

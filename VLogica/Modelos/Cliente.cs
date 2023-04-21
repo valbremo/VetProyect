@@ -142,6 +142,7 @@ namespace VLogica
                 R.IdCliente = Convert.ToInt32(MiFila["IdCliente"]);
                 R.NombreCompleto = Convert.ToString(MiFila["NombreCompleto"]);
                 R.Cedula = Convert.ToString(MiFila["Cedula"]);
+                R.Telefono = Convert.ToString(MiFila["Telefono"]);
                 R.CorreoElectronico = Convert.ToString(MiFila["CorreoElectronico"]);
                 R.Direccion = Convert.ToString(MiFila["Direccion"]);
             }
