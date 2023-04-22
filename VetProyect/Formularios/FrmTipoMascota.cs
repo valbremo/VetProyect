@@ -133,9 +133,9 @@ namespace VetProyect.Formularios
                         //de que ya existan estos datos registrados.
                         if (IdExiste)
                         {
-                            MessageBox.Show("El nombre ya esta en uso", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            TxtNombre.Focus();
-                            TxtNombre.SelectAll();
+                            MessageBox.Show("El id ya esta en uso", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            TxtIdTipoMascota.Focus();
+                            TxtIdTipoMascota.SelectAll();
 
                         }
 
@@ -224,7 +224,6 @@ namespace VetProyect.Formularios
                     {
                         MessageBox.Show("Tipo de mascota eliminado correctamente", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         LimpiarFormulario();
-                        //ActivarBtnAgregar();
                         LlenarListaTipoMascota();
                     }
                 }

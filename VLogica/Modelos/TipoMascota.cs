@@ -23,12 +23,27 @@ namespace VLogica
 
         public bool Agregar()
         {
-            Conexion MyCnn = new Conexion();
+            bool R = false;
 
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("@Nombre", this.Nombre));
-           
+            try
+            {
+                Conexion MyCnn = new Conexion();
 
-            return MyCnn.DMLUpdateDeleteInsert("SPTipoMascotaAgregar") > 0 ? true : false;
+                MyCnn.ListadoDeParametros.Add(new SqlParameter("@Nombre", this.Nombre));
+
+                int retorno = MyCnn.DMLUpdateDeleteInsert("SPTipoMascotaAgregar");
+
+                if (retorno > 0)
+                {
+                    R = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+             return R;
+            
         }
 
         public bool Modificar()
@@ -70,7 +85,7 @@ namespace VLogica
 
             DataTable DatosTipoMascota = new DataTable();
 
-            DatosTipoMascota = MyCnn.DMLSelect("SPTipoMascotaConsultar");
+            DatosTipoMascota = MyCnn.DMLSelect("SPTipoMascotaConsultarPorID");
 
             //Valida los datos de el tipo de mascota
 
@@ -114,11 +129,27 @@ namespace VLogica
 
         public bool Desactivar()
         {
-            Conexion MyCnn = new Conexion();
+            bool R = false;
+            try
+            {
 
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("IdTipoMascota", this.IdTipoMascota));
+                Conexion MyCnn = new Conexion();
 
-            return (MyCnn.DMLUpdateDeleteInsert("SPTipoMascotaEliminar") > 0 ? true : false);
+                MyCnn.ListadoDeParametros.Add(new SqlParameter("IdTipoMascota", this.IdTipoMascota));
+
+                int retorno = MyCnn.DMLUpdateDeleteInsert("SPTipoMascotaEliminar");
+
+                if (retorno > 0)
+                {
+                    R = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return R;
         }
 
         public DataTable ListarTodos()

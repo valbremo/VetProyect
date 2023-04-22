@@ -233,7 +233,6 @@ namespace VetProyect.Formularios
                     {
                         MessageBox.Show("Especialidad eliminada correctamente", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         LimpiarFormulario();
-                        //ActivarBtnAgregar();
                         LlenarListaEspecialidad();
                     }
                 }

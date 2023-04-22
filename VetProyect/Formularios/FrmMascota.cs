@@ -10,7 +10,6 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Globalization;
 using VLogica;
 
 namespace VetProyect.Formularios
@@ -33,7 +32,7 @@ namespace VetProyect.Formularios
 
         private void CargarDatosCliente()
         {
-            Cliente MiCliente = new Cliente();
+            VLogica.Cliente MiCliente = new VLogica.Cliente();
 
             DataTable Datos = new DataTable();
 
@@ -48,7 +47,7 @@ namespace VetProyect.Formularios
 
         private void CargarDatosTipoMascota()
         {
-            TipoMascota MiTipoMascota = new TipoMascota();
+            VLogica.TipoMascota MiTipoMascota = new VLogica.TipoMascota();
 
             DataTable Datos = new DataTable();
 
@@ -83,7 +82,7 @@ namespace VetProyect.Formularios
         {
             TxtIdMascota.Clear();
             TxtNombre.Clear();
-            DtpFecha.Value = DateTime.Now.Date;
+            TxtFecha.Value = DateTime.Now.Date;
             TxtRaza.Clear();
             TxtObservacion.Clear();
             CboxTipoMascota.SelectedIndex = -1;
@@ -100,7 +99,8 @@ namespace VetProyect.Formularios
                 //Valida  los campos no estén vacíos o
                 //que no contengan un dato menor al ingresado.
                 if (!string.IsNullOrEmpty(TxtNombre.Text.Trim()) &&
-                    !DateTime.TryParse(DtpFecha.Text, out DateTime fecha) &&
+                   // !DateTime.TryParse(TxtFecha.Text, out DateTime fecha) &&
+                    !string.IsNullOrEmpty(TxtFecha.Text.Trim())&&
                     !string.IsNullOrEmpty(TxtRaza.Text.Trim()) &&
                     !string.IsNullOrEmpty(TxtObservacion.Text.Trim()) &&
                     DgvListaMascotas.Rows.Count < 1 &&
@@ -138,13 +138,13 @@ namespace VetProyect.Formularios
                     VLogica.Mascota MiMascota = new VLogica.Mascota();
 
                     MiMascota.Nombre = TxtNombre.Text.Trim();
-                    MiMascota.FechaNacimiento = DateTime.ParseExact(DtpFecha.Text.Trim(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                    MiMascota.FechaNacimiento = Convert.ToDateTime(TxtFecha.Text.Trim());
                     MiMascota.Raza = TxtRaza.Text.Trim();
                     MiMascota.Observacion = TxtObservacion.Text.Trim();
                     MiMascota.MiTipoMascota.IdTipoMascota = Convert.ToInt32(CboxTipoMascota.SelectedValue);
                     MiMascota.MiCliente.IdCliente = Convert.ToInt32(CboxCliente.SelectedValue);
 
-                    bool IdExiste = MiMascota.ConsultarPorNombre();
+                    bool IdExiste = MiMascota.ConsultarPorId();
 
 
 
@@ -193,9 +193,9 @@ namespace VetProyect.Formularios
         private void FrmMascota_Load(object sender, EventArgs e)
         {
 
-            CargarDatosCliente();
-
             CargarDatosTipoMascota();
+
+            CargarDatosCliente();
 
             LlenarListaMascotas();
 
@@ -215,7 +215,7 @@ namespace VetProyect.Formularios
 
                     TxtIdMascota.Text = Convert.ToString(MiFila.Cells["CIdMascota"].Value);
                     TxtNombre.Text = Convert.ToString(MiFila.Cells["CNombre"].Value);
-                    DtpFecha.Text = Convert.ToString(MiFila.Cells["CFechaNacimiento"].Value);
+                    TxtFecha.Text = Convert.ToString(MiFila.Cells["CFechaNacimiento"].Value);
                     TxtRaza.Text = Convert.ToString(MiFila.Cells["CRaza"].Value);
                     TxtObservacion.Text = Convert.ToString(MiFila.Cells["CObservacion"].Value);
 
@@ -252,7 +252,7 @@ namespace VetProyect.Formularios
                 //valida los datos existentes y los modifica.
                 if (ValidarDatosRequeridos())
                 {
-                    Mascota MiMascota = new Mascota();
+                    VLogica.Mascota MiMascota = new VLogica.Mascota();
 
 
                     DataGridViewRow MiFila = DgvListaMascotas.SelectedRows[0];
@@ -260,7 +260,7 @@ namespace VetProyect.Formularios
                     MiMascota.IdMascota = Convert.ToInt32(MiFila.Cells["CIdMascota"].Value);
 
                     MiMascota.Nombre = TxtNombre.Text.Trim();
-                    MiMascota.FechaNacimiento = DateTime.ParseExact(DtpFecha.Text.Trim(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                    MiMascota.FechaNacimiento = Convert.ToDateTime(TxtFecha.Text.Trim());
                     MiMascota.Raza = TxtRaza.Text.Trim();
                     MiMascota.Observacion = TxtObservacion.Text.Trim();
                     MiMascota.MiTipoMascota.IdTipoMascota = Convert.ToInt32(CboxTipoMascota.SelectedValue);
@@ -287,7 +287,7 @@ namespace VetProyect.Formularios
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
-            Mascota MiMascota = new Mascota();
+            VLogica.Mascota MiMascota = new VLogica.Mascota();
 
             DataGridViewRow MiFila = DgvListaMascotas.SelectedRows[0];
 

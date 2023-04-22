@@ -133,7 +133,7 @@ namespace VLogica
 
             DataTable DatosUsuario = new DataTable();
 
-            DatosUsuario = MyCnn.DMLSelect("SPUsuarioConsultar");
+            DatosUsuario = MyCnn.DMLSelect("SPUsuarioConsultarPorID");
 
 
             if (DatosUsuario.Rows.Count > 0)

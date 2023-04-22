@@ -43,7 +43,7 @@
             this.CboxTipoMascota = new System.Windows.Forms.ComboBox();
             this.CboxCliente = new System.Windows.Forms.ComboBox();
             this.TxtBuscar = new System.Windows.Forms.TextBox();
-            this.DtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.TxtFecha = new System.Windows.Forms.DateTimePicker();
             this.DgvListaMascotas = new System.Windows.Forms.DataGridView();
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.BtnModificar = new System.Windows.Forms.Button();
@@ -180,12 +180,12 @@
             this.TxtBuscar.Size = new System.Drawing.Size(317, 26);
             this.TxtBuscar.TabIndex = 17;
             // 
-            // DtpFecha
+            // TxtFecha
             // 
-            this.DtpFecha.Location = new System.Drawing.Point(202, 121);
-            this.DtpFecha.Name = "DtpFecha";
-            this.DtpFecha.Size = new System.Drawing.Size(293, 26);
-            this.DtpFecha.TabIndex = 18;
+            this.TxtFecha.Location = new System.Drawing.Point(202, 121);
+            this.TxtFecha.Name = "TxtFecha";
+            this.TxtFecha.Size = new System.Drawing.Size(293, 26);
+            this.TxtFecha.TabIndex = 18;
             // 
             // DgvListaMascotas
             // 
@@ -266,7 +266,7 @@
             // 
             // GbDatosMascota
             // 
-            this.GbDatosMascota.Controls.Add(this.DtpFecha);
+            this.GbDatosMascota.Controls.Add(this.TxtFecha);
             this.GbDatosMascota.Controls.Add(this.CboxCliente);
             this.GbDatosMascota.Controls.Add(this.CboxTipoMascota);
             this.GbDatosMascota.Controls.Add(this.TxtObservacion);
@@ -390,7 +390,7 @@
         private System.Windows.Forms.ComboBox CboxTipoMascota;
         private System.Windows.Forms.ComboBox CboxCliente;
         private System.Windows.Forms.TextBox TxtBuscar;
-        private System.Windows.Forms.DateTimePicker DtpFecha;
+        private System.Windows.Forms.DateTimePicker TxtFecha;
         private System.Windows.Forms.DataGridView DgvListaMascotas;
         private System.Windows.Forms.Button BtnAgregar;
         private System.Windows.Forms.Button BtnModificar;

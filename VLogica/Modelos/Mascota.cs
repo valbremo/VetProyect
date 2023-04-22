@@ -35,16 +35,35 @@ namespace VLogica
 
         public bool Agregar()
         {
-            Conexion MyCnn = new Conexion();
+            bool R = false;
 
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("@Nombre", this.Nombre));
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("@FechaNacimiento", this.FechaNacimiento));
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("@Raza", this.Raza));
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("@Observacion", this.Observacion));
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("@IdTipoMascota", this.MiTipoMascota.IdTipoMascota));
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("@IdCliente", this.MiCliente.IdCliente));
+            try 
+            { 
+                Conexion MyCnn = new Conexion();
 
-            return MyCnn.DMLUpdateDeleteInsert("SPMascotaAgregar") > 0 ? true : false;
+                MyCnn.ListadoDeParametros.Add(new SqlParameter("@Nombre", this.Nombre));
+                MyCnn.ListadoDeParametros.Add(new SqlParameter("@FechaNacimiento", this.FechaNacimiento));
+                MyCnn.ListadoDeParametros.Add(new SqlParameter("@Raza", this.Raza));
+                MyCnn.ListadoDeParametros.Add(new SqlParameter("@Observacion", this.Observacion));
+                MyCnn.ListadoDeParametros.Add(new SqlParameter("@IdTipoMascota", this.MiTipoMascota.IdTipoMascota));
+                MyCnn.ListadoDeParametros.Add(new SqlParameter("@IdCliente", this.MiCliente.IdCliente));
+
+                int retorno = MyCnn.DMLUpdateDeleteInsert("SPMascotaAgregar");
+
+                if (retorno > 0)
+                {
+                    R = true;
+                }
+
+
+        }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return R;
         }
 
         public bool Modificar()
@@ -78,6 +97,36 @@ namespace VLogica
 
             return R;
         }
+
+        public Mascota Consultar(int pIdMascota)
+        {
+            Mascota R = new Mascota();
+
+            Conexion MyCnn = new Conexion();
+
+            MyCnn.ListadoDeParametros.Add(new SqlParameter("@IdMascota", pIdMascota));
+
+            DataTable DatosProducto = new DataTable();
+            DatosProducto = MyCnn.DMLSelect("SPMascotaConsutarPorID");
+
+            if (DatosProducto.Rows.Count > 0)
+            {
+
+                DataRow MiFila = DatosProducto.Rows[0];
+
+                R.IdMascota = Convert.ToInt32(MiFila["IdMascota"]);
+                R.Nombre = Convert.ToString(MiFila["Nombre"]);
+                R.FechaNacimiento = Convert.ToDateTime(MiFila["FechaNacimiento"]);
+                R.Raza = Convert.ToString(MiFila["Raza"]);
+                R.Observacion = Convert.ToString(MiFila["Observacion"]);
+                R.MiTipoMascota.IdTipoMascota = Convert.ToInt32(MiFila["IdMascota"]);
+                R.MiCliente.IdCliente = Convert.ToInt32(MiFila["IdCliente"]);
+
+            }
+            return R;
+        }
+
+
 
         public bool ConsultarPorId()
         {
@@ -133,11 +182,26 @@ namespace VLogica
         }
         public bool Desactivar()
         {
-            Conexion MyCnn = new Conexion();
+            bool R = false;
 
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("IdMascota", this.IdMascota));
+            try
+            {
+                Conexion MyCnn = new Conexion();
 
-            return (MyCnn.DMLUpdateDeleteInsert("SPMascotaEliminar") > 0 ? true : false);
+                MyCnn.ListadoDeParametros.Add(new SqlParameter("IdMascota", this.IdMascota));
+
+                int retorno = MyCnn.DMLUpdateDeleteInsert("SPMascotaEliminar");
+
+                if (retorno > 0)
+                {
+                    R = true;
+                }
+            }
+            catch(Exception)
+            {
+                throw;
+            }
+            return R;
         }
 
 
