@@ -31,6 +31,87 @@ namespace VLogica
             return MyCnn.DMLUpdateDeleteInsert("SPTipoMascotaAgregar") > 0 ? true : false;
         }
 
+        public bool Modificar()
+        {
+            bool R = false;
+
+            try
+            {
+                Conexion MyCnn = new Conexion();
+
+                MyCnn.ListadoDeParametros.Add(new SqlParameter("IdTipoMascota", this.IdTipoMascota));
+
+                MyCnn.ListadoDeParametros.Add(new SqlParameter("@Nombre", this.Nombre));
+
+
+                int retorno = MyCnn.DMLUpdateDeleteInsert("SPTipoMascotaModificar");
+
+                if (retorno > 0)
+                {
+                    R = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return R;
+        }
+
+
+        public TipoMascota Consultar(int pIdTipoMascota)
+        {
+            TipoMascota R = new TipoMascota();
+
+            Conexion MyCnn = new Conexion();
+
+            MyCnn.ListadoDeParametros.Add(new SqlParameter("IdTipoMascota", pIdTipoMascota));
+
+            DataTable DatosTipoMascota = new DataTable();
+
+            DatosTipoMascota = MyCnn.DMLSelect("SPTipoMascotaConsultar");
+
+            //Valida los datos de el tipo de mascota
+
+            if (DatosTipoMascota.Rows.Count > 0)
+            {
+
+                DataRow MiFila = DatosTipoMascota.Rows[0];
+
+                R.IdTipoMascota = Convert.ToInt32(MiFila["IdTipoMascota"]);
+                R.Nombre = Convert.ToString(MiFila["Nombre"]);
+            }
+
+            return R;
+        }
+
+            public bool ConsultarPorId()
+        {
+            bool R = false;
+
+            try
+            {
+                Conexion MiConexion = new Conexion();
+
+                MiConexion.ListadoDeParametros.Add(new SqlParameter("@IdTipoMascota", this.IdTipoMascota));
+
+                DataTable retorno = MiConexion.DMLSelect("SPTipoMascotaConsultarPorID");
+
+                if (retorno.Rows.Count > 0)
+                {
+                    R = true;
+                }
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return R;
+        }
+
         public bool Desactivar()
         {
             Conexion MyCnn = new Conexion();

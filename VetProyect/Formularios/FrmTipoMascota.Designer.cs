@@ -36,17 +36,16 @@
             this.ColNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.DgvListaTipoMascota = new System.Windows.Forms.DataGridView();
+            this.CIdTipoMascota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.BtnModificar = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnSalir = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.CIdTipoMascota = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GbDatosTipoMascota.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvListaTipoMascota)).BeginInit();
             this.SuspendLayout();
             // 
             // GbDatosTipoMascota
@@ -56,9 +55,9 @@
             this.GbDatosTipoMascota.Controls.Add(this.dataGridView1);
             this.GbDatosTipoMascota.Controls.Add(this.label2);
             this.GbDatosTipoMascota.Controls.Add(this.label1);
-            this.GbDatosTipoMascota.Location = new System.Drawing.Point(50, 47);
+            this.GbDatosTipoMascota.Location = new System.Drawing.Point(50, 31);
             this.GbDatosTipoMascota.Name = "GbDatosTipoMascota";
-            this.GbDatosTipoMascota.Size = new System.Drawing.Size(276, 348);
+            this.GbDatosTipoMascota.Size = new System.Drawing.Size(298, 175);
             this.GbDatosTipoMascota.TabIndex = 0;
             this.GbDatosTipoMascota.TabStop = false;
             this.GbDatosTipoMascota.Text = "Datos Tipo de Mascota";
@@ -69,6 +68,7 @@
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(148, 26);
             this.TxtNombre.TabIndex = 4;
+            this.TxtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNombre_KeyPress);
             // 
             // TxtIdTipoMascota
             // 
@@ -130,67 +130,23 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Código";
             // 
-            // dataGridView2
+            // DgvListaTipoMascota
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DgvListaTipoMascota.AllowUserToAddRows = false;
+            this.DgvListaTipoMascota.AllowUserToDeleteRows = false;
+            this.DgvListaTipoMascota.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
+            this.DgvListaTipoMascota.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvListaTipoMascota.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CIdTipoMascota,
             this.Column2});
-            this.dataGridView2.Location = new System.Drawing.Point(484, 97);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersWidth = 62;
-            this.dataGridView2.RowTemplate.Height = 28;
-            this.dataGridView2.Size = new System.Drawing.Size(368, 64);
-            this.dataGridView2.TabIndex = 1;
-            // 
-            // BtnAgregar
-            // 
-            this.BtnAgregar.Location = new System.Drawing.Point(332, 331);
-            this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(125, 63);
-            this.BtnAgregar.TabIndex = 3;
-            this.BtnAgregar.Text = "Agregar";
-            this.BtnAgregar.UseVisualStyleBackColor = true;
-            // 
-            // BtnModificar
-            // 
-            this.BtnModificar.Location = new System.Drawing.Point(484, 336);
-            this.BtnModificar.Name = "BtnModificar";
-            this.BtnModificar.Size = new System.Drawing.Size(129, 59);
-            this.BtnModificar.TabIndex = 2;
-            this.BtnModificar.Text = "Modificar";
-            this.BtnModificar.UseVisualStyleBackColor = true;
-            // 
-            // BtnEliminar
-            // 
-            this.BtnEliminar.Location = new System.Drawing.Point(649, 336);
-            this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(114, 69);
-            this.BtnEliminar.TabIndex = 3;
-            this.BtnEliminar.Text = "Eliminar";
-            this.BtnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // BtnSalir
-            // 
-            this.BtnSalir.Location = new System.Drawing.Point(809, 347);
-            this.BtnSalir.Name = "BtnSalir";
-            this.BtnSalir.Size = new System.Drawing.Size(151, 46);
-            this.BtnSalir.TabIndex = 4;
-            this.BtnSalir.Text = "Salir";
-            this.BtnSalir.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(478, 31);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(409, 32);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Gestión de Tipo de Mascotas";
+            this.DgvListaTipoMascota.Location = new System.Drawing.Point(37, 223);
+            this.DgvListaTipoMascota.Name = "DgvListaTipoMascota";
+            this.DgvListaTipoMascota.ReadOnly = true;
+            this.DgvListaTipoMascota.RowHeadersWidth = 62;
+            this.DgvListaTipoMascota.RowTemplate.Height = 28;
+            this.DgvListaTipoMascota.Size = new System.Drawing.Size(368, 344);
+            this.DgvListaTipoMascota.TabIndex = 1;
+            this.DgvListaTipoMascota.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListaTipoMascota_CellClick);
             // 
             // CIdTipoMascota
             // 
@@ -210,26 +166,69 @@
             this.Column2.ReadOnly = true;
             this.Column2.Width = 150;
             // 
+            // BtnAgregar
+            // 
+            this.BtnAgregar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnAgregar.Location = new System.Drawing.Point(542, 94);
+            this.BtnAgregar.Name = "BtnAgregar";
+            this.BtnAgregar.Size = new System.Drawing.Size(125, 44);
+            this.BtnAgregar.TabIndex = 3;
+            this.BtnAgregar.Text = "Agregar";
+            this.BtnAgregar.UseVisualStyleBackColor = false;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
+            // 
+            // BtnModificar
+            // 
+            this.BtnModificar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnModificar.Location = new System.Drawing.Point(542, 192);
+            this.BtnModificar.Name = "BtnModificar";
+            this.BtnModificar.Size = new System.Drawing.Size(125, 48);
+            this.BtnModificar.TabIndex = 2;
+            this.BtnModificar.Text = "Modificar";
+            this.BtnModificar.UseVisualStyleBackColor = false;
+            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
+            // 
+            // BtnEliminar
+            // 
+            this.BtnEliminar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnEliminar.Location = new System.Drawing.Point(542, 309);
+            this.BtnEliminar.Name = "BtnEliminar";
+            this.BtnEliminar.Size = new System.Drawing.Size(125, 52);
+            this.BtnEliminar.TabIndex = 3;
+            this.BtnEliminar.Text = "Eliminar";
+            this.BtnEliminar.UseVisualStyleBackColor = false;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
+            // 
+            // BtnSalir
+            // 
+            this.BtnSalir.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnSalir.Location = new System.Drawing.Point(542, 433);
+            this.BtnSalir.Name = "BtnSalir";
+            this.BtnSalir.Size = new System.Drawing.Size(125, 52);
+            this.BtnSalir.TabIndex = 4;
+            this.BtnSalir.Text = "Salir";
+            this.BtnSalir.UseVisualStyleBackColor = false;
+            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
+            // 
             // FrmTipoMascota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(990, 417);
-            this.Controls.Add(this.label3);
+            this.ClientSize = new System.Drawing.Size(771, 579);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.BtnModificar);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.DgvListaTipoMascota);
             this.Controls.Add(this.GbDatosTipoMascota);
             this.Name = "FrmTipoMascota";
-            this.Text = "FrmTipoMascota";
+            this.Text = "Gestión de Tipo de Mascotas";
+            this.Load += new System.EventHandler(this.FrmTipoMascota_Load);
             this.GbDatosTipoMascota.ResumeLayout(false);
             this.GbDatosTipoMascota.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvListaTipoMascota)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -242,11 +241,10 @@
         private System.Windows.Forms.Button BtnAgregar;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColIdTipoMascota;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColNombre;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView DgvListaTipoMascota;
         private System.Windows.Forms.Button BtnModificar;
         private System.Windows.Forms.Button BtnEliminar;
         private System.Windows.Forms.Button BtnSalir;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TxtNombre;
         private System.Windows.Forms.TextBox TxtIdTipoMascota;
         private System.Windows.Forms.DataGridViewTextBoxColumn CIdTipoMascota;

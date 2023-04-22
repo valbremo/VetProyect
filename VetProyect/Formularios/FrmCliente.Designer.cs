@@ -43,17 +43,17 @@
             this.GbDetalleCliente = new System.Windows.Forms.GroupBox();
             this.TxtBuscar = new System.Windows.Forms.TextBox();
             this.DgvListaClientes = new System.Windows.Forms.DataGridView();
-            this.CIdCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CorreoElectronico = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GbBuscar = new System.Windows.Forms.GroupBox();
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.BtnModificar = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnSalir = new System.Windows.Forms.Button();
+            this.CIdCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CNombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CCedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CCorreoElectronico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GbDetalleCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaClientes)).BeginInit();
             this.GbBuscar.SuspendLayout();
@@ -214,11 +214,11 @@
             this.DgvListaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvListaClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CIdCliente,
-            this.NombreCompleto,
-            this.Cedula,
-            this.Telefono,
-            this.CorreoElectronico,
-            this.Direccion});
+            this.CNombreCompleto,
+            this.CCedula,
+            this.CTelefono,
+            this.CCorreoElectronico,
+            this.CDireccion});
             this.DgvListaClientes.Location = new System.Drawing.Point(12, 117);
             this.DgvListaClientes.Name = "DgvListaClientes";
             this.DgvListaClientes.ReadOnly = true;
@@ -230,61 +230,6 @@
             this.DgvListaClientes.TabIndex = 15;
             this.DgvListaClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListaClientes_CellClick);
             this.DgvListaClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLista_CellContentClick);
-            // 
-            // CIdCliente
-            // 
-            this.CIdCliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.CIdCliente.DataPropertyName = "IdCliente";
-            this.CIdCliente.HeaderText = "Código";
-            this.CIdCliente.MinimumWidth = 8;
-            this.CIdCliente.Name = "CIdCliente";
-            this.CIdCliente.ReadOnly = true;
-            this.CIdCliente.Width = 80;
-            // 
-            // NombreCompleto
-            // 
-            this.NombreCompleto.DataPropertyName = "NombreCompleto";
-            this.NombreCompleto.HeaderText = "Nombre";
-            this.NombreCompleto.MinimumWidth = 8;
-            this.NombreCompleto.Name = "NombreCompleto";
-            this.NombreCompleto.ReadOnly = true;
-            this.NombreCompleto.Width = 150;
-            // 
-            // Cedula
-            // 
-            this.Cedula.DataPropertyName = "Cedula";
-            this.Cedula.HeaderText = "Cédula";
-            this.Cedula.MinimumWidth = 8;
-            this.Cedula.Name = "Cedula";
-            this.Cedula.ReadOnly = true;
-            this.Cedula.Width = 150;
-            // 
-            // Telefono
-            // 
-            this.Telefono.DataPropertyName = "Telefono";
-            this.Telefono.HeaderText = "Teléfono";
-            this.Telefono.MinimumWidth = 8;
-            this.Telefono.Name = "Telefono";
-            this.Telefono.ReadOnly = true;
-            this.Telefono.Width = 150;
-            // 
-            // CorreoElectronico
-            // 
-            this.CorreoElectronico.DataPropertyName = "CorreoElectronico";
-            this.CorreoElectronico.HeaderText = "Correo Electrónico";
-            this.CorreoElectronico.MinimumWidth = 8;
-            this.CorreoElectronico.Name = "CorreoElectronico";
-            this.CorreoElectronico.ReadOnly = true;
-            this.CorreoElectronico.Width = 150;
-            // 
-            // Direccion
-            // 
-            this.Direccion.DataPropertyName = "Direccion";
-            this.Direccion.HeaderText = "Dirección";
-            this.Direccion.MinimumWidth = 8;
-            this.Direccion.Name = "Direccion";
-            this.Direccion.ReadOnly = true;
-            this.Direccion.Width = 150;
             // 
             // GbBuscar
             // 
@@ -341,6 +286,61 @@
             this.BtnSalir.UseVisualStyleBackColor = false;
             this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
+            // CIdCliente
+            // 
+            this.CIdCliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CIdCliente.DataPropertyName = "IdCliente";
+            this.CIdCliente.HeaderText = "Código";
+            this.CIdCliente.MinimumWidth = 8;
+            this.CIdCliente.Name = "CIdCliente";
+            this.CIdCliente.ReadOnly = true;
+            this.CIdCliente.Width = 80;
+            // 
+            // CNombreCompleto
+            // 
+            this.CNombreCompleto.DataPropertyName = "NombreCompleto";
+            this.CNombreCompleto.HeaderText = "Nombre";
+            this.CNombreCompleto.MinimumWidth = 8;
+            this.CNombreCompleto.Name = "CNombreCompleto";
+            this.CNombreCompleto.ReadOnly = true;
+            this.CNombreCompleto.Width = 150;
+            // 
+            // CCedula
+            // 
+            this.CCedula.DataPropertyName = "Cedula";
+            this.CCedula.HeaderText = "Cédula";
+            this.CCedula.MinimumWidth = 8;
+            this.CCedula.Name = "CCedula";
+            this.CCedula.ReadOnly = true;
+            this.CCedula.Width = 150;
+            // 
+            // CTelefono
+            // 
+            this.CTelefono.DataPropertyName = "Telefono";
+            this.CTelefono.HeaderText = "Teléfono";
+            this.CTelefono.MinimumWidth = 8;
+            this.CTelefono.Name = "CTelefono";
+            this.CTelefono.ReadOnly = true;
+            this.CTelefono.Width = 150;
+            // 
+            // CCorreoElectronico
+            // 
+            this.CCorreoElectronico.DataPropertyName = "CorreoElectronico";
+            this.CCorreoElectronico.HeaderText = "Correo Electrónico";
+            this.CCorreoElectronico.MinimumWidth = 8;
+            this.CCorreoElectronico.Name = "CCorreoElectronico";
+            this.CCorreoElectronico.ReadOnly = true;
+            this.CCorreoElectronico.Width = 150;
+            // 
+            // CDireccion
+            // 
+            this.CDireccion.DataPropertyName = "Direccion";
+            this.CDireccion.HeaderText = "Dirección";
+            this.CDireccion.MinimumWidth = 8;
+            this.CDireccion.Name = "CDireccion";
+            this.CDireccion.ReadOnly = true;
+            this.CDireccion.Width = 150;
+            // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -388,10 +388,10 @@
         private System.Windows.Forms.Button BtnEliminar;
         private System.Windows.Forms.Button BtnSalir;
         private System.Windows.Forms.DataGridViewTextBoxColumn CIdCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCompleto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cedula;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CorreoElectronico;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CNombreCompleto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CCedula;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CTelefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CCorreoElectronico;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CDireccion;
     }
 }
