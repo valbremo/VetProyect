@@ -37,13 +37,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.BtnModificar = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnSalir = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.CIdTipoMascota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GbDatosTipoMascota.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -136,7 +136,7 @@
             this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
+            this.CIdTipoMascota,
             this.Column2});
             this.dataGridView2.Location = new System.Drawing.Point(484, 97);
             this.dataGridView2.Name = "dataGridView2";
@@ -145,22 +145,6 @@
             this.dataGridView2.RowTemplate.Height = 28;
             this.dataGridView2.Size = new System.Drawing.Size(368, 64);
             this.dataGridView2.TabIndex = 1;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "IdTipoMascota";
-            this.Column1.HeaderText = "Código";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 150;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "Nombre";
-            this.Column2.HeaderText = "Nombre";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 150;
             // 
             // BtnAgregar
             // 
@@ -208,6 +192,24 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Gestión de Tipo de Mascotas";
             // 
+            // CIdTipoMascota
+            // 
+            this.CIdTipoMascota.DataPropertyName = "IdTipoMascota";
+            this.CIdTipoMascota.HeaderText = "Código";
+            this.CIdTipoMascota.MinimumWidth = 8;
+            this.CIdTipoMascota.Name = "CIdTipoMascota";
+            this.CIdTipoMascota.ReadOnly = true;
+            this.CIdTipoMascota.Width = 150;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Nombre";
+            this.Column2.HeaderText = "Nombre";
+            this.Column2.MinimumWidth = 8;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 150;
+            // 
             // FrmTipoMascota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -241,13 +243,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColIdTipoMascota;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColNombre;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.Button BtnModificar;
         private System.Windows.Forms.Button BtnEliminar;
         private System.Windows.Forms.Button BtnSalir;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TxtNombre;
         private System.Windows.Forms.TextBox TxtIdTipoMascota;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CIdTipoMascota;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

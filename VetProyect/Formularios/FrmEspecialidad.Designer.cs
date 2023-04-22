@@ -35,13 +35,13 @@
             this.GbDatosTipoMascota = new System.Windows.Forms.GroupBox();
             this.TxtNombre = new System.Windows.Forms.TextBox();
             this.TxtIdEspecialidad = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ColIdTipoMascota = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvListaEspecialidad = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.CIdEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GbDatosTipoMascota.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvListaEspecialidad)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnAgregar
@@ -64,6 +64,7 @@
             this.BtnSalir.TabIndex = 11;
             this.BtnSalir.Text = "Salir";
             this.BtnSalir.UseVisualStyleBackColor = false;
+            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // BtnEliminar
             // 
@@ -74,6 +75,7 @@
             this.BtnEliminar.TabIndex = 10;
             this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.UseVisualStyleBackColor = false;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // BtnModificar
             // 
@@ -84,12 +86,13 @@
             this.BtnModificar.TabIndex = 8;
             this.BtnModificar.Text = "Modificar";
             this.BtnModificar.UseVisualStyleBackColor = false;
+            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
             // GbDatosTipoMascota
             // 
             this.GbDatosTipoMascota.Controls.Add(this.TxtNombre);
             this.GbDatosTipoMascota.Controls.Add(this.TxtIdEspecialidad);
-            this.GbDatosTipoMascota.Controls.Add(this.dataGridView1);
+            this.GbDatosTipoMascota.Controls.Add(this.DgvListaEspecialidad);
             this.GbDatosTipoMascota.Controls.Add(this.label2);
             this.GbDatosTipoMascota.Controls.Add(this.label1);
             this.GbDatosTipoMascota.Location = new System.Drawing.Point(59, 37);
@@ -105,6 +108,7 @@
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(202, 26);
             this.TxtNombre.TabIndex = 4;
+            this.TxtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNombre_KeyPress);
             // 
             // TxtIdEspecialidad
             // 
@@ -114,41 +118,24 @@
             this.TxtIdEspecialidad.Size = new System.Drawing.Size(144, 26);
             this.TxtIdEspecialidad.TabIndex = 3;
             // 
-            // dataGridView1
+            // DgvListaEspecialidad
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColIdTipoMascota,
-            this.ColNombre});
-            this.dataGridView1.Location = new System.Drawing.Point(23, 200);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(604, 190);
-            this.dataGridView1.TabIndex = 2;
-            // 
-            // ColIdTipoMascota
-            // 
-            this.ColIdTipoMascota.DataPropertyName = "IdTipoMascota";
-            this.ColIdTipoMascota.HeaderText = "Código";
-            this.ColIdTipoMascota.MinimumWidth = 8;
-            this.ColIdTipoMascota.Name = "ColIdTipoMascota";
-            this.ColIdTipoMascota.ReadOnly = true;
-            this.ColIdTipoMascota.Width = 150;
-            // 
-            // ColNombre
-            // 
-            this.ColNombre.DataPropertyName = "Nombre";
-            this.ColNombre.HeaderText = "Nombre";
-            this.ColNombre.MinimumWidth = 8;
-            this.ColNombre.Name = "ColNombre";
-            this.ColNombre.ReadOnly = true;
-            this.ColNombre.Width = 150;
+            this.DgvListaEspecialidad.AllowUserToAddRows = false;
+            this.DgvListaEspecialidad.AllowUserToDeleteRows = false;
+            this.DgvListaEspecialidad.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
+            this.DgvListaEspecialidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvListaEspecialidad.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CIdEspecialidad,
+            this.CNombre});
+            this.DgvListaEspecialidad.Location = new System.Drawing.Point(23, 200);
+            this.DgvListaEspecialidad.Name = "DgvListaEspecialidad";
+            this.DgvListaEspecialidad.ReadOnly = true;
+            this.DgvListaEspecialidad.RowHeadersWidth = 62;
+            this.DgvListaEspecialidad.RowTemplate.Height = 28;
+            this.DgvListaEspecialidad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DgvListaEspecialidad.Size = new System.Drawing.Size(604, 190);
+            this.DgvListaEspecialidad.TabIndex = 2;
+            this.DgvListaEspecialidad.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListaEspecialidad_CellClick);
             // 
             // label2
             // 
@@ -168,6 +155,24 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Código";
             // 
+            // CIdEspecialidad
+            // 
+            this.CIdEspecialidad.DataPropertyName = "IdEspecialidad";
+            this.CIdEspecialidad.HeaderText = "Código";
+            this.CIdEspecialidad.MinimumWidth = 8;
+            this.CIdEspecialidad.Name = "CIdEspecialidad";
+            this.CIdEspecialidad.ReadOnly = true;
+            this.CIdEspecialidad.Width = 150;
+            // 
+            // CNombre
+            // 
+            this.CNombre.DataPropertyName = "Nombre";
+            this.CNombre.HeaderText = "Nombre";
+            this.CNombre.MinimumWidth = 8;
+            this.CNombre.Name = "CNombre";
+            this.CNombre.ReadOnly = true;
+            this.CNombre.Width = 150;
+            // 
             // FrmEspecialidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -180,9 +185,10 @@
             this.Controls.Add(this.GbDatosTipoMascota);
             this.Name = "FrmEspecialidad";
             this.Text = "Gestión de Especialidad";
+            this.Load += new System.EventHandler(this.FrmEspecialidad_Load);
             this.GbDatosTipoMascota.ResumeLayout(false);
             this.GbDatosTipoMascota.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvListaEspecialidad)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -195,10 +201,10 @@
         private System.Windows.Forms.GroupBox GbDatosTipoMascota;
         private System.Windows.Forms.TextBox TxtNombre;
         private System.Windows.Forms.TextBox TxtIdEspecialidad;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColIdTipoMascota;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColNombre;
+        private System.Windows.Forms.DataGridView DgvListaEspecialidad;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CIdEspecialidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CNombre;
     }
 }

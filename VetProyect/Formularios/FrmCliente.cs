@@ -57,7 +57,7 @@ namespace VetProyect.Formularios
         //Llena la lista con los datos del cliente.
         private void LlenarListaClientes()
         {
-            //se llama la clase empleado para manipular los datos.
+            //se llama la clase cliente para manipular los datos.
             VLogica.Cliente MiCliente = new VLogica.Cliente();
             try
             {

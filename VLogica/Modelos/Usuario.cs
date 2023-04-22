@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
-using VLogica.Modelos;
 
 namespace VLogica
 {
@@ -93,21 +92,7 @@ namespace VLogica
             return R;
         }
 
-        public bool ModificarContra()
-        {
-
-            Conexion MyCnn = new Conexion();
-
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("@NombreCompleto", this.NombreCompleto));
-
-            Crypto Encriptador = new Crypto();
-
-            string ClaveEncriptada = Encriptador.EncriptarEnUnSentido(this.Contrasena);
-
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("@Contrasena", ClaveEncriptada));
-
-            return (MyCnn.DMLUpdateDeleteInsert("SPUsuarioModificarContra") > 0 ? true : false);
-        }
+        
 
         public bool Desactivar()
         {

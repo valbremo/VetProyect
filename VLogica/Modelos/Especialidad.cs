@@ -24,21 +24,160 @@ namespace VLogica
 
         public bool Agregar()
         {
-            Conexion MyCnn = new Conexion();
+            bool R = false;
 
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("@Nombre", this.Nombre));
+            try
+            {
+                Conexion MyCnn = new Conexion();
 
+                MyCnn.ListadoDeParametros.Add(new SqlParameter("@Nombre", this.Nombre));
 
-            return MyCnn.DMLUpdateDeleteInsert("SPEspecialidadAgregar") > 0 ? true : false;
+                int retorno = MyCnn.DMLUpdateDeleteInsert("SPEspecialidadAgregar");
+
+                if (retorno > 0)
+                {
+                    R = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return R;
         }
 
         public bool Desactivar()
         {
+            bool R = false;
+            try
+            {
+
+                Conexion MyCnn = new Conexion();
+
+                MyCnn.ListadoDeParametros.Add(new SqlParameter("IdEspecialidad", this.IdEspecialidad));
+
+                int retorno = MyCnn.DMLUpdateDeleteInsert("SPEspecialidadEliminar");
+
+                if (retorno > 0)
+                {
+                    R = true;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return R;
+
+
+        }
+
+        public Especialidad Consultar(int pIdEspecialidad)
+        {
+            Especialidad R = new Especialidad();
+
             Conexion MyCnn = new Conexion();
 
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("IdEspecialidad", this.IdEspecialidad));
+            MyCnn.ListadoDeParametros.Add(new SqlParameter("IdEspecialidad", pIdEspecialidad));
 
-            return (MyCnn.DMLUpdateDeleteInsert("SPEspecialidadEliminar") > 0 ? true : false);
+            DataTable DatosEspecialidad = new DataTable();
+
+            DatosEspecialidad = MyCnn.DMLSelect("SPEspecialidadConsultarPorID");
+
+            //Valida los datos de la Especialidad
+
+            if (DatosEspecialidad.Rows.Count > 0)
+            {
+
+                DataRow MiFila = DatosEspecialidad.Rows[0];
+
+                R.IdEspecialidad = Convert.ToInt32(MiFila["IdEspecialidad"]);
+                R.Nombre = Convert.ToString(MiFila["Nombre"]);
+            }
+
+            return R;
+        }
+
+        public bool Modificar()
+        {
+            bool R = false;
+
+            try
+            {
+                Conexion MyCnn = new Conexion();
+
+                MyCnn.ListadoDeParametros.Add(new SqlParameter("IdEspecialidad", this.IdEspecialidad));
+
+                MyCnn.ListadoDeParametros.Add(new SqlParameter("@Nombre", this.Nombre));
+  
+
+                int retorno = MyCnn.DMLUpdateDeleteInsert("SPEspecialidadModificar");
+
+                if (retorno > 0)
+                {
+                    R = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return R;
+        }
+
+        public bool ConsultarPorId()
+        {
+            bool R = false;
+
+            try
+            {
+                Conexion MiConexion = new Conexion();
+
+                MiConexion.ListadoDeParametros.Add(new SqlParameter("@IdEspecialidad", this.IdEspecialidad));
+
+                DataTable retorno = MiConexion.DMLSelect("SPEspecialidadConsultarPorID");
+
+                if (retorno.Rows.Count > 0)
+                {
+                    R = true;
+                }
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return R;
+        }
+        public bool ConsultarPorNombre()
+        {
+            bool R = false;
+
+            try
+            {
+                Conexion MiConexion = new Conexion();
+
+                MiConexion.ListadoDeParametros.Add(new SqlParameter("@Nombre", this.Nombre));
+
+                DataTable retorno = MiConexion.DMLSelect("SPEspecialidadConsultarPorNombre");
+
+                if (retorno.Rows.Count > 0)
+                {
+                    R = true;
+                }
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return R;
         }
 
         public DataTable ListarTodos()
