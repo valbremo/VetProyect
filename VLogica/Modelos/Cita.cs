@@ -16,7 +16,6 @@ namespace VLogica
 
         public string Especificacion { get; set; }
 
-        public bool Disponible { get; set; }
 
         // se escriben las composiciones
 
@@ -32,15 +31,33 @@ namespace VLogica
 
         public bool Agregar()
         {
-            Conexion MyCnn = new Conexion();
+            bool R = false;
 
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("@Fecha", this.Fecha));
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("@Especificacion", this.Especificacion));
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("@Disponible", this.Disponible));
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("@IdCliente", this.MiCliente.IdCliente));
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("@IdMascota", this.MiMascota.IdMascota));
+            try
+            { 
+                Conexion MyCnn = new Conexion();
 
-            return MyCnn.DMLUpdateDeleteInsert("SPCitaAgregar") > 0 ? true : false;
+                MyCnn.ListadoDeParametros.Add(new SqlParameter("@Fecha", this.Fecha));
+                MyCnn.ListadoDeParametros.Add(new SqlParameter("@Especificacion", this.Especificacion));
+                MyCnn.ListadoDeParametros.Add(new SqlParameter("@IdCliente", this.MiCliente.IdCliente));
+                MyCnn.ListadoDeParametros.Add(new SqlParameter("@IdMascota", this.MiMascota.IdMascota));
+
+                int retorno = MyCnn.DMLUpdateDeleteInsert("SPCitaAgregar");
+
+                if (retorno > 0)
+                {
+                    R = true;
+                }
+
+
+           }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return R;
 
         }
 
@@ -56,7 +73,6 @@ namespace VLogica
 
                 MyCnn.ListadoDeParametros.Add(new SqlParameter("@Fecha", this.Fecha));
                 MyCnn.ListadoDeParametros.Add(new SqlParameter("@Espeficicacion", this.Especificacion));
-                MyCnn.ListadoDeParametros.Add(new SqlParameter("@Disponible", this.Disponible));
                 MyCnn.ListadoDeParametros.Add(new SqlParameter("@IdCliente", this.MiCliente.IdCliente));
                 MyCnn.ListadoDeParametros.Add(new SqlParameter("@IdMascota", this.MiMascota.IdMascota));
 
@@ -74,6 +90,34 @@ namespace VLogica
 
             return R;
         }
+
+
+        public Cita Consultar(int pIdCita)
+        {
+            Cita R = new Cita();
+
+            Conexion MyCnn = new Conexion();
+
+            MyCnn.ListadoDeParametros.Add(new SqlParameter("@IdCita", pIdCita));
+
+            DataTable DatosProducto = new DataTable();
+            DatosProducto = MyCnn.DMLSelect("SPCitaConsultarPorID");
+
+            if (DatosProducto.Rows.Count > 0)
+            {
+
+                DataRow MiFila = DatosProducto.Rows[0];
+
+                R.IdCita = Convert.ToInt32(MiFila["IdCita"]);
+                R.Fecha = Convert.ToDateTime(MiFila["Fecha"]);
+                R.Especificacion = Convert.ToString(MiFila["Especificacion"]);
+                R.MiMascota.IdMascota = Convert.ToInt32(MiFila["IdMascota"]);
+                R.MiCliente.IdCliente = Convert.ToInt32(MiFila["IdCliente"]);
+
+            }
+            return R;
+        }
+
 
         public bool ConsultarPorId()
         {
@@ -106,11 +150,26 @@ namespace VLogica
 
         public bool Desactivar()
         {
-            Conexion MyCnn = new Conexion();
+            bool R = false;
 
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("IdCita", this.IdCita));
+            try
+            { 
+                Conexion MyCnn = new Conexion();
 
-            return (MyCnn.DMLUpdateDeleteInsert("SPCitaEliminar") > 0 ? true : false);
+                MyCnn.ListadoDeParametros.Add(new SqlParameter("IdCita", this.IdCita));
+
+                int retorno = MyCnn.DMLUpdateDeleteInsert("SPCitaEliminar");
+
+                if (retorno > 0)
+                {
+                    R = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return R;
         }
 
 
