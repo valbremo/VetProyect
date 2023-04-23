@@ -58,6 +58,8 @@
             this.CObservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CIdTipoMascota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CIdCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoMascota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaMascotas)).BeginInit();
             this.GbBuscar.SuspendLayout();
             this.GbDatosMascota.SuspendLayout();
@@ -159,6 +161,7 @@
             // 
             // CboxTipoMascota
             // 
+            this.CboxTipoMascota.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CboxTipoMascota.FormattingEnabled = true;
             this.CboxTipoMascota.Location = new System.Drawing.Point(697, 195);
             this.CboxTipoMascota.Name = "CboxTipoMascota";
@@ -167,6 +170,7 @@
             // 
             // CboxCliente
             // 
+            this.CboxCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CboxCliente.FormattingEnabled = true;
             this.CboxCliente.Location = new System.Drawing.Point(202, 192);
             this.CboxCliente.Name = "CboxCliente";
@@ -200,7 +204,9 @@
             this.CRaza,
             this.CObservacion,
             this.CIdTipoMascota,
-            this.CIdCliente});
+            this.CIdCliente,
+            this.TipoMascota,
+            this.NombreCliente});
             this.DgvListaMascotas.Location = new System.Drawing.Point(12, 153);
             this.DgvListaMascotas.Name = "DgvListaMascotas";
             this.DgvListaMascotas.ReadOnly = true;
@@ -339,6 +345,7 @@
             this.CIdTipoMascota.MinimumWidth = 8;
             this.CIdTipoMascota.Name = "CIdTipoMascota";
             this.CIdTipoMascota.ReadOnly = true;
+            this.CIdTipoMascota.Visible = false;
             this.CIdTipoMascota.Width = 150;
             // 
             // CIdCliente
@@ -348,7 +355,26 @@
             this.CIdCliente.MinimumWidth = 8;
             this.CIdCliente.Name = "CIdCliente";
             this.CIdCliente.ReadOnly = true;
+            this.CIdCliente.Visible = false;
             this.CIdCliente.Width = 150;
+            // 
+            // TipoMascota
+            // 
+            this.TipoMascota.DataPropertyName = "TipoMascota";
+            this.TipoMascota.HeaderText = "Tipo de mascota";
+            this.TipoMascota.MinimumWidth = 8;
+            this.TipoMascota.Name = "TipoMascota";
+            this.TipoMascota.ReadOnly = true;
+            this.TipoMascota.Width = 150;
+            // 
+            // NombreCliente
+            // 
+            this.NombreCliente.DataPropertyName = "NombreCompleto";
+            this.NombreCliente.HeaderText = "Nombre del dueño";
+            this.NombreCliente.MinimumWidth = 8;
+            this.NombreCliente.Name = "NombreCliente";
+            this.NombreCliente.ReadOnly = true;
+            this.NombreCliente.Width = 150;
             // 
             // FrmMascota
             // 
@@ -405,5 +431,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CObservacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn CIdTipoMascota;
         private System.Windows.Forms.DataGridViewTextBoxColumn CIdCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoMascota;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCliente;
     }
 }

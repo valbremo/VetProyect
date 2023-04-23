@@ -80,8 +80,9 @@
             // 
             // TxtContrasena
             // 
-            this.TxtContrasena.Location = new System.Drawing.Point(690, 347);
+            this.TxtContrasena.Location = new System.Drawing.Point(690, 348);
             this.TxtContrasena.Name = "TxtContrasena";
+            this.TxtContrasena.PasswordChar = '*';
             this.TxtContrasena.Size = new System.Drawing.Size(211, 30);
             this.TxtContrasena.TabIndex = 6;
             this.TxtContrasena.TextChanged += new System.EventHandler(this.textBox3_TextChanged);

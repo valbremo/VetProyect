@@ -107,7 +107,7 @@ namespace VLogica
             MyCnn.ListadoDeParametros.Add(new SqlParameter("@IdMascota", pIdMascota));
 
             DataTable DatosProducto = new DataTable();
-            DatosProducto = MyCnn.DMLSelect("SPMascotaConsutarPorID");
+            DatosProducto = MyCnn.DMLSelect("SPMascotaConsultarPorID");
 
             if (DatosProducto.Rows.Count > 0)
             {
@@ -138,7 +138,7 @@ namespace VLogica
 
                 MiConexion.ListadoDeParametros.Add(new SqlParameter("@IdMascota", this.IdMascota));
 
-                DataTable retorno = MiConexion.DMLSelect("SPMascotaConsutarPorID");
+                DataTable retorno = MiConexion.DMLSelect("SPMascotaConsultarPorID");
 
                 if (retorno.Rows.Count > 0)
                 {

@@ -16,7 +16,7 @@ namespace VetProyect.Formularios
 {
     public partial class FrmMascota : Form
     {
-        private VLogica.Mascota MiMascotaLocal { get; set; }
+        private VLogica.Mascota MiMascota { get; set; }
 
         public DataTable ListaMascotasNormal { get; set; }
 
@@ -26,7 +26,7 @@ namespace VetProyect.Formularios
         {
             InitializeComponent();
 
-            MiMascotaLocal = new VLogica.Mascota();
+            MiMascota = new VLogica.Mascota();
             ListaMascotasNormal = new DataTable();
         }
 
@@ -38,10 +38,12 @@ namespace VetProyect.Formularios
 
             Datos = MiCliente.Listar();
 
+            
+
             CboxCliente.ValueMember = "IdCliente";
             CboxCliente.DisplayMember = "NombreCompleto";
 
-            CboxCliente.DataSource = Datos; 
+            CboxCliente.DataSource = Datos;
             CboxCliente.SelectedIndex = -1;
         }
 
@@ -53,11 +55,11 @@ namespace VetProyect.Formularios
 
             Datos = MiTipoMascota.Listar();
 
-            CboxCliente.ValueMember = "IdTipoMascota";
-            CboxCliente.DisplayMember = "Nombre";
+            CboxTipoMascota.ValueMember = "IdTipoMascota";
+            CboxTipoMascota.DisplayMember = "Nombre";
 
-            CboxCliente.DataSource = Datos;
-            CboxCliente.SelectedIndex = -1;
+            CboxTipoMascota.DataSource = Datos;
+            CboxTipoMascota.SelectedIndex = -1;
         }
 
         private void LlenarListaMascotas()
@@ -99,11 +101,9 @@ namespace VetProyect.Formularios
                 //Valida  los campos no estén vacíos o
                 //que no contengan un dato menor al ingresado.
                 if (!string.IsNullOrEmpty(TxtNombre.Text.Trim()) &&
-                   // !DateTime.TryParse(TxtFecha.Text, out DateTime fecha) &&
-                    !string.IsNullOrEmpty(TxtFecha.Text.Trim())&&
                     !string.IsNullOrEmpty(TxtRaza.Text.Trim()) &&
                     !string.IsNullOrEmpty(TxtObservacion.Text.Trim()) &&
-                    DgvListaMascotas.Rows.Count < 1 &&
+                    //DgvListaMascotas.Rows.Count > 1 &&
                     CboxTipoMascota.SelectedIndex > -1 &&
                     CboxCliente.SelectedIndex > -1)
                 {
@@ -218,23 +218,13 @@ namespace VetProyect.Formularios
                     TxtFecha.Text = Convert.ToString(MiFila.Cells["CFechaNacimiento"].Value);
                     TxtRaza.Text = Convert.ToString(MiFila.Cells["CRaza"].Value);
                     TxtObservacion.Text = Convert.ToString(MiFila.Cells["CObservacion"].Value);
+                    
 
+                  
+                     CboxTipoMascota.SelectedValue = Convert.ToInt32(MiFila.Cells["CIdTipoMascota"].Value);
 
-                    foreach (DataRowView data in CboxTipoMascota.Items)
-                    {
-                        if (data.Row[1].ToString().Equals(MiFila.Cells["CNombre"].Value))
-                        {
-                            CboxTipoMascota.SelectedValue = data.Row[0];
-                        }
-                    }
-
-                    foreach (DataRowView data in CboxCliente.Items)
-                    {
-                        if (data.Row[1].ToString().Equals(MiFila.Cells["CNombreCompleto"].Value))
-                        {
-                            CboxCliente.SelectedValue = data.Row[0];
-                        }
-                    }
+                     CboxCliente.SelectedValue = Convert.ToInt32(MiFila.Cells["CIdCliente"].Value);
+                   
 
                 }
             }
