@@ -36,10 +36,10 @@ namespace VetProyect.Formularios
 
             DataTable Datos = new DataTable();
 
-            Datos = MiCliente.ListarTodos();
+            Datos = MiCliente.Listar();
 
-            CboxCliente.ValueMember = "CIdCliente";
-            CboxCliente.DisplayMember = "CNombreCompleto";
+            CboxCliente.ValueMember = "IdCliente";
+            CboxCliente.DisplayMember = "NombreCompleto";
 
             CboxCliente.DataSource = Datos; 
             CboxCliente.SelectedIndex = -1;
@@ -51,10 +51,10 @@ namespace VetProyect.Formularios
 
             DataTable Datos = new DataTable();
 
-            Datos = MiTipoMascota.ListarTodos();
+            Datos = MiTipoMascota.Listar();
 
-            CboxCliente.ValueMember = "CIdTipoMascota";
-            CboxCliente.DisplayMember = "CNombre";
+            CboxCliente.ValueMember = "IdTipoMascota";
+            CboxCliente.DisplayMember = "Nombre";
 
             CboxCliente.DataSource = Datos;
             CboxCliente.SelectedIndex = -1;

@@ -29,8 +29,8 @@ namespace VLogica
 
         public Mascota()
         {
-            MiTipoMascota = new TipoMascota();
-            MiCliente = new Cliente();
+            MiTipoMascota = new VLogica.TipoMascota();
+            MiCliente = new VLogica.Cliente();
         }
 
         public bool Agregar()
@@ -216,5 +216,6 @@ namespace VLogica
             return R;
 
         }
+
     }
     }
