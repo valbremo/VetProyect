@@ -277,12 +277,13 @@
             // 
             // CPrecio
             // 
+            this.CPrecio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.CPrecio.DataPropertyName = "Precio";
             this.CPrecio.HeaderText = "Precio";
             this.CPrecio.MinimumWidth = 8;
             this.CPrecio.Name = "CPrecio";
             this.CPrecio.ReadOnly = true;
-            this.CPrecio.Width = 150;
+            this.CPrecio.Width = 75;
             // 
             // CIdHistorial
             // 
