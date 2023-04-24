@@ -25,8 +25,8 @@ namespace VLogica
 
         public Cita()
         {
-            MiCliente = new Cliente();
-            MiMascota = new Mascota();  
+            MiCliente = new VLogica.Cliente();
+            MiMascota = new VLogica.Mascota();  
         }
 
         public bool Agregar()
@@ -72,7 +72,7 @@ namespace VLogica
                 MyCnn.ListadoDeParametros.Add(new SqlParameter("IdCita", this.IdCita));
 
                 MyCnn.ListadoDeParametros.Add(new SqlParameter("@Fecha", this.Fecha));
-                MyCnn.ListadoDeParametros.Add(new SqlParameter("@Espeficicacion", this.Especificacion));
+                MyCnn.ListadoDeParametros.Add(new SqlParameter("@Especificacion", this.Especificacion));
                 MyCnn.ListadoDeParametros.Add(new SqlParameter("@IdCliente", this.MiCliente.IdCliente));
                 MyCnn.ListadoDeParametros.Add(new SqlParameter("@IdMascota", this.MiMascota.IdMascota));
 
@@ -111,8 +111,9 @@ namespace VLogica
                 R.IdCita = Convert.ToInt32(MiFila["IdCita"]);
                 R.Fecha = Convert.ToDateTime(MiFila["Fecha"]);
                 R.Especificacion = Convert.ToString(MiFila["Especificacion"]);
-                R.MiMascota.IdMascota = Convert.ToInt32(MiFila["IdMascota"]);
                 R.MiCliente.IdCliente = Convert.ToInt32(MiFila["IdCliente"]);
+                R.MiMascota.IdMascota = Convert.ToInt32(MiFila["IdMascota"]);
+                
 
             }
             return R;

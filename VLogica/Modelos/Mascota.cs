@@ -119,7 +119,7 @@ namespace VLogica
                 R.FechaNacimiento = Convert.ToDateTime(MiFila["FechaNacimiento"]);
                 R.Raza = Convert.ToString(MiFila["Raza"]);
                 R.Observacion = Convert.ToString(MiFila["Observacion"]);
-                R.MiTipoMascota.IdTipoMascota = Convert.ToInt32(MiFila["IdMascota"]);
+                R.MiTipoMascota.IdTipoMascota = Convert.ToInt32(MiFila["IdTipoMascota"]);
                 R.MiCliente.IdCliente = Convert.ToInt32(MiFila["IdCliente"]);
 
             }
@@ -227,6 +227,18 @@ namespace VLogica
 
             return R;
         }
+
+        public DataTable ListarHM()
+        {
+            DataTable R = new DataTable();
+
+            Conexion MyCnn = new Conexion();
+
+            R = MyCnn.DMLSelect("SPHistorialListarMascota");
+
+            return R;
+        }
+
 
     }
     }

@@ -88,8 +88,7 @@ namespace VetProyect.Formularios
             TxtRaza.Clear();
             TxtObservacion.Clear();
             CboxTipoMascota.SelectedIndex = -1;
-            CboxCliente.SelectedIndex = -1;
-            
+            CboxCliente.SelectedIndex = -1;  
 
         }
 

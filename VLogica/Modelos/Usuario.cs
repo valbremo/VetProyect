@@ -259,6 +259,18 @@ namespace VLogica
 
             }
 
+        public DataTable ListarRU()
+        {
+            DataTable R = new DataTable();
+
+            Conexion MiConexion = new Conexion();
+
+            R = MiConexion.DMLSelect("SPRecetaListarUsuario");
+
+            return R;
 
         }
+
+
+    }
     } 

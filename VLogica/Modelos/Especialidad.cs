@@ -191,5 +191,16 @@ namespace VLogica
             return R;
 
         }
+
+        public DataTable ListarHE()
+        {
+            DataTable R = new DataTable();
+
+            Conexion MyCnn = new Conexion();
+
+            R = MyCnn.DMLSelect("SPHistorialListarEspecialidad");
+
+            return R;
+        }
     }
 }

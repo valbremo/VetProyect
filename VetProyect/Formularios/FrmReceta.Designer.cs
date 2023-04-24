@@ -31,91 +31,89 @@
             this.GbDatosCita = new System.Windows.Forms.GroupBox();
             this.TxtPrecio = new System.Windows.Forms.TextBox();
             this.TxtTratamiento = new System.Windows.Forms.TextBox();
-            this.TxtIdRecetaa = new System.Windows.Forms.TextBox();
-            this.CbIdUsuario = new System.Windows.Forms.ComboBox();
+            this.TxtIdReceta = new System.Windows.Forms.TextBox();
+            this.CboxUsuario = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.CbIdHistorial = new System.Windows.Forms.ComboBox();
-            this.dateTimeFecha = new System.Windows.Forms.DateTimePicker();
+            this.CboxHistorial = new System.Windows.Forms.ComboBox();
+            this.TxtFecha = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.GbBuscarCita = new System.Windows.Forms.GroupBox();
-            this.TxtBuscar = new System.Windows.Forms.TextBox();
-            this.CbVerID = new System.Windows.Forms.CheckBox();
-            this.DgvLista = new System.Windows.Forms.DataGridView();
+            this.DgvListaRecetas = new System.Windows.Forms.DataGridView();
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnModificar = new System.Windows.Forms.Button();
             this.BtnAgregar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.BtnSalir = new System.Windows.Forms.Button();
-            this.ColIdReceta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColTratamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColHistorial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColIdUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CIdReceta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CTratamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CIdHistorial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CIdUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SintomasHistorial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GbDatosCita.SuspendLayout();
-            this.GbBuscarCita.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvLista)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvListaRecetas)).BeginInit();
             this.SuspendLayout();
             // 
             // GbDatosCita
             // 
             this.GbDatosCita.Controls.Add(this.TxtPrecio);
             this.GbDatosCita.Controls.Add(this.TxtTratamiento);
-            this.GbDatosCita.Controls.Add(this.TxtIdRecetaa);
-            this.GbDatosCita.Controls.Add(this.CbIdUsuario);
+            this.GbDatosCita.Controls.Add(this.TxtIdReceta);
+            this.GbDatosCita.Controls.Add(this.CboxUsuario);
             this.GbDatosCita.Controls.Add(this.label7);
             this.GbDatosCita.Controls.Add(this.label6);
-            this.GbDatosCita.Controls.Add(this.CbIdHistorial);
-            this.GbDatosCita.Controls.Add(this.dateTimeFecha);
+            this.GbDatosCita.Controls.Add(this.CboxHistorial);
+            this.GbDatosCita.Controls.Add(this.TxtFecha);
             this.GbDatosCita.Controls.Add(this.label5);
             this.GbDatosCita.Controls.Add(this.label4);
             this.GbDatosCita.Controls.Add(this.label3);
             this.GbDatosCita.Controls.Add(this.label2);
-            this.GbDatosCita.Location = new System.Drawing.Point(18, 49);
+            this.GbDatosCita.Location = new System.Drawing.Point(158, 440);
             this.GbDatosCita.Name = "GbDatosCita";
-            this.GbDatosCita.Size = new System.Drawing.Size(483, 430);
+            this.GbDatosCita.Size = new System.Drawing.Size(961, 322);
             this.GbDatosCita.TabIndex = 26;
             this.GbDatosCita.TabStop = false;
             this.GbDatosCita.Text = "Datos de la Receta";
             // 
             // TxtPrecio
             // 
-            this.TxtPrecio.Location = new System.Drawing.Point(217, 219);
+            this.TxtPrecio.Location = new System.Drawing.Point(527, 184);
             this.TxtPrecio.Name = "TxtPrecio";
-            this.TxtPrecio.Size = new System.Drawing.Size(195, 26);
+            this.TxtPrecio.Size = new System.Drawing.Size(208, 26);
             this.TxtPrecio.TabIndex = 12;
             // 
             // TxtTratamiento
             // 
-            this.TxtTratamiento.Location = new System.Drawing.Point(211, 120);
+            this.TxtTratamiento.Location = new System.Drawing.Point(527, 42);
+            this.TxtTratamiento.Multiline = true;
             this.TxtTratamiento.Name = "TxtTratamiento";
-            this.TxtTratamiento.Size = new System.Drawing.Size(202, 26);
+            this.TxtTratamiento.Size = new System.Drawing.Size(419, 85);
             this.TxtTratamiento.TabIndex = 11;
             // 
-            // TxtIdRecetaa
+            // TxtIdReceta
             // 
-            this.TxtIdRecetaa.Location = new System.Drawing.Point(215, 40);
-            this.TxtIdRecetaa.Name = "TxtIdRecetaa";
-            this.TxtIdRecetaa.ReadOnly = true;
-            this.TxtIdRecetaa.Size = new System.Drawing.Size(151, 26);
-            this.TxtIdRecetaa.TabIndex = 10;
+            this.TxtIdReceta.Location = new System.Drawing.Point(168, 45);
+            this.TxtIdReceta.Name = "TxtIdReceta";
+            this.TxtIdReceta.ReadOnly = true;
+            this.TxtIdReceta.Size = new System.Drawing.Size(151, 26);
+            this.TxtIdReceta.TabIndex = 10;
             // 
-            // CbIdUsuario
+            // CboxUsuario
             // 
-            this.CbIdUsuario.FormattingEnabled = true;
-            this.CbIdUsuario.Location = new System.Drawing.Point(218, 333);
-            this.CbIdUsuario.Name = "CbIdUsuario";
-            this.CbIdUsuario.Size = new System.Drawing.Size(194, 28);
-            this.CbIdUsuario.TabIndex = 9;
+            this.CboxUsuario.FormattingEnabled = true;
+            this.CboxUsuario.Location = new System.Drawing.Point(527, 269);
+            this.CboxUsuario.Name = "CboxUsuario";
+            this.CboxUsuario.Size = new System.Drawing.Size(194, 28);
+            this.CboxUsuario.TabIndex = 9;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(52, 350);
+            this.label7.Location = new System.Drawing.Point(417, 272);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 20);
             this.label7.TabIndex = 8;
@@ -124,31 +122,31 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(52, 297);
+            this.label6.Location = new System.Drawing.Point(33, 272);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(66, 20);
             this.label6.TabIndex = 7;
             this.label6.Text = "Historial";
             // 
-            // CbIdHistorial
+            // CboxHistorial
             // 
-            this.CbIdHistorial.FormattingEnabled = true;
-            this.CbIdHistorial.Location = new System.Drawing.Point(215, 289);
-            this.CbIdHistorial.Name = "CbIdHistorial";
-            this.CbIdHistorial.Size = new System.Drawing.Size(198, 28);
-            this.CbIdHistorial.TabIndex = 6;
+            this.CboxHistorial.FormattingEnabled = true;
+            this.CboxHistorial.Location = new System.Drawing.Point(149, 269);
+            this.CboxHistorial.Name = "CboxHistorial";
+            this.CboxHistorial.Size = new System.Drawing.Size(198, 28);
+            this.CboxHistorial.TabIndex = 6;
             // 
-            // dateTimeFecha
+            // TxtFecha
             // 
-            this.dateTimeFecha.Location = new System.Drawing.Point(211, 173);
-            this.dateTimeFecha.Name = "dateTimeFecha";
-            this.dateTimeFecha.Size = new System.Drawing.Size(226, 26);
-            this.dateTimeFecha.TabIndex = 5;
+            this.TxtFecha.Location = new System.Drawing.Point(149, 178);
+            this.TxtFecha.Name = "TxtFecha";
+            this.TxtFecha.Size = new System.Drawing.Size(226, 26);
+            this.TxtFecha.TabIndex = 5;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(33, 239);
+            this.label5.Location = new System.Drawing.Point(417, 184);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 20);
             this.label5.TabIndex = 4;
@@ -157,7 +155,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(33, 123);
+            this.label4.Location = new System.Drawing.Point(417, 48);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 20);
             this.label4.TabIndex = 3;
@@ -166,7 +164,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(38, 178);
+            this.label3.Location = new System.Drawing.Point(32, 178);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 20);
             this.label3.TabIndex = 2;
@@ -182,176 +180,166 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Código";
             // 
-            // GbBuscarCita
+            // DgvListaRecetas
             // 
-            this.GbBuscarCita.Controls.Add(this.TxtBuscar);
-            this.GbBuscarCita.Controls.Add(this.CbVerID);
-            this.GbBuscarCita.Location = new System.Drawing.Point(557, 49);
-            this.GbBuscarCita.Name = "GbBuscarCita";
-            this.GbBuscarCita.Size = new System.Drawing.Size(982, 101);
-            this.GbBuscarCita.TabIndex = 25;
-            this.GbBuscarCita.TabStop = false;
-            this.GbBuscarCita.Text = "Buscar Receta";
-            // 
-            // TxtBuscar
-            // 
-            this.TxtBuscar.Location = new System.Drawing.Point(357, 40);
-            this.TxtBuscar.Name = "TxtBuscar";
-            this.TxtBuscar.Size = new System.Drawing.Size(523, 26);
-            this.TxtBuscar.TabIndex = 1;
-            // 
-            // CbVerID
-            // 
-            this.CbVerID.AutoSize = true;
-            this.CbVerID.Location = new System.Drawing.Point(206, 40);
-            this.CbVerID.Name = "CbVerID";
-            this.CbVerID.Size = new System.Drawing.Size(85, 24);
-            this.CbVerID.TabIndex = 0;
-            this.CbVerID.Text = "Código";
-            this.CbVerID.UseVisualStyleBackColor = true;
-            // 
-            // DgvLista
-            // 
-            this.DgvLista.AllowUserToAddRows = false;
-            this.DgvLista.AllowUserToDeleteRows = false;
-            this.DgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColIdReceta,
-            this.ColTratamiento,
-            this.ColFecha,
-            this.ColPrecio,
-            this.ColHistorial,
-            this.ColIdUsuario});
-            this.DgvLista.Location = new System.Drawing.Point(566, 172);
-            this.DgvLista.Name = "DgvLista";
-            this.DgvLista.ReadOnly = true;
-            this.DgvLista.RowHeadersWidth = 62;
-            this.DgvLista.RowTemplate.Height = 28;
-            this.DgvLista.Size = new System.Drawing.Size(974, 353);
-            this.DgvLista.TabIndex = 24;
+            this.DgvListaRecetas.AllowUserToAddRows = false;
+            this.DgvListaRecetas.AllowUserToDeleteRows = false;
+            this.DgvListaRecetas.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
+            this.DgvListaRecetas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvListaRecetas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CIdReceta,
+            this.CTratamiento,
+            this.CFecha,
+            this.CPrecio,
+            this.CIdHistorial,
+            this.CIdUsuario,
+            this.SintomasHistorial,
+            this.NombreUsuario});
+            this.DgvListaRecetas.Location = new System.Drawing.Point(12, 65);
+            this.DgvListaRecetas.Name = "DgvListaRecetas";
+            this.DgvListaRecetas.ReadOnly = true;
+            this.DgvListaRecetas.RowHeadersWidth = 62;
+            this.DgvListaRecetas.RowTemplate.Height = 28;
+            this.DgvListaRecetas.Size = new System.Drawing.Size(1232, 353);
+            this.DgvListaRecetas.TabIndex = 24;
+            this.DgvListaRecetas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListaRecetas_CellClick);
             // 
             // BtnEliminar
             // 
-            this.BtnEliminar.Location = new System.Drawing.Point(973, 563);
+            this.BtnEliminar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnEliminar.Location = new System.Drawing.Point(637, 790);
             this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(212, 58);
+            this.BtnEliminar.Size = new System.Drawing.Size(156, 42);
             this.BtnEliminar.TabIndex = 23;
             this.BtnEliminar.Text = "Eliminar";
-            this.BtnEliminar.UseVisualStyleBackColor = true;
+            this.BtnEliminar.UseVisualStyleBackColor = false;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // BtnModificar
             // 
-            this.BtnModificar.Location = new System.Drawing.Point(763, 567);
+            this.BtnModificar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnModificar.Location = new System.Drawing.Point(414, 790);
             this.BtnModificar.Name = "BtnModificar";
-            this.BtnModificar.Size = new System.Drawing.Size(180, 50);
+            this.BtnModificar.Size = new System.Drawing.Size(129, 42);
             this.BtnModificar.TabIndex = 22;
             this.BtnModificar.Text = "Modificar";
-            this.BtnModificar.UseVisualStyleBackColor = true;
+            this.BtnModificar.UseVisualStyleBackColor = false;
+            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
             // BtnAgregar
             // 
-            this.BtnAgregar.Location = new System.Drawing.Point(575, 563);
+            this.BtnAgregar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnAgregar.Location = new System.Drawing.Point(226, 786);
             this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(171, 51);
+            this.BtnAgregar.Size = new System.Drawing.Size(130, 43);
             this.BtnAgregar.TabIndex = 21;
             this.BtnAgregar.Text = "Agregar";
-            this.BtnAgregar.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(507, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(370, 32);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Control de registro de Recetas";
+            this.BtnAgregar.UseVisualStyleBackColor = false;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // BtnSalir
             // 
-            this.BtnSalir.Location = new System.Drawing.Point(1209, 570);
+            this.BtnSalir.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnSalir.Location = new System.Drawing.Point(882, 790);
             this.BtnSalir.Name = "BtnSalir";
-            this.BtnSalir.Size = new System.Drawing.Size(212, 43);
+            this.BtnSalir.Size = new System.Drawing.Size(161, 42);
             this.BtnSalir.TabIndex = 27;
             this.BtnSalir.Text = "Salir";
-            this.BtnSalir.UseVisualStyleBackColor = true;
+            this.BtnSalir.UseVisualStyleBackColor = false;
+            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
-            // ColIdReceta
+            // CIdReceta
             // 
-            this.ColIdReceta.DataPropertyName = "IdReceta";
-            this.ColIdReceta.HeaderText = "Código";
-            this.ColIdReceta.MinimumWidth = 8;
-            this.ColIdReceta.Name = "ColIdReceta";
-            this.ColIdReceta.ReadOnly = true;
-            this.ColIdReceta.Width = 150;
+            this.CIdReceta.DataPropertyName = "IdReceta";
+            this.CIdReceta.HeaderText = "Código";
+            this.CIdReceta.MinimumWidth = 8;
+            this.CIdReceta.Name = "CIdReceta";
+            this.CIdReceta.ReadOnly = true;
+            this.CIdReceta.Width = 150;
             // 
-            // ColTratamiento
+            // CTratamiento
             // 
-            this.ColTratamiento.DataPropertyName = "Tratamiento";
-            this.ColTratamiento.HeaderText = "Tratamiento";
-            this.ColTratamiento.MinimumWidth = 8;
-            this.ColTratamiento.Name = "ColTratamiento";
-            this.ColTratamiento.ReadOnly = true;
-            this.ColTratamiento.Width = 150;
+            this.CTratamiento.DataPropertyName = "Tratamiento";
+            this.CTratamiento.HeaderText = "Tratamiento";
+            this.CTratamiento.MinimumWidth = 8;
+            this.CTratamiento.Name = "CTratamiento";
+            this.CTratamiento.ReadOnly = true;
+            this.CTratamiento.Width = 150;
             // 
-            // ColFecha
+            // CFecha
             // 
-            this.ColFecha.DataPropertyName = "Fecha";
-            this.ColFecha.HeaderText = "Fecha";
-            this.ColFecha.MinimumWidth = 8;
-            this.ColFecha.Name = "ColFecha";
-            this.ColFecha.ReadOnly = true;
-            this.ColFecha.Width = 150;
+            this.CFecha.DataPropertyName = "Fecha";
+            this.CFecha.HeaderText = "Fecha";
+            this.CFecha.MinimumWidth = 8;
+            this.CFecha.Name = "CFecha";
+            this.CFecha.ReadOnly = true;
+            this.CFecha.Width = 150;
             // 
-            // ColPrecio
+            // CPrecio
             // 
-            this.ColPrecio.DataPropertyName = "Precio";
-            this.ColPrecio.HeaderText = "Precio";
-            this.ColPrecio.MinimumWidth = 8;
-            this.ColPrecio.Name = "ColPrecio";
-            this.ColPrecio.ReadOnly = true;
-            this.ColPrecio.Width = 150;
+            this.CPrecio.DataPropertyName = "Precio";
+            this.CPrecio.HeaderText = "Precio";
+            this.CPrecio.MinimumWidth = 8;
+            this.CPrecio.Name = "CPrecio";
+            this.CPrecio.ReadOnly = true;
+            this.CPrecio.Width = 150;
             // 
-            // ColHistorial
+            // CIdHistorial
             // 
-            this.ColHistorial.DataPropertyName = "IdHistorial";
-            this.ColHistorial.HeaderText = "Historial";
-            this.ColHistorial.MinimumWidth = 8;
-            this.ColHistorial.Name = "ColHistorial";
-            this.ColHistorial.ReadOnly = true;
-            this.ColHistorial.Width = 150;
+            this.CIdHistorial.DataPropertyName = "IdHistorial";
+            this.CIdHistorial.HeaderText = "Historial";
+            this.CIdHistorial.MinimumWidth = 8;
+            this.CIdHistorial.Name = "CIdHistorial";
+            this.CIdHistorial.ReadOnly = true;
+            this.CIdHistorial.Visible = false;
+            this.CIdHistorial.Width = 150;
             // 
-            // ColIdUsuario
+            // CIdUsuario
             // 
-            this.ColIdUsuario.DataPropertyName = "IdUsuario";
-            this.ColIdUsuario.HeaderText = "Usuario";
-            this.ColIdUsuario.MinimumWidth = 8;
-            this.ColIdUsuario.Name = "ColIdUsuario";
-            this.ColIdUsuario.ReadOnly = true;
-            this.ColIdUsuario.Width = 150;
+            this.CIdUsuario.DataPropertyName = "IdUsuario";
+            this.CIdUsuario.HeaderText = "Usuario";
+            this.CIdUsuario.MinimumWidth = 8;
+            this.CIdUsuario.Name = "CIdUsuario";
+            this.CIdUsuario.ReadOnly = true;
+            this.CIdUsuario.Visible = false;
+            this.CIdUsuario.Width = 150;
+            // 
+            // SintomasHistorial
+            // 
+            this.SintomasHistorial.DataPropertyName = "Sintomas";
+            this.SintomasHistorial.HeaderText = "Síntomas presentados";
+            this.SintomasHistorial.MinimumWidth = 8;
+            this.SintomasHistorial.Name = "SintomasHistorial";
+            this.SintomasHistorial.ReadOnly = true;
+            this.SintomasHistorial.Width = 150;
+            // 
+            // NombreUsuario
+            // 
+            this.NombreUsuario.DataPropertyName = "NombreCompleto";
+            this.NombreUsuario.HeaderText = "Doctora";
+            this.NombreUsuario.MinimumWidth = 8;
+            this.NombreUsuario.Name = "NombreUsuario";
+            this.NombreUsuario.ReadOnly = true;
+            this.NombreUsuario.Width = 150;
             // 
             // FrmReceta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1592, 638);
+            this.ClientSize = new System.Drawing.Size(1298, 855);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.GbDatosCita);
-            this.Controls.Add(this.GbBuscarCita);
-            this.Controls.Add(this.DgvLista);
+            this.Controls.Add(this.DgvListaRecetas);
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.BtnModificar);
             this.Controls.Add(this.BtnAgregar);
-            this.Controls.Add(this.label1);
             this.Name = "FrmReceta";
-            this.Text = "FrmReceta";
+            this.Text = "Gestión de Receta";
+            this.Load += new System.EventHandler(this.FrmReceta_Load);
             this.GbDatosCita.ResumeLayout(false);
             this.GbDatosCita.PerformLayout();
-            this.GbBuscarCita.ResumeLayout(false);
-            this.GbBuscarCita.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvLista)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvListaRecetas)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -360,30 +348,28 @@
         private System.Windows.Forms.GroupBox GbDatosCita;
         private System.Windows.Forms.TextBox TxtPrecio;
         private System.Windows.Forms.TextBox TxtTratamiento;
-        private System.Windows.Forms.TextBox TxtIdRecetaa;
-        private System.Windows.Forms.ComboBox CbIdUsuario;
+        private System.Windows.Forms.TextBox TxtIdReceta;
+        private System.Windows.Forms.ComboBox CboxUsuario;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox CbIdHistorial;
-        private System.Windows.Forms.DateTimePicker dateTimeFecha;
+        private System.Windows.Forms.ComboBox CboxHistorial;
+        private System.Windows.Forms.DateTimePicker TxtFecha;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox GbBuscarCita;
-        private System.Windows.Forms.TextBox TxtBuscar;
-        private System.Windows.Forms.CheckBox CbVerID;
-        private System.Windows.Forms.DataGridView DgvLista;
+        private System.Windows.Forms.DataGridView DgvListaRecetas;
         private System.Windows.Forms.Button BtnEliminar;
         private System.Windows.Forms.Button BtnModificar;
         private System.Windows.Forms.Button BtnAgregar;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColIdReceta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColTratamiento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColFecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColPrecio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColHistorial;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColIdUsuario;
         private System.Windows.Forms.Button BtnSalir;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CIdReceta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CTratamiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CFecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CPrecio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CIdHistorial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CIdUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SintomasHistorial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreUsuario;
     }
 }

@@ -241,8 +241,9 @@ namespace VetProyect.Formularios
                     MiCita.Fecha = Convert.ToDateTime(TxtFecha.Text.Trim());
                     MiCita.Especificacion = TxtEspecificacion.Text.Trim();
 
-                    MiCita.MiMascota.IdMascota = Convert.ToInt32(CboxMascota.SelectedValue);
+                    
                     MiCita.MiCliente.IdCliente = Convert.ToInt32(CboxCliente.SelectedValue);
+                    MiCita.MiMascota.IdMascota = Convert.ToInt32(CboxMascota.SelectedValue);
 
                     if (MiCita.ConsultarPorId())
                     {

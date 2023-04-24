@@ -53,7 +53,7 @@
             this.CIdCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CIdMascota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreMascota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mascota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaCitas)).BeginInit();
             this.GbBuscarCita.SuspendLayout();
             this.GbDatosCita.SuspendLayout();
@@ -105,6 +105,7 @@
             // 
             // CboxCliente
             // 
+            this.CboxCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CboxCliente.FormattingEnabled = true;
             this.CboxCliente.Location = new System.Drawing.Point(123, 136);
             this.CboxCliente.Name = "CboxCliente";
@@ -131,6 +132,7 @@
             // 
             // CboxMascota
             // 
+            this.CboxMascota.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CboxMascota.FormattingEnabled = true;
             this.CboxMascota.Location = new System.Drawing.Point(123, 210);
             this.CboxMascota.Name = "CboxMascota";
@@ -209,7 +211,7 @@
             this.CIdCliente,
             this.CIdMascota,
             this.NombreCliente,
-            this.NombreMascota});
+            this.Mascota});
             this.DgvListaCitas.Location = new System.Drawing.Point(23, 356);
             this.DgvListaCitas.Name = "DgvListaCitas";
             this.DgvListaCitas.ReadOnly = true;
@@ -288,7 +290,7 @@
             // CIdCliente
             // 
             this.CIdCliente.DataPropertyName = "IdCliente";
-            this.CIdCliente.HeaderText = "Cliente";
+            this.CIdCliente.HeaderText = "Dueño";
             this.CIdCliente.MinimumWidth = 8;
             this.CIdCliente.Name = "CIdCliente";
             this.CIdCliente.ReadOnly = true;
@@ -314,14 +316,14 @@
             this.NombreCliente.ReadOnly = true;
             this.NombreCliente.Width = 150;
             // 
-            // NombreMascota
+            // Mascota
             // 
-            this.NombreMascota.DataPropertyName = "Nombre";
-            this.NombreMascota.HeaderText = "Nombre de la mascota";
-            this.NombreMascota.MinimumWidth = 8;
-            this.NombreMascota.Name = "NombreMascota";
-            this.NombreMascota.ReadOnly = true;
-            this.NombreMascota.Width = 150;
+            this.Mascota.DataPropertyName = "Mascota";
+            this.Mascota.HeaderText = "Nombre de la mascota";
+            this.Mascota.MinimumWidth = 8;
+            this.Mascota.Name = "Mascota";
+            this.Mascota.ReadOnly = true;
+            this.Mascota.Width = 150;
             // 
             // FrmCita
             // 
@@ -375,6 +377,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CIdCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn CIdMascota;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreMascota;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Mascota;
     }
 }

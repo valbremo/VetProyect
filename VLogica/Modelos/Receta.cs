@@ -27,22 +27,42 @@ namespace VLogica
 
         public Receta()
         {
-            MiHistorial = new Historial();
-            MiUsuario = new Usuario();
+            MiHistorial = new VLogica.Historial();
+            MiUsuario = new VLogica.Usuario();
         }
 
 
         public bool Agregar()
         {
-            Conexion MyCnn = new Conexion();
+            bool R = false;
 
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("@Tratamiento", this.Tratamiento));
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("@Fecha", this.Fecha));
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("@Precio", this.Precio));
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("@IdHistorial", this.MiHistorial.IdHistorial));
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("@IdUsuario", this.MiUsuario.IdUsuario));
+            try 
+            { 
 
-            return MyCnn.DMLUpdateDeleteInsert("SPRecetaAgregar") > 0 ? true : false;
+                Conexion MyCnn = new Conexion();
+
+                MyCnn.ListadoDeParametros.Add(new SqlParameter("@Tratamiento", this.Tratamiento));
+                MyCnn.ListadoDeParametros.Add(new SqlParameter("@Fecha", this.Fecha));
+                MyCnn.ListadoDeParametros.Add(new SqlParameter("@Precio", this.Precio));
+                MyCnn.ListadoDeParametros.Add(new SqlParameter("@IdHistorial", this.MiHistorial.IdHistorial));
+                MyCnn.ListadoDeParametros.Add(new SqlParameter("@IdUsuario", this.MiUsuario.IdUsuario));
+
+                int retorno = MyCnn.DMLUpdateDeleteInsert("SPRecetaAgregar");
+
+                if (retorno > 0)
+                {
+                    R = true;
+                }
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return R;
         }
 
         public bool Modificar()
@@ -77,6 +97,33 @@ namespace VLogica
         }
 
 
+        public Receta Consultar(int pIdReceta)
+        {
+            Receta R = new Receta();
+
+            Conexion MyCnn = new Conexion();
+
+            MyCnn.ListadoDeParametros.Add(new SqlParameter("@IdReceta", pIdReceta));
+
+            DataTable DatosProducto = new DataTable();
+            DatosProducto = MyCnn.DMLSelect("SPRecetaConsultarPorID");
+
+            if (DatosProducto.Rows.Count > 0)
+            {
+
+                DataRow MiFila = DatosProducto.Rows[0];
+
+                R.IdReceta = Convert.ToInt32(MiFila["IdReceta"]);
+                R.Tratamiento = Convert.ToString(MiFila["Tratamiento"]);
+                R.Fecha = Convert.ToDateTime(MiFila["Fecha"]);
+                R.Precio = Convert.ToDecimal(MiFila["Precio"]);
+                R.MiHistorial.IdHistorial = Convert.ToInt32(MiFila["IdHistorial"]);
+                R.MiUsuario.IdUsuario = Convert.ToInt32(MiFila["IdUsuario"]);
+
+            }
+            return R;
+        }
+
         public bool ConsultarPorId()
         {
             bool R = false;
@@ -106,11 +153,29 @@ namespace VLogica
 
         public bool Desactivar()
         {
-            Conexion MyCnn = new Conexion();
 
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("IdReceta", this.IdReceta));
+            bool R = false;
 
-            return (MyCnn.DMLUpdateDeleteInsert("SPRecetaEliminar") > 0 ? true : false);
+            try
+            { 
+
+                Conexion MyCnn = new Conexion();
+
+                MyCnn.ListadoDeParametros.Add(new SqlParameter("IdReceta", this.IdReceta));
+
+                int retorno = MyCnn.DMLUpdateDeleteInsert("SPRecetaEliminar");
+
+                if (retorno > 0)
+                {
+                    R = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return R;
+
         }
 
 
