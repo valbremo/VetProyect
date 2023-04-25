@@ -102,7 +102,7 @@ namespace VetProyect.Formularios
                 if (!string.IsNullOrEmpty(TxtNombre.Text.Trim()) &&
                     !string.IsNullOrEmpty(TxtRaza.Text.Trim()) &&
                     !string.IsNullOrEmpty(TxtObservacion.Text.Trim()) &&
-                    //DgvListaMascotas.Rows.Count > 1 &&
+ 
                     CboxTipoMascota.SelectedIndex > -1 &&
                     CboxCliente.SelectedIndex > -1)
                 {

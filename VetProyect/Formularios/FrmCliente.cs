@@ -361,16 +361,15 @@ namespace VetProyect.Formularios
 
         //Método que permite solo letras y números
         //en el textbox de direccion.
-        private void TxtDireccion_KeyPress(object sender, KeyPressEventArgs e)
+        private void TxtDireccion_KeyPress(object sender, KeyPressEventArgs pE)
         {
-            e.Handled = Herramientas.CaracteresTexto(e, true);
+            Herramientas.CaracteresTexto(pE);
 
         }
 
         private void TxtBuscar_Click(object sender, EventArgs e)
         {
-            TxtBuscar.Focus();
-            TxtBuscar.SelectAll();
+            
         }
 
         private void TxtIdCliente_KeyPress(object sender, KeyPressEventArgs e)
