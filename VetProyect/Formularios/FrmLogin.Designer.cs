@@ -35,7 +35,6 @@
             this.TxtContrasena = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.LblRecuperarContrasena = new System.Windows.Forms.LinkLabel();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -110,18 +109,6 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Contraseña:";
             // 
-            // LblRecuperarContrasena
-            // 
-            this.LblRecuperarContrasena.AutoSize = true;
-            this.LblRecuperarContrasena.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.LblRecuperarContrasena.Font = new System.Drawing.Font("Courier New", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRecuperarContrasena.Location = new System.Drawing.Point(734, 386);
-            this.LblRecuperarContrasena.Name = "LblRecuperarContrasena";
-            this.LblRecuperarContrasena.Size = new System.Drawing.Size(208, 18);
-            this.LblRecuperarContrasena.TabIndex = 9;
-            this.LblRecuperarContrasena.TabStop = true;
-            this.LblRecuperarContrasena.Text = "Olvidé mi contraseña";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -171,7 +158,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(948, 542);
-            this.Controls.Add(this.LblRecuperarContrasena);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -201,7 +187,6 @@
         private System.Windows.Forms.TextBox TxtContrasena;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.LinkLabel LblRecuperarContrasena;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;

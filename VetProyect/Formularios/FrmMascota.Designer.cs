@@ -42,15 +42,8 @@
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.CboxTipoMascota = new System.Windows.Forms.ComboBox();
             this.CboxCliente = new System.Windows.Forms.ComboBox();
-            this.TxtBuscar = new System.Windows.Forms.TextBox();
             this.TxtFecha = new System.Windows.Forms.DateTimePicker();
             this.DgvListaMascotas = new System.Windows.Forms.DataGridView();
-            this.BtnAgregar = new System.Windows.Forms.Button();
-            this.BtnModificar = new System.Windows.Forms.Button();
-            this.BtnEliminar = new System.Windows.Forms.Button();
-            this.BtnSalir = new System.Windows.Forms.Button();
-            this.GbBuscar = new System.Windows.Forms.GroupBox();
-            this.GbDatosMascota = new System.Windows.Forms.GroupBox();
             this.CIdMascota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CFechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,8 +53,13 @@
             this.CIdCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoMascota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnAgregar = new System.Windows.Forms.Button();
+            this.BtnModificar = new System.Windows.Forms.Button();
+            this.BtnEliminar = new System.Windows.Forms.Button();
+            this.BtnSalir = new System.Windows.Forms.Button();
+            this.GbDatosMascota = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaMascotas)).BeginInit();
-            this.GbBuscar.SuspendLayout();
             this.GbDatosMascota.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -177,13 +175,6 @@
             this.CboxCliente.Size = new System.Drawing.Size(188, 28);
             this.CboxCliente.TabIndex = 14;
             // 
-            // TxtBuscar
-            // 
-            this.TxtBuscar.Location = new System.Drawing.Point(314, 44);
-            this.TxtBuscar.Name = "TxtBuscar";
-            this.TxtBuscar.Size = new System.Drawing.Size(317, 26);
-            this.TxtBuscar.TabIndex = 17;
-            // 
             // TxtFecha
             // 
             this.TxtFecha.Location = new System.Drawing.Point(202, 121);
@@ -207,7 +198,7 @@
             this.CIdCliente,
             this.TipoMascota,
             this.NombreCliente});
-            this.DgvListaMascotas.Location = new System.Drawing.Point(12, 153);
+            this.DgvListaMascotas.Location = new System.Drawing.Point(12, 100);
             this.DgvListaMascotas.Name = "DgvListaMascotas";
             this.DgvListaMascotas.ReadOnly = true;
             this.DgvListaMascotas.RowHeadersWidth = 62;
@@ -215,83 +206,6 @@
             this.DgvListaMascotas.Size = new System.Drawing.Size(1113, 265);
             this.DgvListaMascotas.TabIndex = 19;
             this.DgvListaMascotas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListaMascotas_CellClick);
-            // 
-            // BtnAgregar
-            // 
-            this.BtnAgregar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnAgregar.Location = new System.Drawing.Point(98, 841);
-            this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(165, 45);
-            this.BtnAgregar.TabIndex = 20;
-            this.BtnAgregar.Text = "Agregar";
-            this.BtnAgregar.UseVisualStyleBackColor = false;
-            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
-            // 
-            // BtnModificar
-            // 
-            this.BtnModificar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnModificar.Location = new System.Drawing.Point(355, 841);
-            this.BtnModificar.Name = "BtnModificar";
-            this.BtnModificar.Size = new System.Drawing.Size(165, 45);
-            this.BtnModificar.TabIndex = 21;
-            this.BtnModificar.Text = "Modificar";
-            this.BtnModificar.UseVisualStyleBackColor = false;
-            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
-            // 
-            // BtnEliminar
-            // 
-            this.BtnEliminar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnEliminar.Location = new System.Drawing.Point(618, 841);
-            this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(165, 45);
-            this.BtnEliminar.TabIndex = 22;
-            this.BtnEliminar.Text = "Eliminar";
-            this.BtnEliminar.UseVisualStyleBackColor = false;
-            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
-            // 
-            // BtnSalir
-            // 
-            this.BtnSalir.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnSalir.Location = new System.Drawing.Point(881, 841);
-            this.BtnSalir.Name = "BtnSalir";
-            this.BtnSalir.Size = new System.Drawing.Size(165, 45);
-            this.BtnSalir.TabIndex = 23;
-            this.BtnSalir.Text = "Salir";
-            this.BtnSalir.UseVisualStyleBackColor = false;
-            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
-            // 
-            // GbBuscar
-            // 
-            this.GbBuscar.Controls.Add(this.TxtBuscar);
-            this.GbBuscar.Location = new System.Drawing.Point(80, 22);
-            this.GbBuscar.Name = "GbBuscar";
-            this.GbBuscar.Size = new System.Drawing.Size(950, 109);
-            this.GbBuscar.TabIndex = 24;
-            this.GbBuscar.TabStop = false;
-            this.GbBuscar.Text = "Buscar Mascota";
-            // 
-            // GbDatosMascota
-            // 
-            this.GbDatosMascota.Controls.Add(this.TxtFecha);
-            this.GbDatosMascota.Controls.Add(this.CboxCliente);
-            this.GbDatosMascota.Controls.Add(this.CboxTipoMascota);
-            this.GbDatosMascota.Controls.Add(this.TxtObservacion);
-            this.GbDatosMascota.Controls.Add(this.TxtRaza);
-            this.GbDatosMascota.Controls.Add(this.TxtNombre);
-            this.GbDatosMascota.Controls.Add(this.TxtIdMascota);
-            this.GbDatosMascota.Controls.Add(this.label8);
-            this.GbDatosMascota.Controls.Add(this.label7);
-            this.GbDatosMascota.Controls.Add(this.label6);
-            this.GbDatosMascota.Controls.Add(this.label5);
-            this.GbDatosMascota.Controls.Add(this.label4);
-            this.GbDatosMascota.Controls.Add(this.label3);
-            this.GbDatosMascota.Controls.Add(this.label2);
-            this.GbDatosMascota.Location = new System.Drawing.Point(50, 447);
-            this.GbDatosMascota.Name = "GbDatosMascota";
-            this.GbDatosMascota.Size = new System.Drawing.Size(1019, 350);
-            this.GbDatosMascota.TabIndex = 25;
-            this.GbDatosMascota.TabStop = false;
-            this.GbDatosMascota.Text = "Datos de la Mascota";
             // 
             // CIdMascota
             // 
@@ -376,13 +290,90 @@
             this.NombreCliente.ReadOnly = true;
             this.NombreCliente.Width = 150;
             // 
+            // BtnAgregar
+            // 
+            this.BtnAgregar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnAgregar.Location = new System.Drawing.Point(98, 767);
+            this.BtnAgregar.Name = "BtnAgregar";
+            this.BtnAgregar.Size = new System.Drawing.Size(165, 45);
+            this.BtnAgregar.TabIndex = 20;
+            this.BtnAgregar.Text = "Agregar";
+            this.BtnAgregar.UseVisualStyleBackColor = false;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
+            // 
+            // BtnModificar
+            // 
+            this.BtnModificar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnModificar.Location = new System.Drawing.Point(355, 767);
+            this.BtnModificar.Name = "BtnModificar";
+            this.BtnModificar.Size = new System.Drawing.Size(165, 45);
+            this.BtnModificar.TabIndex = 21;
+            this.BtnModificar.Text = "Modificar";
+            this.BtnModificar.UseVisualStyleBackColor = false;
+            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
+            // 
+            // BtnEliminar
+            // 
+            this.BtnEliminar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnEliminar.Location = new System.Drawing.Point(618, 767);
+            this.BtnEliminar.Name = "BtnEliminar";
+            this.BtnEliminar.Size = new System.Drawing.Size(165, 45);
+            this.BtnEliminar.TabIndex = 22;
+            this.BtnEliminar.Text = "Eliminar";
+            this.BtnEliminar.UseVisualStyleBackColor = false;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
+            // 
+            // BtnSalir
+            // 
+            this.BtnSalir.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnSalir.Location = new System.Drawing.Point(881, 767);
+            this.BtnSalir.Name = "BtnSalir";
+            this.BtnSalir.Size = new System.Drawing.Size(165, 45);
+            this.BtnSalir.TabIndex = 23;
+            this.BtnSalir.Text = "Salir";
+            this.BtnSalir.UseVisualStyleBackColor = false;
+            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
+            // 
+            // GbDatosMascota
+            // 
+            this.GbDatosMascota.Controls.Add(this.TxtFecha);
+            this.GbDatosMascota.Controls.Add(this.CboxCliente);
+            this.GbDatosMascota.Controls.Add(this.CboxTipoMascota);
+            this.GbDatosMascota.Controls.Add(this.TxtObservacion);
+            this.GbDatosMascota.Controls.Add(this.TxtRaza);
+            this.GbDatosMascota.Controls.Add(this.TxtNombre);
+            this.GbDatosMascota.Controls.Add(this.TxtIdMascota);
+            this.GbDatosMascota.Controls.Add(this.label8);
+            this.GbDatosMascota.Controls.Add(this.label7);
+            this.GbDatosMascota.Controls.Add(this.label6);
+            this.GbDatosMascota.Controls.Add(this.label5);
+            this.GbDatosMascota.Controls.Add(this.label4);
+            this.GbDatosMascota.Controls.Add(this.label3);
+            this.GbDatosMascota.Controls.Add(this.label2);
+            this.GbDatosMascota.Location = new System.Drawing.Point(63, 392);
+            this.GbDatosMascota.Name = "GbDatosMascota";
+            this.GbDatosMascota.Size = new System.Drawing.Size(1019, 350);
+            this.GbDatosMascota.TabIndex = 25;
+            this.GbDatosMascota.TabStop = false;
+            this.GbDatosMascota.Text = "Datos de la Mascota";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(434, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(445, 32);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "Control de registro de mascotas";
+            // 
             // FrmMascota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1137, 898);
+            this.ClientSize = new System.Drawing.Size(1137, 844);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.GbDatosMascota);
-            this.Controls.Add(this.GbBuscar);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.DgvListaMascotas);
             this.Controls.Add(this.BtnAgregar);
@@ -392,11 +383,10 @@
             this.Text = "Gestión de Mascota";
             this.Load += new System.EventHandler(this.FrmMascota_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaMascotas)).EndInit();
-            this.GbBuscar.ResumeLayout(false);
-            this.GbBuscar.PerformLayout();
             this.GbDatosMascota.ResumeLayout(false);
             this.GbDatosMascota.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -415,14 +405,12 @@
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.ComboBox CboxTipoMascota;
         private System.Windows.Forms.ComboBox CboxCliente;
-        private System.Windows.Forms.TextBox TxtBuscar;
         private System.Windows.Forms.DateTimePicker TxtFecha;
         private System.Windows.Forms.DataGridView DgvListaMascotas;
         private System.Windows.Forms.Button BtnAgregar;
         private System.Windows.Forms.Button BtnModificar;
         private System.Windows.Forms.Button BtnEliminar;
         private System.Windows.Forms.Button BtnSalir;
-        private System.Windows.Forms.GroupBox GbBuscar;
         private System.Windows.Forms.GroupBox GbDatosMascota;
         private System.Windows.Forms.DataGridViewTextBoxColumn CIdMascota;
         private System.Windows.Forms.DataGridViewTextBoxColumn CNombre;
@@ -433,5 +421,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CIdCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoMascota;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreCliente;
+        private System.Windows.Forms.Label label1;
     }
 }

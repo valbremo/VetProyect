@@ -44,9 +44,6 @@
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnSalir = new System.Windows.Forms.Button();
             this.DgvListaCitas = new System.Windows.Forms.DataGridView();
-            this.GbBuscarCita = new System.Windows.Forms.GroupBox();
-            this.TxtBuscar = new System.Windows.Forms.TextBox();
-            this.GbDatosCita = new System.Windows.Forms.GroupBox();
             this.CIdCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CEspecificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,6 +51,9 @@
             this.CIdMascota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mascota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GbBuscarCita = new System.Windows.Forms.GroupBox();
+            this.TxtBuscar = new System.Windows.Forms.TextBox();
+            this.GbDatosCita = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaCitas)).BeginInit();
             this.GbBuscarCita.SuspendLayout();
             this.GbDatosCita.SuspendLayout();
@@ -62,10 +62,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(381, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(334, 32);
+            this.label1.Size = new System.Drawing.Size(570, 48);
             this.label1.TabIndex = 0;
             this.label1.Text = "Control de registro de citas";
             // 
@@ -222,44 +222,6 @@
             this.DgvListaCitas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListaCitas_CellClick);
             this.DgvListaCitas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // GbBuscarCita
-            // 
-            this.GbBuscarCita.Controls.Add(this.TxtBuscar);
-            this.GbBuscarCita.Location = new System.Drawing.Point(91, 407);
-            this.GbBuscarCita.Name = "GbBuscarCita";
-            this.GbBuscarCita.Size = new System.Drawing.Size(763, 59);
-            this.GbBuscarCita.TabIndex = 18;
-            this.GbBuscarCita.TabStop = false;
-            this.GbBuscarCita.Text = "Buscar Cita";
-            // 
-            // TxtBuscar
-            // 
-            this.TxtBuscar.Location = new System.Drawing.Point(219, 39);
-            this.TxtBuscar.Name = "TxtBuscar";
-            this.TxtBuscar.Size = new System.Drawing.Size(523, 26);
-            this.TxtBuscar.TabIndex = 1;
-            this.TxtBuscar.TextChanged += new System.EventHandler(this.TxtBuscar_TextChanged);
-            // 
-            // GbDatosCita
-            // 
-            this.GbDatosCita.Controls.Add(this.GbBuscarCita);
-            this.GbDatosCita.Controls.Add(this.TxtEspecificacion);
-            this.GbDatosCita.Controls.Add(this.TxtIdCita);
-            this.GbDatosCita.Controls.Add(this.CboxMascota);
-            this.GbDatosCita.Controls.Add(this.label7);
-            this.GbDatosCita.Controls.Add(this.label6);
-            this.GbDatosCita.Controls.Add(this.CboxCliente);
-            this.GbDatosCita.Controls.Add(this.TxtFecha);
-            this.GbDatosCita.Controls.Add(this.label4);
-            this.GbDatosCita.Controls.Add(this.label3);
-            this.GbDatosCita.Controls.Add(this.label2);
-            this.GbDatosCita.Location = new System.Drawing.Point(62, 72);
-            this.GbDatosCita.Name = "GbDatosCita";
-            this.GbDatosCita.Size = new System.Drawing.Size(926, 266);
-            this.GbDatosCita.TabIndex = 19;
-            this.GbDatosCita.TabStop = false;
-            this.GbDatosCita.Text = "Datos de la Cita";
-            // 
             // CIdCita
             // 
             this.CIdCita.DataPropertyName = "IdCita";
@@ -324,6 +286,44 @@
             this.Mascota.Name = "Mascota";
             this.Mascota.ReadOnly = true;
             this.Mascota.Width = 150;
+            // 
+            // GbBuscarCita
+            // 
+            this.GbBuscarCita.Controls.Add(this.TxtBuscar);
+            this.GbBuscarCita.Location = new System.Drawing.Point(91, 407);
+            this.GbBuscarCita.Name = "GbBuscarCita";
+            this.GbBuscarCita.Size = new System.Drawing.Size(763, 59);
+            this.GbBuscarCita.TabIndex = 18;
+            this.GbBuscarCita.TabStop = false;
+            this.GbBuscarCita.Text = "Buscar Cita";
+            // 
+            // TxtBuscar
+            // 
+            this.TxtBuscar.Location = new System.Drawing.Point(219, 39);
+            this.TxtBuscar.Name = "TxtBuscar";
+            this.TxtBuscar.Size = new System.Drawing.Size(523, 26);
+            this.TxtBuscar.TabIndex = 1;
+            this.TxtBuscar.TextChanged += new System.EventHandler(this.TxtBuscar_TextChanged);
+            // 
+            // GbDatosCita
+            // 
+            this.GbDatosCita.Controls.Add(this.GbBuscarCita);
+            this.GbDatosCita.Controls.Add(this.TxtEspecificacion);
+            this.GbDatosCita.Controls.Add(this.TxtIdCita);
+            this.GbDatosCita.Controls.Add(this.CboxMascota);
+            this.GbDatosCita.Controls.Add(this.label7);
+            this.GbDatosCita.Controls.Add(this.label6);
+            this.GbDatosCita.Controls.Add(this.CboxCliente);
+            this.GbDatosCita.Controls.Add(this.TxtFecha);
+            this.GbDatosCita.Controls.Add(this.label4);
+            this.GbDatosCita.Controls.Add(this.label3);
+            this.GbDatosCita.Controls.Add(this.label2);
+            this.GbDatosCita.Location = new System.Drawing.Point(62, 72);
+            this.GbDatosCita.Name = "GbDatosCita";
+            this.GbDatosCita.Size = new System.Drawing.Size(926, 266);
+            this.GbDatosCita.TabIndex = 19;
+            this.GbDatosCita.TabStop = false;
+            this.GbDatosCita.Text = "Datos de la Cita";
             // 
             // FrmCita
             // 

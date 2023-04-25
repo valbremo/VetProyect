@@ -36,10 +36,10 @@
             this.TxtNombre = new System.Windows.Forms.TextBox();
             this.TxtIdEspecialidad = new System.Windows.Forms.TextBox();
             this.DgvListaEspecialidad = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.CIdEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.GbDatosTipoMascota.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaEspecialidad)).BeginInit();
             this.SuspendLayout();
@@ -47,9 +47,9 @@
             // BtnAgregar
             // 
             this.BtnAgregar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnAgregar.Location = new System.Drawing.Point(776, 55);
+            this.BtnAgregar.Location = new System.Drawing.Point(739, 103);
             this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(151, 56);
+            this.BtnAgregar.Size = new System.Drawing.Size(151, 43);
             this.BtnAgregar.TabIndex = 9;
             this.BtnAgregar.Text = "Agregar";
             this.BtnAgregar.UseVisualStyleBackColor = false;
@@ -58,9 +58,9 @@
             // BtnSalir
             // 
             this.BtnSalir.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnSalir.Location = new System.Drawing.Point(776, 295);
+            this.BtnSalir.Location = new System.Drawing.Point(739, 336);
             this.BtnSalir.Name = "BtnSalir";
-            this.BtnSalir.Size = new System.Drawing.Size(151, 57);
+            this.BtnSalir.Size = new System.Drawing.Size(151, 43);
             this.BtnSalir.TabIndex = 11;
             this.BtnSalir.Text = "Salir";
             this.BtnSalir.UseVisualStyleBackColor = false;
@@ -69,9 +69,9 @@
             // BtnEliminar
             // 
             this.BtnEliminar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnEliminar.Location = new System.Drawing.Point(776, 209);
+            this.BtnEliminar.Location = new System.Drawing.Point(739, 257);
             this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(151, 61);
+            this.BtnEliminar.Size = new System.Drawing.Size(151, 41);
             this.BtnEliminar.TabIndex = 10;
             this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.UseVisualStyleBackColor = false;
@@ -80,9 +80,9 @@
             // BtnModificar
             // 
             this.BtnModificar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnModificar.Location = new System.Drawing.Point(776, 132);
+            this.BtnModificar.Location = new System.Drawing.Point(739, 180);
             this.BtnModificar.Name = "BtnModificar";
-            this.BtnModificar.Size = new System.Drawing.Size(151, 59);
+            this.BtnModificar.Size = new System.Drawing.Size(151, 44);
             this.BtnModificar.TabIndex = 8;
             this.BtnModificar.Text = "Modificar";
             this.BtnModificar.UseVisualStyleBackColor = false;
@@ -137,24 +137,6 @@
             this.DgvListaEspecialidad.TabIndex = 2;
             this.DgvListaEspecialidad.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListaEspecialidad_CellClick);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 130);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nombre";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 84);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Código";
-            // 
             // CIdEspecialidad
             // 
             this.CIdEspecialidad.DataPropertyName = "IdEspecialidad";
@@ -173,11 +155,29 @@
             this.CNombre.ReadOnly = true;
             this.CNombre.Width = 150;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(19, 130);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Nombre";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(19, 84);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Código";
+            // 
             // FrmEspecialidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(951, 475);
+            this.ClientSize = new System.Drawing.Size(929, 475);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.BtnEliminar);

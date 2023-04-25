@@ -42,10 +42,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.DgvListaRecetas = new System.Windows.Forms.DataGridView();
-            this.BtnEliminar = new System.Windows.Forms.Button();
-            this.BtnModificar = new System.Windows.Forms.Button();
-            this.BtnAgregar = new System.Windows.Forms.Button();
-            this.BtnSalir = new System.Windows.Forms.Button();
             this.CIdReceta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CTratamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,6 +50,11 @@
             this.CIdUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SintomasHistorial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnEliminar = new System.Windows.Forms.Button();
+            this.BtnModificar = new System.Windows.Forms.Button();
+            this.BtnAgregar = new System.Windows.Forms.Button();
+            this.BtnSalir = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.GbDatosCita.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaRecetas)).BeginInit();
             this.SuspendLayout();
@@ -72,7 +73,7 @@
             this.GbDatosCita.Controls.Add(this.label4);
             this.GbDatosCita.Controls.Add(this.label3);
             this.GbDatosCita.Controls.Add(this.label2);
-            this.GbDatosCita.Location = new System.Drawing.Point(158, 440);
+            this.GbDatosCita.Location = new System.Drawing.Point(158, 458);
             this.GbDatosCita.Name = "GbDatosCita";
             this.GbDatosCita.Size = new System.Drawing.Size(961, 322);
             this.GbDatosCita.TabIndex = 26;
@@ -195,7 +196,7 @@
             this.CIdUsuario,
             this.SintomasHistorial,
             this.NombreUsuario});
-            this.DgvListaRecetas.Location = new System.Drawing.Point(12, 65);
+            this.DgvListaRecetas.Location = new System.Drawing.Point(12, 87);
             this.DgvListaRecetas.Name = "DgvListaRecetas";
             this.DgvListaRecetas.ReadOnly = true;
             this.DgvListaRecetas.RowHeadersWidth = 62;
@@ -203,50 +204,6 @@
             this.DgvListaRecetas.Size = new System.Drawing.Size(1232, 353);
             this.DgvListaRecetas.TabIndex = 24;
             this.DgvListaRecetas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListaRecetas_CellClick);
-            // 
-            // BtnEliminar
-            // 
-            this.BtnEliminar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnEliminar.Location = new System.Drawing.Point(637, 790);
-            this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(156, 42);
-            this.BtnEliminar.TabIndex = 23;
-            this.BtnEliminar.Text = "Eliminar";
-            this.BtnEliminar.UseVisualStyleBackColor = false;
-            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
-            // 
-            // BtnModificar
-            // 
-            this.BtnModificar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnModificar.Location = new System.Drawing.Point(414, 790);
-            this.BtnModificar.Name = "BtnModificar";
-            this.BtnModificar.Size = new System.Drawing.Size(129, 42);
-            this.BtnModificar.TabIndex = 22;
-            this.BtnModificar.Text = "Modificar";
-            this.BtnModificar.UseVisualStyleBackColor = false;
-            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
-            // 
-            // BtnAgregar
-            // 
-            this.BtnAgregar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnAgregar.Location = new System.Drawing.Point(226, 786);
-            this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(130, 43);
-            this.BtnAgregar.TabIndex = 21;
-            this.BtnAgregar.Text = "Agregar";
-            this.BtnAgregar.UseVisualStyleBackColor = false;
-            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
-            // 
-            // BtnSalir
-            // 
-            this.BtnSalir.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnSalir.Location = new System.Drawing.Point(882, 790);
-            this.BtnSalir.Name = "BtnSalir";
-            this.BtnSalir.Size = new System.Drawing.Size(161, 42);
-            this.BtnSalir.TabIndex = 27;
-            this.BtnSalir.Text = "Salir";
-            this.BtnSalir.UseVisualStyleBackColor = false;
-            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // CIdReceta
             // 
@@ -323,11 +280,66 @@
             this.NombreUsuario.ReadOnly = true;
             this.NombreUsuario.Width = 150;
             // 
+            // BtnEliminar
+            // 
+            this.BtnEliminar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnEliminar.Location = new System.Drawing.Point(637, 790);
+            this.BtnEliminar.Name = "BtnEliminar";
+            this.BtnEliminar.Size = new System.Drawing.Size(156, 42);
+            this.BtnEliminar.TabIndex = 23;
+            this.BtnEliminar.Text = "Eliminar";
+            this.BtnEliminar.UseVisualStyleBackColor = false;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
+            // 
+            // BtnModificar
+            // 
+            this.BtnModificar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnModificar.Location = new System.Drawing.Point(414, 790);
+            this.BtnModificar.Name = "BtnModificar";
+            this.BtnModificar.Size = new System.Drawing.Size(129, 42);
+            this.BtnModificar.TabIndex = 22;
+            this.BtnModificar.Text = "Modificar";
+            this.BtnModificar.UseVisualStyleBackColor = false;
+            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
+            // 
+            // BtnAgregar
+            // 
+            this.BtnAgregar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnAgregar.Location = new System.Drawing.Point(226, 786);
+            this.BtnAgregar.Name = "BtnAgregar";
+            this.BtnAgregar.Size = new System.Drawing.Size(130, 43);
+            this.BtnAgregar.TabIndex = 21;
+            this.BtnAgregar.Text = "Agregar";
+            this.BtnAgregar.UseVisualStyleBackColor = false;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
+            // 
+            // BtnSalir
+            // 
+            this.BtnSalir.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnSalir.Location = new System.Drawing.Point(882, 790);
+            this.BtnSalir.Name = "BtnSalir";
+            this.BtnSalir.Size = new System.Drawing.Size(161, 42);
+            this.BtnSalir.TabIndex = 27;
+            this.BtnSalir.Text = "Salir";
+            this.BtnSalir.UseVisualStyleBackColor = false;
+            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(634, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(624, 48);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Control de registro de recetas";
+            // 
             // FrmReceta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1298, 855);
+            this.ClientSize = new System.Drawing.Size(1258, 855);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.GbDatosCita);
             this.Controls.Add(this.DgvListaRecetas);
@@ -341,6 +353,7 @@
             this.GbDatosCita.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaRecetas)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -372,5 +385,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CIdUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn SintomasHistorial;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreUsuario;
+        private System.Windows.Forms.Label label1;
     }
 }

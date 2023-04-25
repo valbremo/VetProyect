@@ -44,12 +44,6 @@
             this.TxtIdHistorial = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.DgvListaHistoriales = new System.Windows.Forms.DataGridView();
-            this.GbBuscarHistorial = new System.Windows.Forms.GroupBox();
-            this.BtnAgregar = new System.Windows.Forms.Button();
-            this.BtnEliminar = new System.Windows.Forms.Button();
-            this.BtnSalir = new System.Windows.Forms.Button();
-            this.BtnModificar = new System.Windows.Forms.Button();
-            this.TxtBuscar = new System.Windows.Forms.TextBox();
             this.CIdHistorial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CSintomas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,9 +52,13 @@
             this.CIdEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mascota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreEspecificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnAgregar = new System.Windows.Forms.Button();
+            this.BtnEliminar = new System.Windows.Forms.Button();
+            this.BtnSalir = new System.Windows.Forms.Button();
+            this.BtnModificar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.GbDatosHistorial.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaHistoriales)).BeginInit();
-            this.GbBuscarHistorial.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -138,7 +136,7 @@
             this.GbDatosHistorial.Controls.Add(this.label3);
             this.GbDatosHistorial.Controls.Add(this.label2);
             this.GbDatosHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GbDatosHistorial.Location = new System.Drawing.Point(197, 470);
+            this.GbDatosHistorial.Location = new System.Drawing.Point(194, 444);
             this.GbDatosHistorial.Name = "GbDatosHistorial";
             this.GbDatosHistorial.Size = new System.Drawing.Size(1144, 223);
             this.GbDatosHistorial.TabIndex = 7;
@@ -207,7 +205,7 @@
             this.CIdEspecialidad,
             this.Mascota,
             this.NombreEspecificacion});
-            this.DgvListaHistoriales.Location = new System.Drawing.Point(12, 135);
+            this.DgvListaHistoriales.Location = new System.Drawing.Point(12, 106);
             this.DgvListaHistoriales.Name = "DgvListaHistoriales";
             this.DgvListaHistoriales.ReadOnly = true;
             this.DgvListaHistoriales.RowHeadersWidth = 62;
@@ -215,67 +213,6 @@
             this.DgvListaHistoriales.Size = new System.Drawing.Size(1480, 318);
             this.DgvListaHistoriales.TabIndex = 8;
             this.DgvListaHistoriales.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListaHistoriales_CellClick);
-            // 
-            // GbBuscarHistorial
-            // 
-            this.GbBuscarHistorial.Controls.Add(this.TxtBuscar);
-            this.GbBuscarHistorial.Location = new System.Drawing.Point(12, 30);
-            this.GbBuscarHistorial.Name = "GbBuscarHistorial";
-            this.GbBuscarHistorial.Size = new System.Drawing.Size(973, 75);
-            this.GbBuscarHistorial.TabIndex = 9;
-            this.GbBuscarHistorial.TabStop = false;
-            this.GbBuscarHistorial.Text = "Buscar Historial";
-            // 
-            // BtnAgregar
-            // 
-            this.BtnAgregar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnAgregar.Location = new System.Drawing.Point(301, 712);
-            this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(144, 48);
-            this.BtnAgregar.TabIndex = 10;
-            this.BtnAgregar.Text = "Agregar";
-            this.BtnAgregar.UseVisualStyleBackColor = false;
-            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
-            // 
-            // BtnEliminar
-            // 
-            this.BtnEliminar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnEliminar.Location = new System.Drawing.Point(778, 712);
-            this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(144, 48);
-            this.BtnEliminar.TabIndex = 12;
-            this.BtnEliminar.Text = "Eliminar";
-            this.BtnEliminar.UseVisualStyleBackColor = false;
-            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
-            // 
-            // BtnSalir
-            // 
-            this.BtnSalir.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnSalir.Location = new System.Drawing.Point(1015, 712);
-            this.BtnSalir.Name = "BtnSalir";
-            this.BtnSalir.Size = new System.Drawing.Size(144, 48);
-            this.BtnSalir.TabIndex = 13;
-            this.BtnSalir.Text = "Salir";
-            this.BtnSalir.UseVisualStyleBackColor = false;
-            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
-            // 
-            // BtnModificar
-            // 
-            this.BtnModificar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnModificar.Location = new System.Drawing.Point(537, 712);
-            this.BtnModificar.Name = "BtnModificar";
-            this.BtnModificar.Size = new System.Drawing.Size(144, 48);
-            this.BtnModificar.TabIndex = 13;
-            this.BtnModificar.Text = "Modificar";
-            this.BtnModificar.UseVisualStyleBackColor = false;
-            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
-            // 
-            // TxtBuscar
-            // 
-            this.TxtBuscar.Location = new System.Drawing.Point(241, 29);
-            this.TxtBuscar.Name = "TxtBuscar";
-            this.TxtBuscar.Size = new System.Drawing.Size(443, 26);
-            this.TxtBuscar.TabIndex = 0;
             // 
             // CIdHistorial
             // 
@@ -352,16 +289,70 @@
             this.NombreEspecificacion.ReadOnly = true;
             this.NombreEspecificacion.Width = 150;
             // 
+            // BtnAgregar
+            // 
+            this.BtnAgregar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnAgregar.Location = new System.Drawing.Point(301, 693);
+            this.BtnAgregar.Name = "BtnAgregar";
+            this.BtnAgregar.Size = new System.Drawing.Size(144, 48);
+            this.BtnAgregar.TabIndex = 10;
+            this.BtnAgregar.Text = "Agregar";
+            this.BtnAgregar.UseVisualStyleBackColor = false;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
+            // 
+            // BtnEliminar
+            // 
+            this.BtnEliminar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnEliminar.Location = new System.Drawing.Point(778, 693);
+            this.BtnEliminar.Name = "BtnEliminar";
+            this.BtnEliminar.Size = new System.Drawing.Size(144, 48);
+            this.BtnEliminar.TabIndex = 12;
+            this.BtnEliminar.Text = "Eliminar";
+            this.BtnEliminar.UseVisualStyleBackColor = false;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
+            // 
+            // BtnSalir
+            // 
+            this.BtnSalir.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnSalir.Location = new System.Drawing.Point(1015, 693);
+            this.BtnSalir.Name = "BtnSalir";
+            this.BtnSalir.Size = new System.Drawing.Size(144, 48);
+            this.BtnSalir.TabIndex = 13;
+            this.BtnSalir.Text = "Salir";
+            this.BtnSalir.UseVisualStyleBackColor = false;
+            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
+            // 
+            // BtnModificar
+            // 
+            this.BtnModificar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnModificar.Location = new System.Drawing.Point(537, 693);
+            this.BtnModificar.Name = "BtnModificar";
+            this.BtnModificar.Size = new System.Drawing.Size(144, 48);
+            this.BtnModificar.TabIndex = 13;
+            this.BtnModificar.Text = "Modificar";
+            this.BtnModificar.UseVisualStyleBackColor = false;
+            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(805, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(457, 32);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Control de registro de historiales";
+            // 
             // FrmHistorial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1513, 775);
+            this.ClientSize = new System.Drawing.Size(1513, 760);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnModificar);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.BtnEliminar);
-            this.Controls.Add(this.GbBuscarHistorial);
             this.Controls.Add(this.DgvListaHistoriales);
             this.Controls.Add(this.GbDatosHistorial);
             this.Name = "FrmHistorial";
@@ -371,9 +362,8 @@
             this.GbDatosHistorial.ResumeLayout(false);
             this.GbDatosHistorial.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaHistoriales)).EndInit();
-            this.GbBuscarHistorial.ResumeLayout(false);
-            this.GbBuscarHistorial.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -393,12 +383,10 @@
         private System.Windows.Forms.TextBox TxtIdHistorial;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.DataGridView DgvListaHistoriales;
-        private System.Windows.Forms.GroupBox GbBuscarHistorial;
         private System.Windows.Forms.Button BtnAgregar;
         private System.Windows.Forms.Button BtnEliminar;
         private System.Windows.Forms.Button BtnSalir;
         private System.Windows.Forms.Button BtnModificar;
-        private System.Windows.Forms.TextBox TxtBuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn CIdHistorial;
         private System.Windows.Forms.DataGridViewTextBoxColumn CSintomas;
         private System.Windows.Forms.DataGridViewTextBoxColumn CFecha;
@@ -407,5 +395,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CIdEspecialidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Mascota;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreEspecificacion;
+        private System.Windows.Forms.Label label1;
     }
 }

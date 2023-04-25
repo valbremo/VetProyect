@@ -152,7 +152,7 @@ namespace VetProyect.Formularios
 
                     if (!IdExiste)
                     {
-                        //No existe un usuario con la cédula y el correo proporcionado 
+                        //No existe un receta con la cédula 
 
                         // en la llamada a funciones anteriores usé una var bool para 
                         //almacenar el retorno de la función. Acá evaluaremos el 

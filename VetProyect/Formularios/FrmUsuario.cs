@@ -329,6 +329,11 @@ namespace VetProyect.Formularios
         {
             
         }
+
+        private void DgvListaUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
     
 }
