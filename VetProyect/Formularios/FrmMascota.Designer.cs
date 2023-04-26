@@ -39,7 +39,6 @@
             this.TxtNombre = new System.Windows.Forms.TextBox();
             this.TxtRaza = new System.Windows.Forms.TextBox();
             this.TxtObservacion = new System.Windows.Forms.TextBox();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.CboxTipoMascota = new System.Windows.Forms.ComboBox();
             this.CboxCliente = new System.Windows.Forms.ComboBox();
             this.TxtFecha = new System.Windows.Forms.DateTimePicker();
@@ -198,7 +197,7 @@
             this.CIdCliente,
             this.TipoMascota,
             this.NombreCliente});
-            this.DgvListaMascotas.Location = new System.Drawing.Point(12, 100);
+            this.DgvListaMascotas.Location = new System.Drawing.Point(12, 62);
             this.DgvListaMascotas.Name = "DgvListaMascotas";
             this.DgvListaMascotas.ReadOnly = true;
             this.DgvListaMascotas.RowHeadersWidth = 62;
@@ -293,7 +292,7 @@
             // BtnAgregar
             // 
             this.BtnAgregar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnAgregar.Location = new System.Drawing.Point(98, 767);
+            this.BtnAgregar.Location = new System.Drawing.Point(100, 711);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(165, 45);
             this.BtnAgregar.TabIndex = 20;
@@ -304,7 +303,7 @@
             // BtnModificar
             // 
             this.BtnModificar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnModificar.Location = new System.Drawing.Point(355, 767);
+            this.BtnModificar.Location = new System.Drawing.Point(357, 711);
             this.BtnModificar.Name = "BtnModificar";
             this.BtnModificar.Size = new System.Drawing.Size(165, 45);
             this.BtnModificar.TabIndex = 21;
@@ -315,7 +314,7 @@
             // BtnEliminar
             // 
             this.BtnEliminar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnEliminar.Location = new System.Drawing.Point(618, 767);
+            this.BtnEliminar.Location = new System.Drawing.Point(620, 711);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(165, 45);
             this.BtnEliminar.TabIndex = 22;
@@ -326,7 +325,7 @@
             // BtnSalir
             // 
             this.BtnSalir.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnSalir.Location = new System.Drawing.Point(881, 767);
+            this.BtnSalir.Location = new System.Drawing.Point(883, 711);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(165, 45);
             this.BtnSalir.TabIndex = 23;
@@ -350,7 +349,7 @@
             this.GbDatosMascota.Controls.Add(this.label4);
             this.GbDatosMascota.Controls.Add(this.label3);
             this.GbDatosMascota.Controls.Add(this.label2);
-            this.GbDatosMascota.Location = new System.Drawing.Point(63, 392);
+            this.GbDatosMascota.Location = new System.Drawing.Point(63, 346);
             this.GbDatosMascota.Name = "GbDatosMascota";
             this.GbDatosMascota.Size = new System.Drawing.Size(1019, 350);
             this.GbDatosMascota.TabIndex = 25;
@@ -361,7 +360,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(434, 36);
+            this.label1.Location = new System.Drawing.Point(446, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(445, 32);
             this.label1.TabIndex = 26;
@@ -371,7 +370,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1137, 844);
+            this.ClientSize = new System.Drawing.Size(1137, 770);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.GbDatosMascota);
             this.Controls.Add(this.BtnSalir);
@@ -402,7 +401,6 @@
         private System.Windows.Forms.TextBox TxtNombre;
         private System.Windows.Forms.TextBox TxtRaza;
         private System.Windows.Forms.TextBox TxtObservacion;
-        private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.ComboBox CboxTipoMascota;
         private System.Windows.Forms.ComboBox CboxCliente;
         private System.Windows.Forms.DateTimePicker TxtFecha;

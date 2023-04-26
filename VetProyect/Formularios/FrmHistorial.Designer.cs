@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -42,7 +41,6 @@
             this.TxtFecha = new System.Windows.Forms.DateTimePicker();
             this.TxtSintomas = new System.Windows.Forms.TextBox();
             this.TxtIdHistorial = new System.Windows.Forms.TextBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.DgvListaHistoriales = new System.Windows.Forms.DataGridView();
             this.CIdHistorial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CSintomas = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -136,7 +134,7 @@
             this.GbDatosHistorial.Controls.Add(this.label3);
             this.GbDatosHistorial.Controls.Add(this.label2);
             this.GbDatosHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GbDatosHistorial.Location = new System.Drawing.Point(194, 444);
+            this.GbDatosHistorial.Location = new System.Drawing.Point(192, 420);
             this.GbDatosHistorial.Name = "GbDatosHistorial";
             this.GbDatosHistorial.Size = new System.Drawing.Size(1144, 223);
             this.GbDatosHistorial.TabIndex = 7;
@@ -205,7 +203,7 @@
             this.CIdEspecialidad,
             this.Mascota,
             this.NombreEspecificacion});
-            this.DgvListaHistoriales.Location = new System.Drawing.Point(12, 106);
+            this.DgvListaHistoriales.Location = new System.Drawing.Point(12, 80);
             this.DgvListaHistoriales.Name = "DgvListaHistoriales";
             this.DgvListaHistoriales.ReadOnly = true;
             this.DgvListaHistoriales.RowHeadersWidth = 62;
@@ -292,7 +290,7 @@
             // BtnAgregar
             // 
             this.BtnAgregar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnAgregar.Location = new System.Drawing.Point(301, 693);
+            this.BtnAgregar.Location = new System.Drawing.Point(325, 670);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(144, 48);
             this.BtnAgregar.TabIndex = 10;
@@ -303,7 +301,7 @@
             // BtnEliminar
             // 
             this.BtnEliminar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnEliminar.Location = new System.Drawing.Point(778, 693);
+            this.BtnEliminar.Location = new System.Drawing.Point(802, 670);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(144, 48);
             this.BtnEliminar.TabIndex = 12;
@@ -314,7 +312,7 @@
             // BtnSalir
             // 
             this.BtnSalir.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnSalir.Location = new System.Drawing.Point(1015, 693);
+            this.BtnSalir.Location = new System.Drawing.Point(1039, 670);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(144, 48);
             this.BtnSalir.TabIndex = 13;
@@ -325,7 +323,7 @@
             // BtnModificar
             // 
             this.BtnModificar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnModificar.Location = new System.Drawing.Point(537, 693);
+            this.BtnModificar.Location = new System.Drawing.Point(561, 670);
             this.BtnModificar.Name = "BtnModificar";
             this.BtnModificar.Size = new System.Drawing.Size(144, 48);
             this.BtnModificar.TabIndex = 13;
@@ -337,7 +335,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(805, 33);
+            this.label1.Location = new System.Drawing.Point(805, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(457, 32);
             this.label1.TabIndex = 14;
@@ -347,7 +345,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1513, 760);
+            this.ClientSize = new System.Drawing.Size(1513, 731);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnModificar);
             this.Controls.Add(this.BtnSalir);
@@ -381,7 +379,6 @@
         private System.Windows.Forms.DateTimePicker TxtFecha;
         private System.Windows.Forms.TextBox TxtSintomas;
         private System.Windows.Forms.TextBox TxtIdHistorial;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.DataGridView DgvListaHistoriales;
         private System.Windows.Forms.Button BtnAgregar;
         private System.Windows.Forms.Button BtnEliminar;

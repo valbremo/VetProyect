@@ -214,7 +214,7 @@ namespace VetProyect.Formularios
                         MessageBox.Show("Usuario modificado correctamente", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         LimpiarFormulario();
                         LlenarListaUsuarios();
-                        //ActivarBotonAgregar();
+                       
 
                     }
                 

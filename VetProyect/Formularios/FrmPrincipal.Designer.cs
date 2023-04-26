@@ -38,7 +38,6 @@
             this.BtnTipoMascota = new System.Windows.Forms.Button();
             this.BtnEspecialidad = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.BtnAcercaDe = new System.Windows.Forms.Button();
             this.BtnSalir = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -161,21 +160,10 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Agroveterinaria";
             // 
-            // BtnAcercaDe
-            // 
-            this.BtnAcercaDe.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.BtnAcercaDe.Location = new System.Drawing.Point(96, 506);
-            this.BtnAcercaDe.Name = "BtnAcercaDe";
-            this.BtnAcercaDe.Size = new System.Drawing.Size(156, 50);
-            this.BtnAcercaDe.TabIndex = 10;
-            this.BtnAcercaDe.Text = "Acerca de";
-            this.BtnAcercaDe.UseVisualStyleBackColor = false;
-            this.BtnAcercaDe.Click += new System.EventHandler(this.BtnAcercaDe_Click);
-            // 
             // BtnSalir
             // 
             this.BtnSalir.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.BtnSalir.Location = new System.Drawing.Point(404, 506);
+            this.BtnSalir.Location = new System.Drawing.Point(73, 535);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(153, 51);
             this.BtnSalir.TabIndex = 11;
@@ -372,7 +360,6 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BtnSalir);
-            this.Controls.Add(this.BtnAcercaDe);
             this.Controls.Add(this.BtnEspecialidad);
             this.Controls.Add(this.BtnTipoMascota);
             this.Controls.Add(this.BtnHistorial);
@@ -407,7 +394,6 @@
         private System.Windows.Forms.Button BtnTipoMascota;
         private System.Windows.Forms.Button BtnEspecialidad;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button BtnAcercaDe;
         private System.Windows.Forms.Button BtnSalir;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;

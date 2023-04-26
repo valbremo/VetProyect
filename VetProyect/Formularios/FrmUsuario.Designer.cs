@@ -65,7 +65,7 @@
             this.GbDatosCita.Controls.Add(this.label5);
             this.GbDatosCita.Controls.Add(this.label4);
             this.GbDatosCita.Controls.Add(this.label2);
-            this.GbDatosCita.Location = new System.Drawing.Point(38, 427);
+            this.GbDatosCita.Location = new System.Drawing.Point(38, 421);
             this.GbDatosCita.Name = "GbDatosCita";
             this.GbDatosCita.Size = new System.Drawing.Size(758, 218);
             this.GbDatosCita.TabIndex = 26;
@@ -217,7 +217,7 @@
             // BtnEliminar
             // 
             this.BtnEliminar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnEliminar.Location = new System.Drawing.Point(429, 680);
+            this.BtnEliminar.Location = new System.Drawing.Point(433, 664);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(159, 48);
             this.BtnEliminar.TabIndex = 23;
@@ -228,7 +228,7 @@
             // BtnModificar
             // 
             this.BtnModificar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnModificar.Location = new System.Drawing.Point(230, 680);
+            this.BtnModificar.Location = new System.Drawing.Point(234, 664);
             this.BtnModificar.Name = "BtnModificar";
             this.BtnModificar.Size = new System.Drawing.Size(159, 48);
             this.BtnModificar.TabIndex = 22;
@@ -239,7 +239,7 @@
             // BtnAgregar
             // 
             this.BtnAgregar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnAgregar.Location = new System.Drawing.Point(38, 681);
+            this.BtnAgregar.Location = new System.Drawing.Point(42, 665);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(153, 45);
             this.BtnAgregar.TabIndex = 21;
@@ -250,7 +250,7 @@
             // BtnSalir
             // 
             this.BtnSalir.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnSalir.Location = new System.Drawing.Point(621, 677);
+            this.BtnSalir.Location = new System.Drawing.Point(625, 661);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(159, 48);
             this.BtnSalir.TabIndex = 29;
@@ -272,7 +272,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(820, 744);
+            this.ClientSize = new System.Drawing.Size(820, 726);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.GbDatosCita);

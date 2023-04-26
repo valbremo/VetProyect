@@ -63,9 +63,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(381, 28);
+            this.label1.Location = new System.Drawing.Point(470, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(570, 48);
+            this.label1.Size = new System.Drawing.Size(380, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Control de registro de citas";
             // 
@@ -157,7 +157,7 @@
             // BtnAgregar
             // 
             this.BtnAgregar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnAgregar.Location = new System.Drawing.Point(34, 748);
+            this.BtnAgregar.Location = new System.Drawing.Point(27, 701);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(171, 51);
             this.BtnAgregar.TabIndex = 13;
@@ -168,7 +168,7 @@
             // BtnModificar
             // 
             this.BtnModificar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnModificar.Location = new System.Drawing.Point(275, 748);
+            this.BtnModificar.Location = new System.Drawing.Point(268, 701);
             this.BtnModificar.Name = "BtnModificar";
             this.BtnModificar.Size = new System.Drawing.Size(180, 50);
             this.BtnModificar.TabIndex = 14;
@@ -179,7 +179,7 @@
             // BtnEliminar
             // 
             this.BtnEliminar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnEliminar.Location = new System.Drawing.Point(530, 748);
+            this.BtnEliminar.Location = new System.Drawing.Point(523, 701);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(212, 51);
             this.BtnEliminar.TabIndex = 15;
@@ -190,7 +190,7 @@
             // BtnSalir
             // 
             this.BtnSalir.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnSalir.Location = new System.Drawing.Point(807, 748);
+            this.BtnSalir.Location = new System.Drawing.Point(800, 701);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(181, 51);
             this.BtnSalir.TabIndex = 16;
@@ -212,7 +212,7 @@
             this.CIdMascota,
             this.NombreCliente,
             this.Mascota});
-            this.DgvListaCitas.Location = new System.Drawing.Point(23, 356);
+            this.DgvListaCitas.Location = new System.Drawing.Point(23, 326);
             this.DgvListaCitas.Name = "DgvListaCitas";
             this.DgvListaCitas.ReadOnly = true;
             this.DgvListaCitas.RowHeadersWidth = 62;
@@ -318,7 +318,7 @@
             this.GbDatosCita.Controls.Add(this.label4);
             this.GbDatosCita.Controls.Add(this.label3);
             this.GbDatosCita.Controls.Add(this.label2);
-            this.GbDatosCita.Location = new System.Drawing.Point(62, 72);
+            this.GbDatosCita.Location = new System.Drawing.Point(62, 54);
             this.GbDatosCita.Name = "GbDatosCita";
             this.GbDatosCita.Size = new System.Drawing.Size(926, 266);
             this.GbDatosCita.TabIndex = 19;
@@ -329,7 +329,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1021, 821);
+            this.ClientSize = new System.Drawing.Size(1021, 759);
             this.Controls.Add(this.GbDatosCita);
             this.Controls.Add(this.DgvListaCitas);
             this.Controls.Add(this.BtnSalir);

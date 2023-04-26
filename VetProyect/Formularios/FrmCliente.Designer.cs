@@ -81,7 +81,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(455, 123);
+            this.label3.Location = new System.Drawing.Point(456, 43);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 22);
             this.label3.TabIndex = 2;
@@ -101,7 +101,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(456, 200);
+            this.label5.Location = new System.Drawing.Point(456, 129);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(163, 22);
             this.label5.TabIndex = 4;
@@ -111,7 +111,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(23, 278);
+            this.label6.Location = new System.Drawing.Point(456, 196);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(89, 22);
             this.label6.TabIndex = 5;
@@ -140,7 +140,7 @@
             // TxtCedula
             // 
             this.TxtCedula.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCedula.Location = new System.Drawing.Point(660, 123);
+            this.TxtCedula.Location = new System.Drawing.Point(660, 37);
             this.TxtCedula.Name = "TxtCedula";
             this.TxtCedula.Size = new System.Drawing.Size(248, 33);
             this.TxtCedula.TabIndex = 7;
@@ -158,7 +158,7 @@
             // TxtCorreoElectronico
             // 
             this.TxtCorreoElectronico.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCorreoElectronico.Location = new System.Drawing.Point(660, 197);
+            this.TxtCorreoElectronico.Location = new System.Drawing.Point(660, 123);
             this.TxtCorreoElectronico.Name = "TxtCorreoElectronico";
             this.TxtCorreoElectronico.Size = new System.Drawing.Size(277, 33);
             this.TxtCorreoElectronico.TabIndex = 9;
@@ -167,7 +167,7 @@
             // TxtDireccion
             // 
             this.TxtDireccion.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtDireccion.Location = new System.Drawing.Point(159, 270);
+            this.TxtDireccion.Location = new System.Drawing.Point(660, 190);
             this.TxtDireccion.Name = "TxtDireccion";
             this.TxtDireccion.Size = new System.Drawing.Size(281, 33);
             this.TxtDireccion.TabIndex = 10;
@@ -188,9 +188,9 @@
             this.GbDetalleCliente.Controls.Add(this.label2);
             this.GbDetalleCliente.Controls.Add(this.label1);
             this.GbDetalleCliente.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GbDetalleCliente.Location = new System.Drawing.Point(132, 568);
+            this.GbDetalleCliente.Location = new System.Drawing.Point(113, 447);
             this.GbDetalleCliente.Name = "GbDetalleCliente";
-            this.GbDetalleCliente.Size = new System.Drawing.Size(1014, 319);
+            this.GbDetalleCliente.Size = new System.Drawing.Size(1014, 247);
             this.GbDetalleCliente.TabIndex = 11;
             this.GbDetalleCliente.TabStop = false;
             this.GbDetalleCliente.Text = "Detalle del Cliente";
@@ -208,14 +208,14 @@
             this.CTelefono,
             this.CCorreoElectronico,
             this.CDireccion});
-            this.DgvListaClientes.Location = new System.Drawing.Point(12, 96);
+            this.DgvListaClientes.Location = new System.Drawing.Point(12, 79);
             this.DgvListaClientes.Name = "DgvListaClientes";
             this.DgvListaClientes.ReadOnly = true;
             this.DgvListaClientes.RowHeadersVisible = false;
             this.DgvListaClientes.RowHeadersWidth = 62;
             this.DgvListaClientes.RowTemplate.Height = 28;
             this.DgvListaClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvListaClientes.Size = new System.Drawing.Size(1190, 434);
+            this.DgvListaClientes.Size = new System.Drawing.Size(1190, 353);
             this.DgvListaClientes.TabIndex = 15;
             this.DgvListaClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListaClientes_CellClick);
             this.DgvListaClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLista_CellContentClick);
@@ -278,7 +278,7 @@
             // BtnAgregar
             // 
             this.BtnAgregar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnAgregar.Location = new System.Drawing.Point(233, 893);
+            this.BtnAgregar.Location = new System.Drawing.Point(233, 714);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(153, 52);
             this.BtnAgregar.TabIndex = 17;
@@ -289,7 +289,7 @@
             // BtnModificar
             // 
             this.BtnModificar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnModificar.Location = new System.Drawing.Point(434, 892);
+            this.BtnModificar.Location = new System.Drawing.Point(434, 713);
             this.BtnModificar.Name = "BtnModificar";
             this.BtnModificar.Size = new System.Drawing.Size(158, 53);
             this.BtnModificar.TabIndex = 18;
@@ -300,7 +300,7 @@
             // BtnEliminar
             // 
             this.BtnEliminar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnEliminar.Location = new System.Drawing.Point(641, 893);
+            this.BtnEliminar.Location = new System.Drawing.Point(641, 714);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(166, 54);
             this.BtnEliminar.TabIndex = 19;
@@ -311,7 +311,7 @@
             // BtnSalir
             // 
             this.BtnSalir.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnSalir.Location = new System.Drawing.Point(848, 895);
+            this.BtnSalir.Location = new System.Drawing.Point(848, 716);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(163, 52);
             this.BtnSalir.TabIndex = 20;
@@ -323,7 +323,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(586, 45);
+            this.label7.Location = new System.Drawing.Point(589, 28);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(422, 32);
             this.label7.TabIndex = 21;
@@ -333,7 +333,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1214, 960);
+            this.ClientSize = new System.Drawing.Size(1214, 779);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.BtnEliminar);
